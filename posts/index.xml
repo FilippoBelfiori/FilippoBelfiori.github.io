@@ -5,6 +5,213 @@
     <link>https://mortad3lla.github.io/posts/</link>
     <description>Recent content in Blog on Filippo Belfiori</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://mortad3lla.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://mortad3lla.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chern Classes in Ordinary Cohomology</title>
+      <link>https://mortad3lla.github.io/posts/chern-classes/</link>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://mortad3lla.github.io/posts/chern-classes/</guid>
+      <description>&lt;p&gt;Let $X$ be a topological space and let $E \to X$ be a complex vector bundle of rank $n$. The &lt;strong&gt;Chern classes&lt;/strong&gt; of $E$ are characteristic classes&lt;/p&gt;
+$$
+c_i(E) \in H^{2i}(X;\mathbb{Z}), \qquad i=0,\dots,n,
+$$&lt;p&gt;with $c_0(E)=1$, which measure the twisting of the bundle $E$.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;total Chern class&lt;/strong&gt; is defined as&lt;/p&gt;
+$$
+c(E) = 1 + c_1(E) + c_2(E) + \cdots + c_n(E) \in H^{\ast}(X;\mathbb{Z}).
+$$&lt;hr&gt;
+&lt;h2 id=&#34;classifying-space-construction&#34;&gt;Classifying Space Construction&lt;/h2&gt;
+&lt;p&gt;For every $n$, there exists a classifying space $BU(n)$ and a universal complex vector bundle&lt;/p&gt;
+$$
+\gamma_n \to BU(n).
+$$&lt;p&gt;The integral cohomology ring of $BU(n)$ is a polynomial ring&lt;/p&gt;
+$$
+H^\ast(BU(n);\mathbb{Z}) \cong \mathbb{Z}[c_1,\dots,c_n],
+$$&lt;p&gt;where $c_i$ are the universal Chern classes.&lt;/p&gt;
+&lt;p&gt;If a rank $n$ bundle $E \to X$ is classified by a map&lt;/p&gt;
+$$
+f : X \to BU(n),
+$$&lt;p&gt;then the Chern classes of $E$ are defined by pullback:&lt;/p&gt;
+$$
+c_i(E) := f^\ast(c_i).
+$$&lt;hr&gt;
+&lt;h2 id=&#34;basic-properties&#34;&gt;Basic Properties&lt;/h2&gt;
+&lt;div class=&#34;math-env style-defn&#34; 
+    
+     data-kind=&#34;fact&#34;
+     data-lang=&#34;en&#34;
+     data-numbered=&#34;true&#34;&gt;
+  &lt;span class=&#34;math-heading&#34;&gt;
+  &lt;span class=&#34;math-title&#34;
+        data-label=&#39;Fact&#39;&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;span class=&#34;math-body&#34;&gt;
+    &lt;p&gt;Let $E,F$ be complex vector bundles over $X$.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;(&lt;strong&gt;Naturality&lt;/strong&gt;) If $g : Y \to X$, then
+&lt;/p&gt;
+$$
+   c_i(g^\ast E) = g^\ast c_i(E).
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(&lt;strong&gt;Whitney Sum Formula&lt;/strong&gt;)
+&lt;/p&gt;
+$$
+   c(E \oplus F) = c(E) \smile c(F).
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(&lt;strong&gt;Normalization&lt;/strong&gt;) For the trivial bundle $\varepsilon^n$,
+&lt;/p&gt;
+$$
+   c_i(\varepsilon^n)=0 \quad \text{for } i&gt;0.
+   $$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(&lt;strong&gt;Dimension&lt;/strong&gt;) If $\operatorname{rank}(E)=n$, then
+&lt;/p&gt;
+$$
+   c_i(E)=0 \quad \text{for } i&gt;n.
+   $$&lt;/li&gt;
+&lt;/ol&gt;
+
+  &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&#34;line-bundles&#34;&gt;Line Bundles&lt;/h2&gt;
+&lt;p&gt;If $L \to X$ is a complex line bundle, then&lt;/p&gt;
+$$
+c(L) = 1 + c_1(L),
+$$&lt;p&gt;and $c_i(L)=0$ for $i&gt;1$.&lt;/p&gt;
+&lt;p&gt;Moreover, isomorphism classes of complex line bundles over $X$ correspond to elements of $H^2(X;\mathbb{Z})$ via the first Chern class:&lt;/p&gt;
+$$
+L \longmapsto c_1(L).
+$$&lt;hr&gt;
+&lt;h2 id=&#34;splitting-principle&#34;&gt;Splitting Principle&lt;/h2&gt;
+&lt;p&gt;There exists a space $\tilde X \to X$ such that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The induced map in cohomology is injective.&lt;/li&gt;
+&lt;li&gt;The pulled-back bundle splits as a sum of line bundles:&lt;/li&gt;
+&lt;/ul&gt;
+$$
+\pi^\ast E \cong L_1 \oplus \cdots \oplus L_n.
+$$&lt;p&gt;If we define formal &lt;strong&gt;Chern roots&lt;/strong&gt;&lt;/p&gt;
+$$
+x_i := c_1(L_i),
+$$&lt;p&gt;then&lt;/p&gt;
+$$
+c(E) = \prod_{i=1}^n (1 + x_i).
+$$&lt;p&gt;All polynomial identities between Chern classes follow from symmetric polynomial identities in the $x_i$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;top-chern-class-and-euler-class&#34;&gt;Top Chern Class and Euler Class&lt;/h2&gt;
+&lt;p&gt;If $\operatorname{rank}(E)=n$, then the top Chern class&lt;/p&gt;
+$$
+c_n(E) \in H^{2n}(X;\mathbb{Z})
+$$&lt;p&gt;coincides with the Euler class of the underlying oriented real bundle of rank $2n$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;chern-character&#34;&gt;Chern Character&lt;/h2&gt;
+&lt;p&gt;There is a natural transformation from complex $K$-theory to rational cohomology called the &lt;strong&gt;Chern character&lt;/strong&gt;:&lt;/p&gt;
+$$
+\operatorname{ch} : K^0(X) \to H^{\ast}(X;\mathbb{Q}),
+$$&lt;p&gt;defined in terms of Chern classes by&lt;/p&gt;
+$$
+\operatorname{ch}(E) = \sum_{i=1}^n e^{x_i},
+$$&lt;p&gt;where $x_i$ are the Chern roots (via the splitting principle).&lt;/p&gt;
+&lt;hr&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Postnikov Tower</title>
+      <link>https://mortad3lla.github.io/posts/postnikov-tower/</link>
+      <pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://mortad3lla.github.io/posts/postnikov-tower/</guid>
+      <description>&lt;p&gt;If $X$ and $Y$ are topological spaces, a map $f: X \to Y$ is said to be an &lt;strong&gt;$n$-equivalence&lt;/strong&gt; if it induces a bijection $\pi_0(X) \to \pi_0(Y)$ (the sets of path-connected components of $X$ and $Y$ respectively) and for all choice of a base-point $x \in X$, an isomorphism of groups $\pi_i(X,x) \to \pi_i(Y,f(x))$ for all $i &lt; n$ and a surjection for $i=n$. Moreover, $f$ is a &lt;strong&gt;weak homotopy equivalence&lt;/strong&gt; if it is an $n$-equivalence for all $n$.&lt;/p&gt;
+&lt;p&gt;A map $p: E \to B$ is a &lt;strong&gt;(Serre) fibration&lt;/strong&gt; if it has the right lifting property with respect to the maps $D^n \times \{0\} \to D^n \times I$.&lt;/p&gt;
+&lt;p&gt;If $f: X \to Y$ is any map, there is a functorial way to factorize it as $X \to P_f \to Y$ where $X \to P_f$ is a homotopy equivalence and $P_f \to Y$ is a (Serre) fibration. Then we define the &lt;strong&gt;homotopy fibre&lt;/strong&gt; $F_f(y)$ of a map $f: X \to Y$ and a point $y \in Y$ as the fibre of $P_f \to Y$ over $y$. This is exactly the homotopy pullback, computed as the ordinary pullback after a fibrant remplacement.&lt;/p&gt;
+&lt;div class=&#34;math-env style-defn&#34; 
+    
+     data-kind=&#34;fact&#34;
+     data-lang=&#34;en&#34;
+     data-numbered=&#34;true&#34;&gt;
+  &lt;span class=&#34;math-heading&#34;&gt;
+  &lt;span class=&#34;math-title&#34;
+        data-label=&#39;Fact&#39;&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;span class=&#34;math-body&#34;&gt;
+    &lt;p&gt;If $p: E \to B$ is a Serre fibration, $e \in E$ is a point, $F=p^{-1}(p(e))$ is the fibre of $p(e)$, then the sequence
+&lt;/p&gt;
+$$
+(F,e) \to (E,e) \to (B,p(e))
+$$&lt;p&gt;
+gives rise to a long exact sequence
+&lt;/p&gt;
+$$
+\ldots \pi_n(F,e) \to \pi_n(E,e) \to \pi_n(B,p(e)) \to \pi_{n-1}(F,e) \to \ldots \to \pi_0(F,e) \to \pi_0(E,e) \to \pi_0(B,p(e)).
+$$
+  &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&#34;postnikov-towers&#34;&gt;Postnikov Towers&lt;/h2&gt;
+&lt;p&gt;Let $X$ be a connected topological space. The &lt;strong&gt;Postnikov tower&lt;/strong&gt; of $X$ is a sequence of spaces and maps
+&lt;/p&gt;
+$$
+\cdots \to P_n X \to P_{n-1} X \to \cdots \to P_1 X \to P_0 X
+$$&lt;p&gt;
+together with maps $X \to P_n X$ satisfying:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$X \to P_n X$ is an $n$-equivalence.&lt;/li&gt;
+&lt;li&gt;$\pi_i(P_n X) = 0$ for all $i &gt; n$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Each $P_n X$ is called the &lt;strong&gt;$n$-th Postnikov stage&lt;/strong&gt; of $X$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;construction-sketch&#34;&gt;Construction Sketch&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Start with $P_0 X = K(\pi_0(X),0)$.&lt;/li&gt;
+&lt;li&gt;Inductively, given $P_{n-1} X$, define $P_n X$ by killing homotopy in degree $&gt; n$ using &lt;strong&gt;fibrations&lt;/strong&gt; and &lt;strong&gt;homotopy fibres&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Each step involves a fibration sequence
+$$
+K(\pi_n(X),n) \to P_n X \to P_{n-1} X.
+$$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here $K(\pi_n(X),n)$ is the &lt;strong&gt;Eilenberg–MacLane space&lt;/strong&gt; of type $(\pi_n(X),n)$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;properties-of-postnikov-towers&#34;&gt;Properties of Postnikov Towers&lt;/h3&gt;
+&lt;div class=&#34;math-env style-defn&#34; 
+    
+     data-kind=&#34;fact&#34;
+     data-lang=&#34;en&#34;
+     data-numbered=&#34;true&#34;&gt;
+  &lt;span class=&#34;math-heading&#34;&gt;
+  &lt;span class=&#34;math-title&#34;
+        data-label=&#39;Fact&#39;&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;span class=&#34;math-body&#34;&gt;
+    &lt;ol&gt;
+&lt;li&gt;The tower comes equipped with maps $X \to P_n X$ which are $n$-equivalences.&lt;/li&gt;
+&lt;li&gt;The homotopy groups of $P_n X$ are
+$$
+\pi_i(P_n X) \cong 
+\begin{cases}
+\pi_i(X) &amp; i \le n \\
+0 &amp; i &gt; n.
+\end{cases}
+$$&lt;/li&gt;
+&lt;li&gt;The tower is &lt;strong&gt;functorial&lt;/strong&gt; in $X$.&lt;/li&gt;
+&lt;li&gt;The inverse limit of the tower recovers $X$ up to weak homotopy equivalence:
+$$
+X \simeq \varprojlim P_n X.
+$$&lt;/li&gt;
+&lt;/ol&gt;
+
+  &lt;/span&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
   </channel>
 </rss>

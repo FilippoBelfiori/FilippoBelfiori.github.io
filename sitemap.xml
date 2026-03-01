@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mortad3lla.github.io/posts/</loc>
+    <lastmod>2026-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mortad3lla.github.io/posts/chern-classes/</loc>
+    <lastmod>2026-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mortad3lla.github.io/posts/postnikov-tower/</loc>
+    <lastmod>2026-02-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://mortad3lla.github.io/research/</loc>
     <lastmod>2026-01-31T21:38:02+01:00</lastmod>
   </url><url>
@@ -16,8 +25,6 @@
   </url><url>
     <loc>https://mortad3lla.github.io/teaching/</loc>
     <lastmod>2026-01-31T21:38:02+01:00</lastmod>
-  </url><url>
-    <loc>https://mortad3lla.github.io/posts/</loc>
   </url><url>
     <loc>https://mortad3lla.github.io/categories/</loc>
   </url><url>
