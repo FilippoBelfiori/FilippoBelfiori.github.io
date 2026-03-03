@@ -7,6 +7,192 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://mortad3lla.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Exponential Motives — Lesson I</title>
+      <link>https://mortad3lla.github.io/posts/exponential_motives_lesson1/</link>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://mortad3lla.github.io/posts/exponential_motives_lesson1/</guid>
+      <description>&lt;p&gt;These are notes from a lecture by &lt;strong&gt;J. Fresán&lt;/strong&gt; on &lt;em&gt;Exponential Motives&lt;/em&gt;, a generalisation of the theory of motives. There are many ways to think about motives; the perspective here is close to &lt;strong&gt;Nori motives&lt;/strong&gt;, since periods are central.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Une introduction aux périodes&lt;/em&gt; (has examples)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Multiple zeta values: from numbers to motives&lt;/em&gt;, Ch. 2&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Periods and Nori Motives&lt;/em&gt; (about Nori)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;i-periods&#34;&gt;I. Periods&lt;/h2&gt;
+&lt;p&gt;Let $k \hookrightarrow \mathbb{C}$ be a subfield of the complex numbers. The most interesting cases are $k = \mathbb{Q}$ or $k = \overline{\mathbb{Q}}$.&lt;/p&gt;
+&lt;p&gt;Let $X$ be a smooth algebraic variety over $k$. Most of the time we assume $X$ is &lt;strong&gt;affine&lt;/strong&gt;. We attach to $X$ two vector spaces over $k$:&lt;/p&gt;
+&lt;h3 id=&#34;a-algebraic-de-rham-cohomology&#34;&gt;a) Algebraic de Rham Cohomology&lt;/h3&gt;
+$$H^*_{\mathrm{dR}}(X) = \bigoplus_{n \geq 0} H^n_{\mathrm{dR}}(X)$$&lt;p&gt;This is a finite-dimensional $k$-vector space.&lt;/p&gt;
+&lt;h3 id=&#34;b-betti-cohomology&#34;&gt;b) Betti Cohomology&lt;/h3&gt;
+$$H^*_B(X) = \bigoplus_{n \geq 0} H^n_B(X)$$&lt;p&gt;This is a finite-dimensional $\mathbb{Q}$-vector space. (This uses the fact that $k \hookrightarrow \mathbb{C}$; the de Rham side does not.)&lt;/p&gt;
+&lt;h3 id=&#34;c-comparison-isomorphism&#34;&gt;c) Comparison Isomorphism&lt;/h3&gt;
+$$H^*_{\mathrm{dR}}(X) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X) \otimes_\mathbb{Q} \mathbb{C}$$&lt;hr&gt;
+&lt;h2 id=&#34;algebraic-de-rham-cohomology&#34;&gt;Algebraic de Rham Cohomology&lt;/h2&gt;
+&lt;p&gt;On $X$ we have $\Omega^1_{X/k}$, the &lt;strong&gt;sheaf of Kähler differentials&lt;/strong&gt;. Think of it as the algebraic analogue of differential forms on a smooth manifold: locally you have generators $dx_i$, and you can define 1-forms $f_i\, dx_i$ where the $f_i$ are now algebraic (rather than $C^\infty$) functions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fact.&lt;/strong&gt; If $X$ is smooth, then $\Omega^1_{X/k}$ is locally free (hence coherent).&lt;/p&gt;
+&lt;p&gt;We form the &lt;strong&gt;algebraic de Rham complex&lt;/strong&gt; (a complex of coherent sheaves in the Zariski topology):&lt;/p&gt;
+$$\mathcal{O}_X \xrightarrow{d} \Omega^1_{X/k} \longrightarrow \Omega^2_{X/k} \longrightarrow \cdots \qquad \text{where } \Omega^p_{X/k} = \wedge^p \Omega^1_{X/k}.$$&lt;p&gt;Denote this complex $\Omega^\bullet_{X/k}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt;
+&lt;/p&gt;
+$$H^*_{\mathrm{dR}}(X) := \mathbb{H}^*_{\mathrm{Zar}}(X,\, \Omega^\bullet_{X/k})$$&lt;p&gt;
+(hypercohomology of that complex of sheaves).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; There is a spectral sequence
+&lt;/p&gt;
+$$E_1^{p,q} = H^q(X,\, \Omega^p_X) \Rightarrow H^{p+q}_{\mathrm{dR}}(X).$$&lt;p&gt;&lt;strong&gt;Remark (affine case).&lt;/strong&gt; If $X$ is affine, coherent sheaves have no positive cohomology, so $H^q(X, \Omega^p_X) = 0$ for all $q \geq 1$. The spectral sequence degenerates at the first page, and therefore:&lt;/p&gt;
+$$H^n_{\mathrm{dR}}(X) = H^n\!\left(\mathcal{O}_X(X) \to \Omega^1_X(X) \to \Omega^2_X(X) \to \cdots\right)$$&lt;p&gt;i.e. the cohomology of the complex of global sections. This is finite-dimensional. In particular, an element of $H^n_{\mathrm{dR}}(X)$ is the class $[\omega]$ of some $\omega \in \Omega^n_X(X)$ with $d\omega = 0$ (closed).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; If $X$ is not affine, it is not easy to write explicit examples of forms. One usually passes through hypercohomology. For instance, if $X = \bigcup_i U_i$ is a union of affines, an element of $H^n_{\mathrm{dR}}(X)$ looks like a tuple
+&lt;/p&gt;
+$$\left([\omega_{U_i}]_{U_i},\ [\eta_{U_i \cap U_j}]_{U_i \cap U_j},\ \ldots\right).$$&lt;p&gt;&lt;em&gt;Exercise.&lt;/em&gt; Try this for $\mathbb{P}^1$, which has 2 affine opens.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;betti-cohomology--singular-cohomology&#34;&gt;Betti Cohomology (= Singular Cohomology)&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(&amp;quot;Betti&amp;quot; is standard terminology in algebraic geometry.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Since $k \hookrightarrow \mathbb{C}$, we can consider
+&lt;/p&gt;
+$$X(\mathbb{C}) = \mathrm{Hom}_k(\mathrm{Spec}\,\mathbb{C},\, X).$$&lt;p&gt;This is a nice topological space — in fact a &lt;strong&gt;complex manifold&lt;/strong&gt; (because $X$ is smooth). So we can take singular cohomology:&lt;/p&gt;
+$$H^*_B(X) := H^*_{\mathrm{sing}}(X(\mathbb{C}),\, \mathbb{Q}) = \mathrm{Hom}_{\mathrm{Vect}_\mathbb{Q}}\!\left(H^B_*(X),\, \mathbb{Q}\right).$$&lt;p&gt;We work with $\mathbb{Q}$-coefficients: by the universal coefficient theorem, $H^*_{\mathrm{sing}}(X(\mathbb{C}), \mathbb{Q})$ is exactly the $\mathbb{Q}$-dual of the singular homology $H^B_*(X)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Recall singular homology:&lt;/strong&gt;
+&lt;/p&gt;
+$$C_p(X(\mathbb{C})) = \bigoplus_{\sigma:\Delta^p \to X(\mathbb{C})} \mathbb{Q} \cdot \sigma, \qquad \Delta^p = \{(x_0,\ldots,x_p)\in\mathbb{R}^{p+1} : x_i \geq 0,\ \textstyle\sum x_i = 1\}.$$&lt;p&gt;The boundary maps are given by the alternating sum of face inclusions $\partial_i: \Delta^{p-1} \to \Delta^p$. An element of $H^B_n(X(\mathbb{C}))$ is a class $[\sigma]$ of some $\sigma: \Delta^n \to X(\mathbb{C})$ with $\partial\sigma = 0$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposition.&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The homology does not change if we restrict to $C^\infty$-simplices, i.e. there exists an open neighbourhood $U$ of $\Delta^n$ in $\mathbb{R}^{n+1}$ such that any $\sigma: \Delta^n \to X(\mathbb{C})$ extends to a $C^\infty$-function $\tilde\sigma: U \to X(\mathbb{C})$.&lt;/li&gt;
+&lt;li&gt;$H^*_B(X)$ agrees with sheaf cohomology: $H^*(X(\mathbb{C}),\, \underline{\mathbb{Q}}_{X(\mathbb{C})})$, where $\underline{\mathbb{Q}}_{X(\mathbb{C})}$ is the &lt;strong&gt;constant sheaf&lt;/strong&gt; of locally constant functions.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-de-rhamgrothendieck-theorem&#34;&gt;The De Rham–Grothendieck Theorem&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Theorem (De Rham, Grothendieck).&lt;/strong&gt; There is a canonical isomorphism
+&lt;/p&gt;
+$$H^*_{\mathrm{dR}}(X) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X) \otimes_\mathbb{Q} \mathbb{C},$$&lt;p&gt;
+which is dual to a &lt;strong&gt;perfect pairing&lt;/strong&gt;:
+&lt;/p&gt;
+$$H^*_{\mathrm{dR}}(X) \otimes H^B_*(X) \longrightarrow \mathbb{C}.$$&lt;p&gt;This pairing is uniquely determined by what it does on affine varieties. On an affine $X$, it is given by:
+&lt;/p&gt;
+$$[\omega] \otimes [\sigma] \longmapsto \int_\sigma \omega,$$&lt;p&gt;
+where for $\sigma = \sum n_i \sigma_i$ with $\sigma_i: \Delta^n \to X(\mathbb{C})$, we set $\int_\sigma \omega = \sum n_i \int_{\Delta^n} \sigma_i^*(\omega)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; The pairing is well-defined and independent of the choice of representatives: $\int_\sigma d\eta = \int_{\partial\sigma} \eta = 0$, and similarly changing $\omega$ by an exact form gives zero.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; Note that tensoring with $k$ is not enough — one needs $\mathbb{C}$! Indeed, $H^*_{\mathrm{dR}}(X)$ and $H^*_B(X)$ are isomorphic over $\mathbb{Q}$ (as abstract vector spaces of the same dimension), but the &lt;strong&gt;only way to write down the isomorphism is over $\mathbb{C}$&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The isomorphism is &lt;strong&gt;canonical&lt;/strong&gt;, meaning it is functorial: given a morphism $f: X \to Y$ of algebraic varieties over $k$, the diagram
+&lt;/p&gt;
+$$\begin{array}{ccc}
+H^*_{\mathrm{dR}}(X) \otimes H^B_*(X) &amp; \longrightarrow &amp; \mathbb{C} \\
+\uparrow f^* \quad \downarrow f_* &amp; &amp; \| \\
+H^*_{\mathrm{dR}}(Y) \otimes H^B_*(Y) &amp; \longrightarrow &amp; \mathbb{C}
+\end{array}$$&lt;p&gt;
+commutes. This boils down to the change-of-variables formula $\int_\sigma f^*\omega = \int_{f_*\sigma} \omega$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;periods-preliminary-definition&#34;&gt;Periods: Preliminary Definition&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Preliminary Definition.&lt;/strong&gt; A &lt;strong&gt;period&lt;/strong&gt; is a complex number that can be written as $\int_\sigma \omega$ for some $\omega \in H^n_{\mathrm{dR}}(X)$ and $\sigma \in H^B_n(X)$, for some smooth algebraic variety $X$ defined over $k \subset \overline{\mathbb{Q}} \subset \mathbb{C}$.&lt;/p&gt;
+&lt;p&gt;In other words, periods are exactly the entries of the comparison isomorphism matrix (once bases are chosen).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Warning.&lt;/strong&gt; The isomorphism requires fixing bases; the numbers depend on this choice.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why &amp;quot;preliminary&amp;quot;?&lt;/strong&gt; All such numbers will be periods, but in reality we want more. For example:
+&lt;/p&gt;
+$$\log 2 = \int_1^2 \frac{dx}{x}$$&lt;p&gt;
+is not obviously in the above definition (the path from $1$ to $2$ on $\mathbb{R}$ does not obviously fit the framework for a smooth projective variety over $\overline{\mathbb{Q}}$). The definition will be extended later.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;h3 id=&#34;example-1-spec-of-a-number-field&#34;&gt;Example 1: Spec of a number field&lt;/h3&gt;
+&lt;p&gt;Take $k = \mathbb{Q}$, $X = \mathrm{Spec}\, K$ (affine of dimension 0) where $K$ is a number field. Say $X \subset \mathbb{A}^1_\mathbb{Q}$ is defined by $\{P(x) = 0\}$ for an irreducible polynomial $P$, so that $\mathcal{O}(X) = \mathbb{Q}[x]/(P) = K$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;De Rham side:&lt;/strong&gt; The de Rham complex is just $\mathcal{O}(X) = K$ (the derivative is always zero), so $H^0_{\mathrm{dR}}(X) = K$ as a $\mathbb{Q}$-vector space.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Betti side:&lt;/strong&gt; $X(\mathbb{C}) = \mathrm{Hom}_\mathbb{Q}(K, \mathbb{C})$ = the set of complex embeddings of $K$, so $H^0_B(X) = \mathbb{Q}^{[K:\mathbb{Q}]}$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Integration is just evaluation: the period matrix, for a basis $x_1, \ldots, x_d$ of $K$ and embeddings $\sigma_1, \ldots, \sigma_d$, is the $d \times d$ matrix $(\sigma_i(x_j))$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For the basis $1, \alpha, \ldots, \alpha^{d-1}$ (where $\alpha$ is a root of $P$), this becomes a &lt;strong&gt;Vandermonde matrix&lt;/strong&gt;:
+&lt;/p&gt;
+$$\begin{pmatrix} 1 &amp; \sigma_1(\alpha) &amp; \cdots &amp; \sigma_1(\alpha)^d \\ 1 &amp; \sigma_2(\alpha) &amp; &amp; \\ 1 &amp; \sigma_d(\alpha) &amp; &amp; \end{pmatrix}$$&lt;p&gt;
+with &lt;strong&gt;non-zero determinant&lt;/strong&gt;. So the isomorphism here is very concrete!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; The determinant of this matrix is a square root of the &lt;strong&gt;discriminant&lt;/strong&gt; of $K$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; All the entries of this matrix are &lt;strong&gt;algebraic numbers&lt;/strong&gt;! The periods here are algebraic.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;example-2&#34;&gt;Example 2: $\mathbb{G}_m = \mathbb{A}^1 \setminus \{0\}$&lt;/h3&gt;
+&lt;p&gt;Take $X = \mathbb{A}^1_\mathbb{Q} \setminus \{0\} \subset \mathbb{A}^2_\mathbb{Q}$, defined by $\{xy = 1\}$. This is $\mathbb{G}_m = \mathrm{Spec}(\mathbb{Q}[x, x^{-1}])$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;De Rham complex:&lt;/strong&gt;
+&lt;/p&gt;
+$$\mathbb{Q}[x, x^{-1}] \xrightarrow{d} \mathbb{Q}[x, x^{-1}]\,dx \longrightarrow 0, \qquad P \mapsto P&#39;\,dx.$$&lt;p&gt;
+Since $d$ is linear, it suffices to study the monomials $x^n$: one checks that $x^n \in \mathrm{Im}(d)$ for all $n \in \mathbb{Z}$ except $n = -1$ (because the logarithm is not algebraic). Thus:
+&lt;/p&gt;
+$$H^1_{\mathrm{dR}}(X) \cong \mathbb{Q} \cdot \left[\tfrac{dx}{x}\right].$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Betti side:&lt;/strong&gt; $X(\mathbb{C}) = \mathbb{C}^*$, which has the homotopy type of $S^1$. The first homology is generated by a loop $\sigma$ around the origin:
+&lt;/p&gt;
+$$H^B_1(X) = \mathbb{Q} \cdot [\sigma].$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Period matrix&lt;/strong&gt; (a $1 \times 1$ matrix):
+&lt;/p&gt;
+$$\int_{|x|=1} \frac{dx}{x} = 2\pi i.$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The entry of the comparison matrix is &lt;strong&gt;transcendental&lt;/strong&gt; — it lies in $\mathbb{C}$ but is not even algebraic!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Take-away.&lt;/strong&gt; For $k = \mathbb{Q}$, the spaces $H^*_{\mathrm{dR}}(X)$ and $H^*_B(X)$ are isomorphic as abstract $\mathbb{Q}$-vector spaces, but the &lt;strong&gt;only way to write down the isomorphism is over $\mathbb{C}$&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;sketch-of-proof-of-the-comparison-isomorphism&#34;&gt;Sketch of Proof of the Comparison Isomorphism&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Step 1.&lt;/strong&gt; $X$ is over $k$. Set $X_\mathbb{C} = X \times_k \mathrm{Spec}(\mathbb{C})$ (same equations, but coefficients in $\mathbb{C}$). This is a complex algebraic variety, and
+&lt;/p&gt;
+$$H^*_{\mathrm{dR}}(X_\mathbb{C}) = H^*_{\mathrm{dR}}(X) \otimes_k \mathbb{C},$$&lt;p&gt;
+so we may assume $k = \mathbb{C}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 2.&lt;/strong&gt; Since polynomials are analytic functions, we can form the &lt;strong&gt;analytification&lt;/strong&gt;:
+&lt;/p&gt;
+$$X^{\mathrm{an}} = \text{analytic variety associated to } X, \quad \text{underlying set } X(\mathbb{C}).$$&lt;p&gt;
+Define the analytic de Rham cohomology:
+&lt;/p&gt;
+$$H^*_{\mathrm{dR, an}}(X^{\mathrm{an}}) = \mathbb{H}^*_{\mathrm{an}}(X^{\mathrm{an}},\, \Omega^\bullet_{X^{\mathrm{an}}}).$$&lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; $H^*_{\mathrm{dR, an}}(X^{\mathrm{an}})$ is canonically isomorphic to $H^*_B(X) \otimes_\mathbb{Q} \mathbb{C} = H^*(X^{\mathrm{an}}, \underline{\mathbb{C}}_{X^{\mathrm{an}}})$.&lt;/p&gt;
+&lt;p&gt;This follows from the &lt;strong&gt;Poincaré Lemma&lt;/strong&gt;: the map of sheaves
+&lt;/p&gt;
+$$\underline{\mathbb{C}}_{X^{\mathrm{an}}} \longrightarrow \left(\mathcal{O}_{X^{\mathrm{an}}} \to \Omega^1_{X^{\mathrm{an}}} \to \cdots\right)$$&lt;p&gt;
+is a quasi-isomorphism (closed implies locally exact — &amp;quot;chiusa su una palla è esatta&amp;quot;).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 3.&lt;/strong&gt; It remains to prove that the natural map
+&lt;/p&gt;
+$$H^*_{\mathrm{dR}}(X) \xrightarrow{\sim} H^*_{\mathrm{dR, an}}(X^{\mathrm{an}})$$&lt;p&gt;
+(algebraic → analytic) is an isomorphism. This is a theorem of &lt;strong&gt;Grothendieck&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;Warning.&lt;/strong&gt; This step will &lt;em&gt;not&lt;/em&gt; be true for exponential motives!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Even for $X = \mathbb{A}^1_\mathbb{C} \setminus \{0\}$ this is surprising: algebraically one has $\mathbb{C}[x, x^{-1}] \to \mathbb{C}[x, x^{-1}]\,dx$, while analytically there are many more holomorphic functions $\mathcal{O}(\mathbb{C}^*) \to \mathcal{O}(\mathbb{C}^*)\,dz$. And yet the cohomologies agree!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to prove Step 3.&lt;/strong&gt; If $X$ is projective (hence proper), one compares via the spectral sequences
+&lt;/p&gt;
+$$E_1^{p,q} = H^q_{\mathrm{Zar}}(X, \Omega^p_X) \Rightarrow H^{p+q}_{\mathrm{dR}}(X)$$&lt;p&gt;
+&lt;/p&gt;
+$$E_1^{p,q} = H^q_{\mathrm{an}}(X^{\mathrm{an}}, \Omega^p_{X^{\mathrm{an}}}) \Rightarrow H^{p+q}_{\mathrm{dR, an}}(X^{\mathrm{an}})$$&lt;p&gt;
+and applies the &lt;strong&gt;GAGA theorem&lt;/strong&gt; (Serre) to identify the $E_1$ pages:
+&lt;/p&gt;
+$$H^q_{\mathrm{Zar}}(X, \Omega^p_X) \xrightarrow{\sim} H^q_{\mathrm{an}}(X^{\mathrm{an}}, \Omega^p_{X^{\mathrm{an}}}).$$&lt;p&gt;If $X$ is &lt;strong&gt;not proper&lt;/strong&gt;, one compactifies. By &lt;strong&gt;Hironaka&#39;s resolution of singularities&lt;/strong&gt;, one finds a smooth proper compactification:
+&lt;/p&gt;
+$$X \overset{j}{\hookrightarrow} \overline{X}, \qquad D = \overline{X} \setminus X \text{ a simple normal crossing divisor (s.n.c.)}.$$&lt;p&gt;Recall: $D = \bigcup D_i$ is s.n.c. if the irreducible components $D_i$ are smooth divisors intersecting transversally, &amp;quot;like coordinate hyperplanes.&amp;quot; The compactification is used as follows: one works with the &lt;strong&gt;logarithmic de Rham complex&lt;/strong&gt;
+&lt;/p&gt;
+$$\Omega^\bullet_{\overline{X}}(\log D) \subset j_* \Omega^\bullet_X$$&lt;p&gt;
+and its analytification, and then proves that the two natural inclusions
+&lt;/p&gt;
+$$\Omega^\bullet_{\overline{X}}(\log D) \hookrightarrow j_* \Omega^\bullet_X \qquad \text{(algebraic)}$$&lt;p&gt;
+&lt;/p&gt;
+$$\Omega^\bullet_{\overline{X}^{\mathrm{an}}}(\log D^{\mathrm{an}}) \hookrightarrow j_* \Omega^\bullet_{X^{\mathrm{an}}} \qquad \text{(analytic)}$$&lt;p&gt;
+are quasi-isomorphisms. One cannot apply GAGA directly, because $j_*\Omega^\bullet_{X^{\mathrm{an}}}$ is not the analytification of $j_*\Omega^\bullet_X$, but the logarithmic subcomplex is coherent, and GAGA applies to it. $\square$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;motivation-exponential-periods&#34;&gt;Motivation: Exponential Periods&lt;/h2&gt;
+&lt;p&gt;There are numbers we would like to study that the classical theory of periods cannot capture:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$e^\alpha$ for $\alpha \in \overline{\mathbb{Q}}$ algebraic,&lt;/li&gt;
+&lt;li&gt;$\sqrt{\pi} = \Gamma\!\left(\tfrac{1}{2}\right)$,&lt;/li&gt;
+&lt;li&gt;more generally $\Gamma(s)$ for $s \in \mathbb{Q} \setminus \mathbb{Z}$,&lt;/li&gt;
+&lt;li&gt;Euler&#39;s constant $\gamma$,&lt;/li&gt;
+&lt;li&gt;$\displaystyle\sum_{n=0}^\infty \frac{1}{(n!)^2}$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;None of these is expected to be a period! Can we find a framework to understand why?&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is the motivation for &lt;strong&gt;exponential motives&lt;/strong&gt;: a generalisation of the theory that enlarges the class of &amp;quot;periods&amp;quot; to accommodate these numbers, by twisting the de Rham complex with an exponential factor.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Chern Classes in Ordinary Cohomology</title>
       <link>https://mortad3lla.github.io/posts/chern-classes/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
