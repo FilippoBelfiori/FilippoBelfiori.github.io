@@ -7,6 +7,393 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://mortad3lla.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Exponential Motives — Lesson III</title>
+      <link>https://mortad3lla.github.io/posts/exponential_motives_lesson3/</link>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://mortad3lla.github.io/posts/exponential_motives_lesson3/</guid>
+      <description>&lt;h2 id=&#34;recap-nori-motives&#34;&gt;Recap: Nori Motives&lt;/h2&gt;
+&lt;p&gt;Recall the category of Nori motives $M(k) = \langle Q(k), \rho_B \rangle$, where $Q(k)$ is the quiver of algebraic varieties over $k$ with vertices $[X, Y, n, i]$ and arrows of types (a), (b), (c) inspired by the Kontsevich–Zagier conjecture. The Betti representation is:
+&lt;/p&gt;
+$$\rho_B: Q(k) \longrightarrow \mathrm{Vect}_\mathbb{Q}, \qquad [X, Y, n, i] \longmapsto H^n_B(X, Y)(i).$$&lt;p&gt;Objects of $M(k)$ are finite-dimensional $\mathbb{Q}$-vector spaces with a continuous action of $\mathrm{End}(\rho_B)$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;i-tensor-product-on--and-the-tannakian-structure&#34;&gt;I. Tensor Product on $M(k)$ and the Tannakian Structure&lt;/h2&gt;
+&lt;p&gt;All of the above was &lt;strong&gt;formal&lt;/strong&gt;. The non-formal, genuinely hard part of the construction is:&lt;/p&gt;
+&lt;div class=&#34;math-env style-defn&#34; 
+    
+     data-kind=&#34;fact&#34;
+     data-lang=&#34;en&#34;
+     data-numbered=&#34;true&#34;&gt;
+  &lt;span class=&#34;math-heading&#34;&gt;
+  &lt;span class=&#34;math-title&#34;
+        data-label=&#39;Fact&#39;&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;span class=&#34;math-body&#34;&gt;
+    &lt;p&gt;&lt;strong&gt;Theorem (Nori).&lt;/strong&gt; The category $M(k)$ is equipped with a tensor product $\otimes$, making it into a &lt;strong&gt;neutral Tannakian category&lt;/strong&gt; over $\mathbb{Q}$, with fiber functor the Betti realization:
+&lt;/p&gt;
+$$\omega_B: M(k) \longrightarrow \mathrm{Vect}_\mathbb{Q}, \qquad \omega_B([X, Y, n, i]) = H^n_B(X, Y)(i).$$
+  &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The construction factors as:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://q.uiver.app/#q=WzMsWzAsMSwiUShrKSJdLFsyLDAsIlxcbWF0aHJte1ZlY3R9X3tcXG1hdGhiYntRfX0iXSxbMSwxLCJNKGspPVxcbGFuZ2xlIFEoayksXFxyaG9fQlxccmFuZ2xlIl0sWzAsMSwiXFxyaG9fQiIse31dLFswLDIsIiIse31dLFsyLDEsIlxcb21lZ2FfQiIse31dXQ&#34;&gt;&lt;img src=&#34;https://q.uiver.app/#q=WzMsWzAsMSwiUShrKSJdLFsyLDAsIlxcbWF0aHJte1ZlY3R9X3tcXG1hdGhiYntRfX0iXSxbMSwxLCJNKGspPVxcbGFuZ2xlIFEoayksXFxyaG9fQlxccmFuZ2xlIl0sWzAsMSwiXFxyaG9fQiIse31dLFswLDIsIiIse31dLFsyLDEsIlxcb21lZ2FfQiIse31dXQ&#34; alt=&#34;Tannakian triangle&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The theorem says in particular that $\otimes$ in $M(k)$ is compatible with the Künneth formula via $\omega_B$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why is this non-trivial?&lt;/strong&gt; We need to define $[X, Y, n, i] \otimes [X&#39;, Y&#39;, n&#39;, i&#39;]$ compatibly with $\rho_B$. The natural candidate is $[X \times X&#39;,\, (Y \times X&#39;) \cup (X \times Y&#39;),\, n+n&#39;,\, i+i&#39;]$. The problem is that Künneth gives:
+&lt;/p&gt;
+$$H^{n+n&#39;}_B\!\left(X \times X&#39;,\, (Y \times X&#39;) \cup (X \times Y&#39;)\right) \simeq \bigoplus_{\substack{a+b=n+n&#39;}} H^a_B(X, Y) \otimes H^b_B(X&#39;, Y&#39;),$$&lt;p&gt;
+and there are &lt;strong&gt;many&lt;/strong&gt; pairs $(a,b)$ with $a+b = n+n&#39;$, not just $(n,n&#39;)$. Even without Tate twists the naive definition does not work.&lt;/p&gt;
+&lt;p&gt;Nori solved this using his &lt;strong&gt;basic lemma&lt;/strong&gt;: the idea is to ensure only the pair $(a,b) = (n,n&#39;)$ contributes, by an appropriate connectivity/vanishing argument.&lt;/p&gt;
+&lt;h3 id=&#34;tannakian-structure-and-the-motivic-galois-group&#34;&gt;Tannakian Structure and the Motivic Galois Group&lt;/h3&gt;
+&lt;p&gt;Being a neutral Tannakian category over $\mathbb{Q}$ means there exists an affine group scheme, the &lt;strong&gt;motivic Galois group&lt;/strong&gt; $G_{\mathrm{mot}}(k)$, such that:
+&lt;/p&gt;
+$$M(k) \simeq \mathrm{Rep}(G_{\mathrm{mot}}(k)).$$&lt;p&gt;This group is enormous — not finite-dimensional at all. From this point of view, a motive is a finite-dimensional $\mathbb{Q}$-vector space with an action of $G_{\mathrm{mot}}(k)$ factoring through a finite-dimensional algebraic quotient.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; The Tate twists are needed precisely to ensure that $G_{\mathrm{mot}}(k)$ is a group: one needs invertible objects under $\otimes$, and $\mathbb{Q}(1) = H^1_B(\mathbb{G}_m)$ with its inverse $\mathbb{Q}(-1)$ provide these. A miracle: adding this single inverse gives all the inverses needed.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;ii-the-period-torsor-and-the-kontsevichzagier-conjecture&#34;&gt;II. The Period Torsor and the Kontsevich–Zagier Conjecture&lt;/h2&gt;
+&lt;h3 id=&#34;the-de-rham-realization&#34;&gt;The De Rham Realization&lt;/h3&gt;
+&lt;p&gt;Periods come from the comparison isomorphism, but $M(k)$ so far only uses $\omega_B$. To access periods, we need a second functor.&lt;/p&gt;
+&lt;p&gt;Using the universal property of Nori&#39;s construction, one builds a &lt;strong&gt;de Rham realization functor&lt;/strong&gt;:
+&lt;/p&gt;
+$$\omega_{\mathrm{dR}}: M(k) \longrightarrow \mathrm{Vect}_k,$$&lt;p&gt;
+such that when $X$ is smooth and $Y$ is s.n.c.:
+&lt;/p&gt;
+$$\omega_{\mathrm{dR}}([X, Y, n, i]) = H^n_{\mathrm{dR}}(X, Y)(i).$$&lt;p&gt;The two realization functors fit in the following diagram:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://q.uiver.app/#q=WzMsWzAsMCwiTShrKSJdLFsxLDAsIlxcbWF0aHJte1ZlY3R9X2siXSxbMSwxLCJcXG1hdGhybXtWZWN0fV97XFxtYXRoYmJ7UX19Il0sWzAsMSwiXFxvbWVnYV97XFxtYXRocm17ZFJ9fSIse31dLFswLDIsIlxcb21lZ2FfQiIse91dXQ&#34;&gt;&lt;img src=&#34;https://q.uiver.app/#q=WzMsWzAsMCwiTShrKSJdLFsxLDAsIlxcbWF0aHJte1ZlY3R9X2siXSxbMSwxLCJcXG1hdGhybXtWZWN0fV97XFxtYXRoYmJ7UX19Il0sWzAsMSwiXFxvbWVnYV97XFxtYXRocm17ZFJ9fSIse31dLFswLDIsIlxcb21lZ2FfQiIse31dXQ&#34; alt=&#34;two realizations&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-period-torsor&#34;&gt;The Period Torsor $\mathcal{P}$&lt;/h3&gt;
+&lt;p&gt;Comparing the two realization functors, one defines the &lt;strong&gt;period torsor&lt;/strong&gt;:
+&lt;/p&gt;
+$$\mathcal{P} = \underline{\mathrm{Isom}}^{\otimes}(\omega_{\mathrm{dR}},\, \omega_B \otimes_\mathbb{Q} k),$$&lt;p&gt;
+the affine $k$-scheme parametrizing tensor-compatible isomorphisms between the two realizations. One proves this functor of points is representable.&lt;/p&gt;
+&lt;p&gt;This may look abstract, but we know a &lt;strong&gt;concrete complex point&lt;/strong&gt; of $\mathcal{P}$: the Grothendieck comparison isomorphism
+&lt;/p&gt;
+$$H^*_{\mathrm{dR}}(X, Y) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X, Y) \otimes_\mathbb{Q} \mathbb{C}$$&lt;p&gt;
+gives an element $\mathrm{comp} \in \mathcal{P}(\mathbb{C})$. So $\mathcal{P}(\mathbb{C}) \neq \emptyset$, which implies $\mathcal{P} \neq \emptyset$ as a scheme.&lt;/p&gt;
+&lt;h3 id=&#34;periods-as-functions-on&#34;&gt;Periods as Functions on $\mathcal{P}$&lt;/h3&gt;
+&lt;p&gt;Regular functions on $\mathcal{P}$ can be evaluated at $\mathrm{comp}$:
+&lt;/p&gt;
+$$\mathcal{O}\!\left(\underline{\mathrm{Isom}}^{\otimes}(\omega_{\mathrm{dR}},\, \omega_B \otimes k)\right) \xrightarrow{\;\mathrm{ev}_{\mathrm{comp}}\;} \mathbb{C}.$$&lt;div class=&#34;math-env style-defn&#34; 
+    
+     data-kind=&#34;fact&#34;
+     data-lang=&#34;en&#34;
+     data-numbered=&#34;true&#34;&gt;
+  &lt;span class=&#34;math-heading&#34;&gt;
+  &lt;span class=&#34;math-title&#34;
+        data-label=&#39;Fact&#39;&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;span class=&#34;math-body&#34;&gt;
+    &lt;strong&gt;Conjecture (Kontsevich–Zagier).&lt;/strong&gt; This evaluation map is &lt;strong&gt;injective&lt;/strong&gt;.
+  &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; The image is exactly the ring of periods, by definition — the three relations (bilinearity, change of variables, Stokes) used to define equality of periods are precisely the relations used to define the morphisms in $Q(k)$, built into the structure of $M(k)$.&lt;/p&gt;
+&lt;h3 id=&#34;explicit-description&#34;&gt;Explicit Description&lt;/h3&gt;
+&lt;p&gt;Given $[\omega] \in H^n_{\mathrm{dR}}(X, Y)$ and $[\sigma] \in H^B_n(X, Y)$, these define an object $H^n(X, Y) \in M(k)$ and a regular function on $\mathcal{P}$:
+&lt;/p&gt;
+$$\underline{\mathrm{Isom}}^{\otimes}(\omega_{\mathrm{dR}},\, \omega_B \otimes k) \longrightarrow \mathbb{A}^1_k, \qquad \varphi \longmapsto \langle \varphi_{H^n(X,Y)}([\omega]),\, [\sigma] \rangle.$$&lt;p&gt;
+Here $\varphi = (\varphi_M)_{M \in \mathrm{Ob}(M(k))}$ and we take the component at $H^n(X,Y)$. When $\varphi = \mathrm{comp}$, this gives exactly $\int_\sigma \omega$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Alternative viewpoint.&lt;/strong&gt; The comparison isomorphism is a &lt;strong&gt;generic point&lt;/strong&gt; of $\mathcal{P}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Toy example.&lt;/strong&gt; Take $k = \mathbb{Q}$, $X = \mathbb{A}^1_\mathbb{Q}$, so $\mathcal{O}(X) = \mathbb{Q}[x]$. A point $\alpha \in X(\mathbb{C}) = \mathbb{C}$ gives:
+&lt;/p&gt;
+$$\mathbb{Q}[x] \longrightarrow \mathbb{C}, \qquad P \longmapsto P(\alpha).$$&lt;p&gt;
+This is injective $\iff$ $\alpha$ is &lt;strong&gt;transcendental&lt;/strong&gt; $\iff$ $\alpha$ is a generic point of $\mathbb{A}^1_\mathbb{Q}$. The conjecture asserts that $\mathrm{comp}$ is a generic point of $\mathcal{P}$ (and in particular $\mathcal{P}$ should be irreducible).&lt;/p&gt;
+&lt;h3 id=&#34;working-object-by-object&#34;&gt;Working Object by Object&lt;/h3&gt;
+&lt;p&gt;$G_{\mathrm{mot}}(k)$ is too large to study directly. Given $M \in M(k)$, consider the smallest Tannakian subcategory $\langle M \rangle^{\otimes} \subset M(k)$ containing $M$. By Tannaka duality $\langle M \rangle^{\otimes} \simeq \mathrm{Rep}(G_M)$ where $G_M$ fits into:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://q.uiver.app/#q=WzMsWzAsMCwiR197XFxtYXRocm17bW90fX0oaykiXSxbMSwwLCJHX00iXSxbMiwwLCJHTChcXG9tZWdhX0IoTSkpIl0sWzAsMSwiIix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDIsIiIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJhcnJvdyJ9fX1dXQ&#34;&gt;&lt;img src=&#34;https://q.uiver.app/#q=WzMsWzAsMCwiR197XFxtYXRocm17bW90fX0oaykiXSxbMSwwLCJHX00iXSxbMiwwLCJHTChcXG9tZWdhX0IoTSkpIl0sWzAsMSwiIix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDIsIiIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJhcnJvdyJ9fX1dXQ&#34; alt=&#34;Galois surjection&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;math-env style-defn&#34; 
+    
+     data-kind=&#34;fact&#34;
+     data-lang=&#34;en&#34;
+     data-numbered=&#34;true&#34;&gt;
+  &lt;span class=&#34;math-heading&#34;&gt;
+  &lt;span class=&#34;math-title&#34;
+        data-label=&#39;Fact&#39;&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;span class=&#34;math-body&#34;&gt;
+    &lt;p&gt;&lt;strong&gt;Grothendieck Period Conjecture.&lt;/strong&gt; For $X$ smooth and $Y \subset X$ s.n.c.:
+&lt;/p&gt;
+$$\mathrm{tr.deg}_{\overline{\mathbb{Q}}}\!\left(\text{periods of } H^n(X, Y)\right) = \dim_\mathbb{Q} G_{H^n(X,Y)}.$$
+  &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Putting everything together, this conjecture is equivalent to the Kontsevich–Zagier conjecture.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;iii-cohomology-theories-for-varieties-with-a-function&#34;&gt;III. Cohomology Theories for Varieties with a Function&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;We have said that there are numbers &lt;strong&gt;not expected to be periods&lt;/strong&gt;:
+&lt;/p&gt;
+$$e^\alpha \text{ for } \alpha \in \overline{\mathbb{Q}}^\times, \qquad \sqrt{\pi} = \Gamma\!\left(\tfrac{1}{2}\right) = \int_{-\infty}^{+\infty} e^{-x^2}\,dx, \qquad \gamma = \iint_{\substack{x \geq 0,\, y \leq 1}} e^{-xy}\,dx\,dy.$$&lt;p&gt;The current state of knowledge is very poor: we do not know 3 periods that are algebraically independent, the transcendence degree of the ring of periods could conceivably be as small as 2, and we do not know a single explicit non-period. The numbers above are only &lt;em&gt;conjectured&lt;/em&gt; to not be periods.&lt;/p&gt;
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
+&lt;p&gt;Let $k \subset \mathbb{C}$, $X$ smooth over $k$, and $f \in \mathcal{O}_X(X)$ a regular function, i.e. a morphism $X \xrightarrow{f} \mathbb{A}^1_k$. If $f$ is non-constant, $X$ is &lt;strong&gt;not proper&lt;/strong&gt;. We want to consider integrals $\int_\sigma e^{-f}\omega$, which should satisfy a Stokes formula. Indeed:
+&lt;/p&gt;
+$$d(e^{-f}\omega) = e^{-f}(d\omega - df \wedge \omega).$$&lt;h3 id=&#34;twisted-de-rham-cohomology&#34;&gt;Twisted de Rham Cohomology&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; The &lt;strong&gt;twisted de Rham cohomology&lt;/strong&gt; of $(X, f)$ is:
+&lt;/p&gt;
+$$H^n_{\mathrm{dR}}(X; f) := \mathbb{H}^n_{\mathrm{Zar}}\!\left(X,\; \mathcal{O}_X \xrightarrow{d_f} \Omega^1_X \xrightarrow{d_f} \Omega^2_X \xrightarrow{d_f} \cdots\right),$$&lt;p&gt;
+where the &lt;strong&gt;twisted differential&lt;/strong&gt; is $d_f(\omega) := d\omega - df \wedge \omega$.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://q.uiver.app/#q=WzQsWzAsMCwiXFxtYXRoY2Fse099X1giXSxbMSwwLCJcXE9tZWdhXjFfWCJdLFsyLDAsIlxcT21lZ2FeMl9YIl0sWzMsMCwiXFxjZG90cyJdLFswLDEsImRfZiIse31dLFsxLDIsImRfZiIse31dLFsyLDMsImRfZiIse31dXQ&#34;&gt;&lt;img src=&#34;https://q.uiver.app/#q=WzQsWzAsMCwiXFxtYXRoY2Fse099X1giXSxbMSwwLCJcXE9tZWdhXjFfWCJdLFsyLDAsIlxcT21lZ2FeMl9YIl0sWzMsMCwiXFxjZG90cyJdLFswLDEsImRfZiIse31dLFsxLDIsImRfZiIse31dLFsyLDMsImRfZiIse31dXQ&#34; alt=&#34;twisted de Rham complex&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is indeed a complex: $d_f^2 = 0$ because $d_f = e^f \circ d \circ e^{-f}$, so $d_f^2 = e^f \circ d^2 \circ e^{-f} = 0$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; If $f$ is constant: $H^n_{\mathrm{dR}}(X; f) = H^n_{\mathrm{dR}}(X)$. Classical motives are a special case with $f = 0$.&lt;/p&gt;
+&lt;h3 id=&#34;conceptual-explanation-vector-bundles-with-connection&#34;&gt;Conceptual Explanation: Vector Bundles with Connection&lt;/h3&gt;
+&lt;p&gt;Twisted de Rham cohomology is the de Rham cohomology of a &lt;strong&gt;vector bundle with integrable connection&lt;/strong&gt;: a morphism&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://q.uiver.app/#q=WzIsWzAsMCwiXFxtYXRoY2Fse0V9Il0sWzEsMCwiXFxtYXRoY2Fse0V9XFxvdGltZXNfe1xcbWF0aGNhbHtPfV9YfVxcT21lZ2FeMV9YIl0sWzAsMSwiXFxuYWJsYSIse31dXQ&#34;&gt;&lt;img src=&#34;https://q.uiver.app/#q=WzIsWzAsMCwiXFxtYXRoY2Fse0V9Il0sWzEsMCwiXFxtYXRoY2Fse0V9XFxvdGltZXNfe1xcbWF0aGNhbHtPfV9YfVxcT21lZ2FeMV9YIl0sWzAsMSwiXFxuYWJsYSIse31dXQ&#34; alt=&#34;connection&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;satisfying the Leibniz rule: $\nabla(g \cdot e) = e \otimes dg + g \cdot \nabla(e)$.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;trivial connection&lt;/strong&gt; is $\mathcal{E} = \mathcal{O}_X$, $\nabla(1) = 0$, giving the usual de Rham complex $\mathcal{O}_X \xrightarrow{d} \Omega^1_X$.&lt;/p&gt;
+&lt;p&gt;In our case, $\mathcal{E} = \mathcal{O}_X$ with the &lt;strong&gt;twisted connection&lt;/strong&gt;:
+&lt;/p&gt;
+$$\nabla_f(1) = -df, \qquad \nabla_f(g) = dg - g\,df \quad \text{for } g \in \mathcal{O}_X.$$&lt;p&gt;
+The associated de Rham complex is exactly $(\Omega^\bullet_X, d_f)$.&lt;/p&gt;
+&lt;h3 id=&#34;analytification-and-the-poincaré-lemma&#34;&gt;Analytification and the Poincaré Lemma&lt;/h3&gt;
+&lt;p&gt;On $X^{\mathrm{an}}$, consider the analytic horizontal sections $\ker(\nabla_f^{\mathrm{an}}) \subset \mathcal{O}_{X^{\mathrm{an}}}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Poincaré Lemma.&lt;/strong&gt;
+&lt;/p&gt;
+$$H^*_{\mathrm{dR,an}}(X^{\mathrm{an}},\, f^{\mathrm{an}}) \simeq H^*(X^{\mathrm{an}},\, \ker(\nabla_f^{\mathrm{an}})).$$&lt;p&gt;In the trivial case: $\ker(\nabla^{\mathrm{an}}) = \underline{\mathbb{C}}_{X^{\mathrm{an}}}$ (constant sheaf). In the twisted case: a holomorphic $g$ satisfies $\nabla_f^{\mathrm{an}}(g) = 0 \iff dg = g\,df \iff g = c\cdot e^f$, so $\ker(\nabla_f^{\mathrm{an}}) = \mathbb{C}\cdot e^f \cong \underline{\mathbb{C}}_{X^{\mathrm{an}}}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Upshot.&lt;/strong&gt; $H^*_{\mathrm{dR,an}}(X^{\mathrm{an}}, f^{\mathrm{an}}) \simeq H^*(X(\mathbb{C}), \mathbb{C})$ = usual singular cohomology of $X(\mathbb{C})$. This is a manifestation of the phenomenon of &lt;strong&gt;irregular singularities&lt;/strong&gt;: algebraically the twisted cohomology can be very different from the classical one, but analytically it recovers the usual topology.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;example--&#34;&gt;Example: $X = \mathbb{A}^1_k$, $f = x^n$, $n \geq 2$&lt;/h2&gt;
+&lt;p&gt;Since $X$ is affine, hypercohomology reduces to the complex of global sections:
+&lt;/p&gt;
+$$k[x] \xrightarrow{d_f} k[x]\,dx, \qquad P \longmapsto (P&#39; - nx^{n-1}P)\,dx.$$&lt;p&gt;&lt;strong&gt;Degree 0.&lt;/strong&gt; $H^0_{\mathrm{dR}}(X; f) = \ker(d_f) = 0$: the only solution of $P&#39; = nx^{n-1}P$ is $P = c\cdot e^{x^n}$, which is not a polynomial.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Degree 1.&lt;/strong&gt; $H^1_{\mathrm{dR}}(X; f) = \mathrm{coker}(d_f)$. The classes $dx, x\,dx, \ldots, x^{n-2}\,dx$ are linearly independent in the cokernel. To see they span, use algebraic integration by parts:
+&lt;/p&gt;
+$$d_f\!\left(-\tfrac{1}{n}\right) = -nx^{n-1}\,dx \implies x^{n-1}\,dx = 0,$$&lt;p&gt;
+&lt;/p&gt;
+$$d_f\!\left(-\tfrac{x}{n}\right) = x^n\,dx - \tfrac{1}{n}\,dx \implies x^n\,dx = \tfrac{1}{n}\,dx,$$&lt;p&gt;
+&lt;/p&gt;
+$$d_f\!\left(-\tfrac{x^2}{n}\right) = x^{n+1}\,dx - \tfrac{2}{n}\,x\,dx \implies x^{n+1}\,dx = \tfrac{2}{n}\,x\,dx,$$&lt;p&gt;
+and by induction every $x^j\,dx$ for $j \geq n-1$ is in the span of $\{dx, \ldots, x^{n-2}\,dx\}$. Therefore:
+&lt;/p&gt;
+$$H^1_{\mathrm{dR}}(\mathbb{A}^1_k;\, x^n) \cong k[dx] \oplus k[x\,dx] \oplus \cdots \oplus k[x^{n-2}\,dx], \quad \dim = n-1.$$&lt;p&gt;&lt;strong&gt;Exercise.&lt;/strong&gt; Show that $H^1_{\mathrm{dR,an}}(\mathbb{A}^1_\mathbb{C};\, x^n) = 0$ (any holomorphic 1-form is in the image of $d_f$). This confirms the Poincaré lemma, since $\mathbb{C}$ is contractible.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;iv-rapid-decay-homology&#34;&gt;IV. Rapid Decay Homology&lt;/h2&gt;
+&lt;p&gt;We want to integrate $e^{-f}\omega$ over chains, but convergence requires $e^{-f}$ to decay on the non-compact ends.&lt;/p&gt;
+&lt;h3 id=&#34;setup-1&#34;&gt;Setup&lt;/h3&gt;
+&lt;p&gt;Define the right half-planes in $\mathbb{C}$:
+&lt;/p&gt;
+$$S_r = \{z \in \mathbb{C} \mid \mathrm{Re}(z) &gt; r\}, \qquad r \in \mathbb{R}.$$&lt;p&gt;On the preimage $f^{-1}(S_r(\mathbb{C})) \subset X(\mathbb{C})$ the function $e^{-f}$ decays exponentially.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposition.&lt;/strong&gt; There exists a Zariski open $U \subset \mathbb{A}^1_k$ (the set of non-critical values, by Ehresmann&#39;s theorem) such that $f^{-1}(U(\mathbb{C})) \xrightarrow{f} U(\mathbb{C})$ is a &lt;strong&gt;locally trivial fibration&lt;/strong&gt;: for every $x \in U(\mathbb{C})$, there exists an open $V_x \ni x$ such that $f^{-1}(x) \hookrightarrow f^{-1}(V_x)$ is a homotopy equivalence.&lt;/p&gt;
+&lt;p&gt;In particular, for $r$ large enough the transition maps in the system $(H^{\mathrm{sing}}_n(X(\mathbb{C}), f^{-1}(S_r)))_{r \to +\infty}$ are &lt;strong&gt;isomorphisms&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition (Rapid Decay Homology).&lt;/strong&gt;
+&lt;/p&gt;
+$$H^{\mathrm{Rd}}_n(X, f) := \varinjlim_{r \to +\infty} H^{\mathrm{sing}}_n\!\left(X(\mathbb{C}),\, f^{-1}(S_r);\, \mathbb{Q}\right), \qquad S_r = \{\mathrm{Re}(z) &gt; r\}.$$&lt;p&gt;&lt;strong&gt;Summary.&lt;/strong&gt; An element of $H^{\mathrm{Rd}}_n(X, f)$ is (for $r$ large enough) a chain $\sigma$ in $X(\mathbb{C})$ whose boundary lies in $f^{-1}(S_r) = \{\mathrm{Re}(f) &gt; r\}$. Two chains are identified if they agree for all large $r$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Special cases.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If $f$ is &lt;strong&gt;constant&lt;/strong&gt;, the image lies in a single point, so $f^{-1}(S_r) = \emptyset$ for large $r$ and $H^{\mathrm{Rd}}_n(X, f) = H^B_n(X)$ (usual Betti homology).&lt;/li&gt;
+&lt;li&gt;The integral $\int_\sigma e^{-f}\omega$ converges for $\sigma \in H^{\mathrm{Rd}}_n(X, f)$, since $e^{-f}$ is exponentially small on $\{\mathrm{Re}(f) &gt; r\}$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;example-&#34;&gt;Example: $X = \mathbb{A}^1_k$, $f = x^n$&lt;/h3&gt;
+&lt;p&gt;The region $\{\mathrm{Re}(x^n) &gt; r\}$ in $\mathbb{C}$ consists of $n$ &lt;strong&gt;Stokes sectors&lt;/strong&gt;, separated by the anti-Stokes directions at angles $\frac{(2j+1)\pi}{n}$ for $j = 0, \ldots, n-1$. Each sector is a connected component where $|e^{-x^n}|$ decays as $|x| \to \infty$.&lt;/p&gt;
+&lt;p&gt;We have $H^{\mathrm{Rd}}_1(\mathbb{A}^1, x^n) \cong H^B_1(\mathbb{C}, \{n\text{ points}\})$, which has dimension $n-1$. A set of $n-1$ generators consists of paths connecting adjacent sectors at infinity (each path goes to $\infty$ inside those sectors, so has boundary in the rapid decay region). For $n = 2$: the single generator is the path along $\mathbb{R}$ from $-\infty$ to $+\infty$.&lt;/p&gt;
+&lt;p&gt;Integrating $e^{-x^n}\,dx$ along these cycles gives values proportional to $\Gamma(1/n)$ (via $t = x^n$):
+&lt;/p&gt;
+$$\int_\sigma e^{-x^n}\,dx \sim \Gamma\!\left(\tfrac{1}{n}\right).$$&lt;p&gt;This gives the &lt;strong&gt;comparison isomorphism&lt;/strong&gt; between $H^1_{\mathrm{dR}}(\mathbb{A}^1; x^n)$ (of dimension $n-1$) and $H^{\mathrm{Rd}}_1(\mathbb{A}^1, x^n)$ (also of dimension $n-1$), with period matrix entries the values $\Gamma(j/n)$ for $j = 1, \ldots, n-1$.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Exponential Motives — Lesson II</title>
+      <link>https://mortad3lla.github.io/posts/exponential_motives_lesson2/</link>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://mortad3lla.github.io/posts/exponential_motives_lesson2/</guid>
+      <description>&lt;p&gt;Recall from last time: for $k \hookrightarrow \mathbb{C}$ and $X$ a smooth algebraic variety over $k$, the comparison isomorphism gives
+&lt;/p&gt;
+$$H^*_{\mathrm{dR}}(X) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X) \otimes_\mathbb{Q} \mathbb{C}, \qquad [\omega] \longmapsto \left([\sigma] \mapsto \int_\sigma \omega\right).$$&lt;p&gt;The &lt;strong&gt;preliminary definition&lt;/strong&gt; of a period was: any number of the form $\int_\sigma \omega$, whenever $k \subset \overline{\mathbb{Q}}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why preliminary?&lt;/strong&gt; Because we would also like numbers such as
+&lt;/p&gt;
+$$\log 2 = \int_1^2 \frac{dx}{x} = \int_\sigma \omega,$$&lt;p&gt;
+but here $\partial\sigma \neq 0$: the chain $\sigma = [1,2]$ has boundary $2 - 1 \neq 0$, so it is not a cycle.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt; use &lt;strong&gt;relative cohomology&lt;/strong&gt;. We allow chains with non-trivial boundary, as long as the boundary is contained in a fixed subvariety.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;i-relative-cohomology&#34;&gt;I. Relative Cohomology&lt;/h2&gt;
+&lt;p&gt;Let $Y \hookrightarrow X$ be a closed subvariety defined over $k$.&lt;/p&gt;
+&lt;h3 id=&#34;betti-side&#34;&gt;Betti Side&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; The relative Betti cohomology $H^*_B(X, Y)$ is the dual of the relative singular homology
+&lt;/p&gt;
+$$H^B_*(X, Y) := H^{\mathrm{sing}}_*(X(\mathbb{C}), Y(\mathbb{C}),\, \mathbb{Q}),$$&lt;p&gt;
+which is the homology of the &lt;strong&gt;cone&lt;/strong&gt; of the chain map $i_*: C_*(Y(\mathbb{C})) \to C_*(X(\mathbb{C}))$.&lt;/p&gt;
+&lt;p&gt;The map $i_*$ is injective (just composing a simplex in $Y$ with the inclusion), and the cone complex is:
+&lt;/p&gt;
+$$\bigl(\mathrm{Cone}(i_*)\bigr)_n = C_{n-1}(Y(\mathbb{C})) \oplus C_n(X(\mathbb{C}))$$&lt;p&gt;
+with differential $\partial(a, b) = \bigl(-\partial a,\; \partial b + i_*(a)\bigr)$ for $a \in C_{n-1}(Y(\mathbb{C}))$, $b \in C_n(X(\mathbb{C}))$.&lt;/p&gt;
+&lt;p&gt;So concretely, an element of $H^B_n(X, Y)$ is represented by a pair $(\sigma_Y, \sigma_X)$ which is closed:
+&lt;/p&gt;
+$$\partial \sigma_Y = 0, \qquad \partial \sigma_X + i_*(\sigma_Y) = 0.$$&lt;p&gt;
+Since $i_*$ is injective, this simplifies: you just need $\sigma_X$ with $\partial(\sigma_X) \in C_{n-1}(Y(\mathbb{C}))$.&lt;/p&gt;
+&lt;p&gt;This is exactly what we wanted: &lt;strong&gt;the boundary of $\sigma_X$ must lie in $Y(\mathbb{C})$&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;By design&lt;/strong&gt;, the construction gives a long exact sequence:
+&lt;/p&gt;
+$$\cdots \to H^B_n(Y) \xrightarrow{i_*} H^B_n(X) \longrightarrow H^B_n(X,Y) \xrightarrow{\partial} H^B_{n-1}(Y) \to \cdots$$&lt;p&gt;So knowing the homology of $X$ and $Y$ at least controls the dimensions of the relative groups.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;In terms of sheaves.&lt;/strong&gt; Writing $Y \overset{i}{\hookrightarrow} X \overset{j}{\hookleftarrow} X\setminus Y$ (closed/open), one has
+&lt;/p&gt;
+$$H^*_B(X, Y) \simeq H^*\!\left(X^{\mathrm{an}},\, j_! j^* \underline{\mathbb{Q}}_X\right).$$&lt;p&gt;
+There is a short exact sequence of sheaves
+&lt;/p&gt;
+$$0 \longrightarrow j_! j^* \underline{\mathbb{Q}}_X \longrightarrow \underline{\mathbb{Q}}_X \longrightarrow i_* \underline{\mathbb{Q}}_Y \longrightarrow 0,$$&lt;p&gt;
+which gives exactly the long exact sequence above.&lt;/p&gt;
+&lt;h3 id=&#34;de-rham-side&#34;&gt;De Rham Side&lt;/h3&gt;
+&lt;p&gt;Assume $Y$ is &lt;strong&gt;smooth&lt;/strong&gt;. The closed immersion $i: Y \hookrightarrow X$ induces a morphism of de Rham complexes:
+&lt;/p&gt;
+$$\Omega^\bullet_X \xrightarrow{i^*} i_* \Omega^\bullet_Y.$$&lt;p&gt;We now take the &lt;strong&gt;total complex&lt;/strong&gt; $\mathrm{Tot}(i^*)$ of the double complex
+&lt;/p&gt;
+$$\begin{array}{ccccc}
+\vdots &amp; &amp; \vdots \\
+\Omega^2_X &amp; \longrightarrow &amp; i_*\Omega^2_Y \\
+\uparrow &amp; &amp; \uparrow \\
+\Omega^1_X &amp; \longrightarrow &amp; i_*\Omega^1_Y \\
+\uparrow &amp; &amp; \uparrow \\
+\mathcal{O}_X &amp; \longrightarrow &amp; i_*\mathcal{O}_Y
+\end{array}$$&lt;p&gt;
+and look at the diagonal. The total complex $\mathrm{Tot}(i^*)$ has differential
+&lt;/p&gt;
+$$d(a,b) = \bigl(da,\; -db + i^*a\bigr), \qquad a \in \Omega^n_X,\; b \in i_*\Omega^{n-1}_Y.$$&lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt;
+&lt;/p&gt;
+$$H^*_{\mathrm{dR}}(X, Y) := \mathbb{H}^*_{\mathrm{Zar}}\!\left(X,\, \mathrm{Tot}(i^*)\right) \qquad \text{(hypercohomology)}.$$&lt;p&gt;&lt;strong&gt;Concretely&lt;/strong&gt; (assuming $X$ affine, so global sections suffice): a class in $H^n_{\mathrm{dR}}(X, Y)$ is represented by a pair
+&lt;/p&gt;
+$$\omega_X \in \Omega^n_X(X) \quad \text{with} \quad d\omega_X = 0,$$&lt;p&gt;
+&lt;/p&gt;
+$$\eta_Y \in \Omega^{n-1}_Y(Y) \quad \text{with} \quad \omega_X\big|_Y = d\eta_Y.$$&lt;p&gt;The map $[(\omega_X, \eta_Y)] \mapsto [\omega_X]$ (forgetting $\eta_Y$) fits into the long exact sequence by design:
+&lt;/p&gt;
+$$\cdots \longrightarrow H^{n-1}_{\mathrm{dR}}(Y) \longrightarrow H^n_{\mathrm{dR}}(X, Y) \longrightarrow H^n_{\mathrm{dR}}(X) \longrightarrow H^n_{\mathrm{dR}}(Y) \longrightarrow \cdots$$&lt;hr&gt;
+&lt;h2 id=&#34;example-&#34;&gt;Example: $X = \mathbb{A}^1_\mathbb{Q} \setminus \{0\}$, $Y = \{1, 2\}$&lt;/h2&gt;
+&lt;p&gt;Take $X = \mathrm{Spec}(\mathbb{Q}[x, x^{-1}])$ (which is the right setting for $\frac{dx}{x}$) and $Y = \{1, 2\} = \{(x-1)(x-2) = 0\}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;De Rham computation.&lt;/strong&gt; The total complex of $i^*$ is:
+&lt;/p&gt;
+$$\mathbb{Q}[x, x^{-1}] \longrightarrow \mathbb{Q}[x, x^{-1}]\,dx \;\oplus\; \mathbb{Q} \oplus \mathbb{Q}$$&lt;p&gt;
+&lt;/p&gt;
+$$P \longmapsto \bigl(P&#39;(x)\,dx,\; P(1),\; P(2)\bigr)$$&lt;p&gt;
+(restriction to $Y$ is just evaluation; the rest of the complex is zero). Thus $H^*_{\mathrm{dR}}(X, Y)$ is the cohomology of this map. We find the &lt;strong&gt;cokernel&lt;/strong&gt; (things not in the image):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\bigl(\frac{dx}{x}, 0, 0\bigr)$: certainly not in the image, since the logarithm is not algebraic.&lt;/li&gt;
+&lt;li&gt;$(0, 1, 0)$: not in the image either — if $P&#39; = 0$ then $P$ is constant, so $P(1)$ must equal $P(2)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These two are linearly independent in the cokernel.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exercise.&lt;/strong&gt; Show that they form a basis.&lt;/p&gt;
+&lt;p&gt;Moreover, $(0, 1, 0)$ defines the &lt;strong&gt;same class&lt;/strong&gt; as $\bigl(\frac{dx}{x}, 0, 0\bigr)$. Indeed, their difference
+&lt;/p&gt;
+$$\left(\frac{dx}{x}, 0, 0\right) - (0, 1, 0) = \left(\frac{dx}{x}, -1, 0\right)$$&lt;p&gt;
+lies in the image: we need $P$ with $P&#39; = 1$, $P(1) = -1$, $P(2) = 0$. Since $P&#39; = 1 \Rightarrow P = x + c$, the system $1 + c = -1$, $2 + c = 0$ gives $c = -2$. So it is the image of $P(x) = x - 2$. Therefore:
+&lt;/p&gt;
+$$H^1_{\mathrm{dR}}\!\left(\mathbb{A}^1_\mathbb{Q} \setminus \{0\},\; \{1,2\}\right) = \mathbb{Q}\bigl[dx\bigr] \oplus \mathbb{Q}\!\left[\tfrac{dx}{x}\right].$$&lt;p&gt;&lt;strong&gt;Betti computation.&lt;/strong&gt; We have $X(\mathbb{C}) = \mathbb{C}^*$ and $Y(\mathbb{C}) = \{1, 2\}$. The relevant piece of the long exact sequence is:
+&lt;/p&gt;
+$$0 \to H^B_1(X) \to H^B_1(X, Y) \xrightarrow{\partial} H^B_0(Y) \to H^B_0(X) \to 0$$&lt;p&gt;
+&lt;/p&gt;
+$$\| \qquad\qquad\quad \| \qquad\qquad\qquad\quad \| \qquad\qquad\quad \|$$&lt;p&gt;
+&lt;/p&gt;
+$$\mathbb{Q}\cdot\gamma \qquad \bullet\!\to\!\bullet \qquad\quad \mathbb{Q} \oplus \mathbb{Q} \xrightarrow{\mathrm{sum}} \mathbb{Q}$$&lt;p&gt;The two generators of $H^B_1(X, Y)$ are: $\gamma$ (the loop $|x|=1$ around $0$) and the path from $1$ to $2$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Period matrix.&lt;/strong&gt; Integrating the two de Rham classes against the two Betti classes:&lt;/p&gt;
+$$\begin{array}{c|cc}
+ &amp; dx &amp; \dfrac{dx}{x} \\[6pt]
+\hline
+[1 \to 2] &amp; 1 &amp; \log 2 \\[6pt]
+\gamma &amp; 0 &amp; 2\pi i
+\end{array}$$&lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; There is a comparison isomorphism
+&lt;/p&gt;
+$$H^*_{\mathrm{dR}}(X, Y) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X, Y) \otimes_\mathbb{Q} \mathbb{C},$$&lt;p&gt;
+dual to the relative period pairing:
+&lt;/p&gt;
+$$[(\omega_X, \eta_Y)] \otimes [\sigma_X] \longmapsto \int_{\sigma_X} \omega_X + \int_{\partial \sigma_X} \eta_Y.$$&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; This is still not enough in general: we need to extend to the case where $Y$ is not smooth, but merely has &lt;strong&gt;simple normal crossing&lt;/strong&gt; (s.n.c.) singularities. (This is needed precisely because the compactification used in the proof of the comparison isomorphism only produces s.n.c. divisors.)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-final-definition-of-a-period&#34;&gt;The (Final) Definition of a Period&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A &lt;strong&gt;period&lt;/strong&gt; is a coefficient of the comparison isomorphism for some $H^n(X, Y)$ over $k \subset \overline{\mathbb{Q}}$, where $X$ is smooth and $Y$ is a simple normal crossing divisor.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Goal.&lt;/strong&gt; Attach to any period a &lt;strong&gt;motivic Galois group&lt;/strong&gt;. This requires understanding &lt;strong&gt;all algebraic relations&lt;/strong&gt; between periods. That is: given periods $p_1, \ldots, p_r$, find all $Q \in \overline{\mathbb{Q}}[x_1, \ldots, x_r]$ with $Q(p_1, \ldots, p_r) = 0$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; It is enough to understand &lt;strong&gt;equality&lt;/strong&gt; between periods. Indeed, periods form a $\overline{\mathbb{Q}}$-algebra (closed under $+$ and $\cdot$, containing $\overline{\mathbb{Q}}$), so any polynomial relation reduces to checking whether a given period equals zero.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key point: Künneth formula.&lt;/strong&gt; For both cohomologies (both de Rham and Betti, when not stated otherwise):
+&lt;/p&gt;
+$$H^*(X_1, Y_1) \otimes H^*(X_2, Y_2) \simeq H^*\!\left(X_1 \times X_2,\; (Y_1 \times X_2) \cup (X_1 \times Y_2)\right).$$&lt;p&gt;Thus we just need to understand &lt;strong&gt;equality&lt;/strong&gt; of periods. There are &lt;strong&gt;three sources of relations&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Bilinearity of the period pairing:&lt;/strong&gt; integrating over a sum of cycles is the sum of the integrals, both over cycles and over forms.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Change of variables:&lt;/strong&gt; for a morphism $f: X \to X&#39;$,
+&lt;/p&gt;
+$$\int_\sigma f^*\omega = \int_{f_*\sigma} \omega.$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Stokes&#39; formula:&lt;/strong&gt;
+&lt;/p&gt;
+$$\int_\sigma d\omega = \int_{\partial\sigma} \omega.$$&lt;p&gt;
+Note: in the relative context, $\partial\sigma$ is no longer necessarily zero.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Conjecture (Kontsevich–Zagier).&lt;/strong&gt; Any relation between periods follows from these three.&lt;/p&gt;
+&lt;p&gt;In other words: if you have an equality between two periods, you can derive it by applying only these three types of relations. This will be made more formal later.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;ii-nori-motives&#34;&gt;II. Nori Motives&lt;/h2&gt;
+&lt;p&gt;Inspired by the Kontsevich–Zagier conjecture, Nori&#39;s construction gives one of the ways to define motives. The key feature is that we can define the &lt;strong&gt;motivic Galois group unconditionally&lt;/strong&gt;; the conjecture then implies that it acts on periods (on all of them). Conjecturally, these groups are the Galois group of periods in a precise sense.&lt;/p&gt;
+&lt;h3 id=&#34;quivers-and-representations&#34;&gt;Quivers and Representations&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A &lt;strong&gt;quiver&lt;/strong&gt; is a directed graph — think of it as a category &lt;em&gt;without composition&lt;/em&gt; (composition will be added later).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A &lt;strong&gt;representation&lt;/strong&gt; of a quiver $Q$ is a functor $\rho: Q \to \mathrm{Vect}_\mathbb{Q}$: to each vertex a vector space, and to each arrow a linear map.&lt;/p&gt;
+&lt;h3 id=&#34;the-endomorphism-algebra&#34;&gt;The Endomorphism Algebra&lt;/h3&gt;
+&lt;p&gt;Given a representation $\rho: Q \to \mathrm{Vect}_\mathbb{Q}$, define:
+&lt;/p&gt;
+$$\mathrm{End}(\rho) = \varprojlim_{\substack{Q_0 \subseteq Q \\ \text{finite}}} \mathrm{End}\!\left(\rho\big|_{Q_0}\right),$$&lt;p&gt;
+where the limit runs over all finite sub-quivers $Q_0$. This is a $\mathbb{Q}$-algebra with a natural &lt;strong&gt;topology&lt;/strong&gt; inherited as a limit of finite-dimensional algebras.&lt;/p&gt;
+&lt;p&gt;For a fixed finite $Q_0$, we define:
+&lt;/p&gt;
+$$\mathrm{End}\!\left(\rho\big|_{Q_0}\right) = \left\{(e_q)_{q \in Q_0} \in \prod_{q \in Q_0} \mathrm{End}(\rho(q)) \;\middle|\; \text{compatible}\right\},$$&lt;p&gt;
+where compatible means: for every arrow $f: q \to q&#39;$ in $Q_0$, the diagram
+&lt;/p&gt;
+$$\begin{array}{ccc}
+\rho(q) &amp; \xrightarrow{\rho(f)} &amp; \rho(q&#39;) \\
+e_q \downarrow &amp; &amp; \downarrow e_{q&#39;} \\
+\rho(q) &amp; \xrightarrow{\rho(f)} &amp; \rho(q&#39;)
+\end{array}$$&lt;p&gt;
+commutes. Therefore $\mathrm{End}(\rho)$ is a &lt;strong&gt;pro-finite-dimensional&lt;/strong&gt; $\mathbb{Q}$-algebra.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; $\langle Q, \rho \rangle$ is the category of finite-dimensional $\mathbb{Q}$-vector spaces with a &lt;strong&gt;continuous action&lt;/strong&gt; of $\mathrm{End}(\rho)$.&lt;/p&gt;
+&lt;p&gt;An object of $\langle Q, \rho \rangle$ is a vector space $V$ together with a ring map $\mathrm{End}(\rho) \to \mathrm{End}(V)$ that factors through $\mathrm{End}(\rho|_{Q_0})$ for some finite $Q_0$ — i.e., the action is continuous for the profinite topology. There are natural &amp;quot;functors&amp;quot; assembling into:
+&lt;/p&gt;
+$$Q \xrightarrow{\rho} \mathrm{Vect}_\mathbb{Q} \qquad \text{and} \qquad Q \to \langle Q, \rho \rangle \xrightarrow{\text{forgetful}} \mathrm{Vect}_\mathbb{Q}, \quad q \mapsto \rho(q).$$&lt;p&gt;&lt;strong&gt;Proposition (Nori) — Universal property.&lt;/strong&gt; The construction $\langle Q, \rho \rangle$ is universal: whenever $\mathcal{A}$ is a $\mathbb{Q}$-linear abelian category and $\beta: \mathcal{A} \to \mathrm{Vect}_\mathbb{Q}$ is a $\mathbb{Q}$-linear exact faithful functor, any factorization of $\rho$ through $\mathcal{A}$ induces a unique (up to unique isomorphism) functor $\langle Q, \rho \rangle \to \mathcal{A}$:
+&lt;/p&gt;
+$$\begin{array}{ccc}
+&amp; &amp; \mathcal{A} \\
+&amp; \nearrow &amp; \downarrow \beta \\
+Q &amp; \xrightarrow{\rho} &amp; \mathrm{Vect}_\mathbb{Q}
+\end{array}$$&lt;h3 id=&#34;the-nori-quiver&#34;&gt;The Nori Quiver $Q(k)$&lt;/h3&gt;
+&lt;p&gt;We apply the above to the specific quiver $Q(k)$:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Vertices:&lt;/strong&gt; symbols $[X, Y, n, i]$ where $X$ is a variety over $k$, $Y \subset X$ is closed, and $n, i \in \mathbb{Z}$ (with $n$ the cohomological degree and $i$ the Tate twist). Morally, the vertex $[X, Y, n, i]$ corresponds to $H^n(X, Y)$ with Tate twist $(i)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Arrows&lt;/strong&gt; (three types, each inspired by one of the three sources of relations):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Type (a):&lt;/strong&gt; For every morphism $h: X \to X&#39;$ with $h(Y) \subset Y&#39;$, a functoriality arrow:
+&lt;/p&gt;
+$$[X&#39;, Y&#39;, n, i] \xrightarrow{h^*} [X, Y, n, i].$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Type (b):&lt;/strong&gt; For every $Z \subset Y \subset X$ closed, a connecting homomorphism:
+&lt;/p&gt;
+$$[Y, Z, n-1, i] \xrightarrow{\partial} [X, Y, n, i].$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Type (c):&lt;/strong&gt; For every $Y \subset X$ closed, a Tate/Künneth arrow:
+&lt;/p&gt;
+$$\left[X \times \mathbb{G}_m,\; (Y \times \mathbb{G}_m) \cup (X \times \{1\}),\; n+1,\; i+1\right] \longrightarrow [X, Y, n, i].$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-quiver-representation&#34;&gt;The Quiver Representation $\rho_B$&lt;/h3&gt;
+&lt;p&gt;The &lt;strong&gt;Betti representation&lt;/strong&gt; is:
+&lt;/p&gt;
+$$\rho_B: Q(k) \longrightarrow \mathrm{Vect}_\mathbb{Q}, \qquad [X, Y, n, i] \longmapsto H^n_B(X, Y)(i),$$&lt;p&gt;
+where the &lt;strong&gt;Tate twist&lt;/strong&gt; $(i)$ means tensoring $(-i)$ times with
+&lt;/p&gt;
+$$H^1_B(\mathbb{G}_m) \simeq H^1_B(\mathbb{G}_m, \{1\}) = \mathbb{Q}(-1).$$&lt;p&gt;
+Concretely: for $i &gt; 0$, tensor $i$ times; for $i &lt; 0$, tensor $(-i)$ times with the dual.&lt;/p&gt;
+&lt;p&gt;The arrows are mapped as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;(a):&lt;/strong&gt; $H^n_B(X&#39;, Y&#39;)(i) \xrightarrow{h^*} H^n_B(X, Y)(i)$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;(b):&lt;/strong&gt; $H^{n-1}_B(Y, Z)(i) \xrightarrow{\partial} H^n_B(X, Y)(i)$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;(c):&lt;/strong&gt; By the Künneth formula:
+$$H^{n+1}_B\!\bigl(X \times \mathbb{G}_m,\; (Y \times \mathbb{G}_m) \cup (X \times \{1\})\bigr)(i+1) \;=\; \bigoplus_{a+b=n+1} H^a_B(X,Y) \otimes H^b_B(\mathbb{G}_m, 1) \cdot (i+1).$$
+Since $H^b_B(\mathbb{G}_m, 1) = 0$ for $b \neq 1$ and $= H^1_B(\mathbb{G}_m)$ for $b = 1$ (because $\mathbb{G}_m = \mathbb{C}^*$ is connected, so $H^0 \simeq \mathbb{Q}$, and taking the relative group with respect to $\{1\}$ kills it), this collapses to $\simeq H^n_B(X, Y)(i)$, giving the required isomorphism.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-category-of-nori-motives&#34;&gt;The Category of Nori Motives&lt;/h3&gt;
+&lt;p&gt;To have a category with duals, one formally introduces the dual via the Tate twist (the sign convention $-i$ in the twist). Then:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition (Nori Motives).&lt;/strong&gt; The &lt;strong&gt;category of Nori motives&lt;/strong&gt; over $k$ is
+&lt;/p&gt;
+$$M(k) = \langle Q(k),\; \rho_B \rangle.$$&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; $M(k)$ is an abelian category. A Nori motive &amp;quot;is&amp;quot; a $H^n_B(X, Y)(i)$, or whatever one can obtain from these by taking kernels, cokernels, and extensions.&lt;/p&gt;
+&lt;p&gt;We will see informally that $M(k)$ has a tensor product $\otimes$, making it equivalent to the category of representations of a pro-algebraic group — the &lt;strong&gt;motivic Galois group&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;relation-with-voevodsky-motives&#34;&gt;Relation with Voevodsky Motives&lt;/h3&gt;
+&lt;p&gt;There exists a functor from the derived category $D^b(M(k))$ to Voevodsky&#39;s triangulated category of motives $DM(k)$, and conjecturally this functor is an equivalence. So Voevodsky motives should be the derived category of Nori motives.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Exponential Motives — Lesson I</title>
       <link>https://mortad3lla.github.io/posts/exponential_motives_lesson1/</link>
       <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>

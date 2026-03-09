@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en-us" style="font-size: 105%">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <meta name="author" content="Filippo Belfiori">
+
+  
+  
+  <meta name="description" content="Recall from last time: for $k \hookrightarrow \mathbb{C}$ and $X$ a smooth algebraic variety over $k$, the comparison isomorphism gives
+
+$$H^*_{\mathrm{dR}}(X) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X) \otimes_\mathbb{Q} \mathbb{C}, \qquad [\omega] \longmapsto \left([\sigma] \mapsto \int_\sigma \omega\right).$$The preliminary definition of a period was: any number of the form $\int_\sigma \omega$, whenever $k \subset \overline{\mathbb{Q}}$.
+Why preliminary? Because we would also like numbers such as
+
+$$\log 2 = \int_1^2 \frac{dx}{x} = \int_\sigma \omega,$$
+but here $\partial\sigma \neq 0$: the chain $\sigma = [1,2]$ has boundary $2 - 1 \neq 0$, so it is not a cycle.">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://mortad3lla.github.io//images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://mortad3lla.github.io//images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://mortad3lla.github.io//images/favicon-16x16.png">
+
+  
+  
+  <meta name="keywords" content='hugo latex theme blog texify texify2 texify3 michael neuper'>
+  
+
+  
+  
+  <link rel="stylesheet" href='https://mortad3lla.github.io/katex/katex.min.css'>
+<script defer defer src='https://mortad3lla.github.io/katex/katex.min.js'></script>
+<script defer src='https://mortad3lla.github.io/katex/contrib/auto-render.min.js'></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+  
+
+  
+  
+
+  
+  <meta property="og:url" content="https://mortad3lla.github.io/posts/exponential_motives_lesson2/">
+  <meta property="og:site_name" content="Filippo Belfiori">
+  <meta property="og:title" content="Exponential Motives — Lesson II">
+  <meta property="og:description" content="Recall from last time: for $k \hookrightarrow \mathbb{C}$ and $X$ a smooth algebraic variety over $k$, the comparison isomorphism gives $$H^*_{\mathrm{dR}}(X) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X) \otimes_\mathbb{Q} \mathbb{C}, \qquad [\omega] \longmapsto \left([\sigma] \mapsto \int_\sigma \omega\right).$$The preliminary definition of a period was: any number of the form $\int_\sigma \omega$, whenever $k \subset \overline{\mathbb{Q}}$.
+Why preliminary? Because we would also like numbers such as $$\log 2 = \int_1^2 \frac{dx}{x} = \int_\sigma \omega,$$ but here $\partial\sigma \neq 0$: the chain $\sigma = [1,2]$ has boundary $2 - 1 \neq 0$, so it is not a cycle.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-03T00:00:00+00:00">
+
+
+  
+  <link rel="canonical" href="https://mortad3lla.github.io/posts/exponential_motives_lesson2/">
+
+  
+  
+  
+  <meta itemprop="name" content="Exponential Motives — Lesson II">
+  <meta itemprop="description" content="Recall from last time: for $k \hookrightarrow \mathbb{C}$ and $X$ a smooth algebraic variety over $k$, the comparison isomorphism gives $$H^*_{\mathrm{dR}}(X) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X) \otimes_\mathbb{Q} \mathbb{C}, \qquad [\omega] \longmapsto \left([\sigma] \mapsto \int_\sigma \omega\right).$$The preliminary definition of a period was: any number of the form $\int_\sigma \omega$, whenever $k \subset \overline{\mathbb{Q}}$.
+Why preliminary? Because we would also like numbers such as $$\log 2 = \int_1^2 \frac{dx}{x} = \int_\sigma \omega,$$ but here $\partial\sigma \neq 0$: the chain $\sigma = [1,2]$ has boundary $2 - 1 \neq 0$, so it is not a cycle.">
+  <meta itemprop="datePublished" content="2026-03-03T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-03-03T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1948">
+
+  
+  
+  
+    <link rel="stylesheet" href="https://mortad3lla.github.io/css/common.min.861fcd7d94c0b4dbf0e9e70d96940dec8eb63a61695188041a92eb7c10290679.css" integrity="sha256-hh/NfZTAtNvw6ecNlpQN7I62OmFpUYgEGpLrfBApBnk=" crossorigin="anonymous">
+  
+
+  
+  
+    <link rel="stylesheet" href="https://mortad3lla.github.io/css/content.min.387e0600ad454285e14579a443ef8d74c65694968d90ef5ec785e6ae23f8355a.css" integrity="sha256-OH4GAK1FQoXhRXmkQ&#43;&#43;NdMZWlJaNkO9ex4XmriP4NVo=" crossorigin="anonymous">
+  
+
+  
+  
+  <title>Exponential Motives — Lesson II - Filippo Belfiori</title>
+  
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exponential Motives — Lesson II">
+  <meta name="twitter:description" content="Recall from last time: for $k \hookrightarrow \mathbb{C}$ and $X$ a smooth algebraic variety over $k$, the comparison isomorphism gives $$H^*_{\mathrm{dR}}(X) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X) \otimes_\mathbb{Q} \mathbb{C}, \qquad [\omega] \longmapsto \left([\sigma] \mapsto \int_\sigma \omega\right).$$The preliminary definition of a period was: any number of the form $\int_\sigma \omega$, whenever $k \subset \overline{\mathbb{Q}}$.
+Why preliminary? Because we would also like numbers such as $$\log 2 = \int_1^2 \frac{dx}{x} = \int_\sigma \omega,$$ but here $\partial\sigma \neq 0$: the chain $\sigma = [1,2]$ has boundary $2 - 1 \neq 0$, so it is not a cycle.">
+
+
+  
+
+
+  <link rel="stylesheet" href="https://mortad3lla.github.io/css/single.min.5a34175f01232dd3f8c27e4152be883054a1cc64ad41473a90a97073d77b2ad0.css" integrity="sha256-WjQXXwEjLdP4wn5BUr6IMFShzGStQUc6kKlwc9d7KtA=" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://mortad3lla.github.io/css/single.min.78a121b7d7a160420f9daab0ea13add66c37b9c44f27bba07b27207e2b0975d2.css" integrity="sha256-eKEht9ehYEIPnaqw6hOt1mw3ucRPJ7ugeycgfisJddI=" crossorigin="anonymous">
+
+
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/style.css" />
+
+</head>
+
+<body>
+  <div id="wrapper">
+    
+
+
+<header id="header">
+  <h1>
+    <a href="https://mortad3lla.github.io/">Filippo Belfiori</a>
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle theme">
+        <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
+        <path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/>
+        </svg>
+    </button>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-binoculars-icon lucide-binoculars">
+<path fill="none" d="M10 10h4"/>
+<path fill="none" d="M19 7V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/>
+<path fill="none" d="M20 21a2 2 0 0 0 2-2v-3.851c0-1.39-2-2.962-2-4.829V8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2z"/>
+<path fill="none" d="M 22 16 L 2 16"/>
+<path fill="none" d="M4 21a2 2 0 0 1-2-2v-3.851c0-1.39 2-2.962 2-4.829V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2z"/>
+<path fill="none" d="M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/research/">Research</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-heart-icon lucide-file-heart">
+<path fill="none" d="M13 22h5a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v7"/>
+<path fill="none" d="M14 2v5a1 1 0 0 0 1 1h5"/>
+<path fill="none" d="M3.62 18.8A2.25 2.25 0 1 1 7 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a1 1 0 0 1-1.507 0z"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/publications/">Publications</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-type-icon lucide-book-type">
+<path fill="none" d="M10 13h4"/>
+<path fill="none" d="M12 6v7"/>
+<path fill="none" d="M16 8V6H8v2"/>
+<path fill="none" d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/teaching/">Teaching</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-user-icon lucide-file-user">
+<path fill="none" d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/>
+<path fill="none" d="M14 2v5a1 1 0 0 0 1 1h5"/>
+<path fill="none" d="M16 22a4 4 0 0 0-8 0"/><circle cx="12" cy="15" r="3"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/curriculum/">CV</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,11H16a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm0,4H16a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2ZM11,9h6a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2ZM21,3H7A1,1,0,0,0,6,4V7H3A1,1,0,0,0,2,8V18a3,3,0,0,0,3,3H18a4,4,0,0,0,4-4V4A1,1,0,0,0,21,3ZM6,18a1,1,0,0,1-2,0V9H6Zm14-1a2,2,0,0,1-2,2H7.82A3,3,0,0,0,8,18V5H20Zm-9-4h1a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2Zm0,4h1a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2Z"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/posts/">Blog</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
+<path d="M10.07031,20.50291a1.00008,1.00008,0,0,0-1.18115-.9834c-1.30908.24024-2.96191.27637-3.40137-.958a5.70754,5.70754,0,0,0-1.83691-2.415,1.20073,1.20073,0,0,1-.1665-.10938,1,1,0,0,0-.93067-.64551H2.54883a.99965.99965,0,0,0-1,.99512c-.00391.81543.811,1.33789,1.1416,1.51465a4.4408,4.4408,0,0,1,.92383,1.35937c.36426,1.02344,1.42285,2.57617,4.46582,2.376.001.03516.00195.06836.00244.09863l.00439.26758a1,1,0,0,0,2,0l-.00488-.31836C10.07715,21.4951,10.07031,21.22068,10.07031,20.50291Zm10.667-15.126c.03174-.125.063-.26367.09034-.41992a6.27792,6.27792,0,0,0-.40821-3.293,1.002,1.002,0,0,0-.61572-.58007c-.356-.12012-1.67041-.35645-4.18408,1.25a13.86918,13.86918,0,0,0-6.354,0C6.76221.751,5.45459.9658,5.10205,1.07908a.99744.99744,0,0,0-.63135.584,6.3003,6.3003,0,0,0-.40332,3.35644c.02442.12793.05078.2461.07813.35449A6.26928,6.26928,0,0,0,2.89014,9.20311a8.42168,8.42168,0,0,0,.04248.92187c.334,4.60254,3.334,5.98438,5.42431,6.459-.04345.125-.083.25878-.11816.40039a1.00023,1.00023,0,0,0,1.94238.47851,1.6784,1.6784,0,0,1,.46778-.87793.99947.99947,0,0,0-.5459-1.74512c-3.4541-.39453-4.95362-1.80175-5.1792-4.89843a6.61076,6.61076,0,0,1-.03369-.73828,4.25769,4.25769,0,0,1,.91943-2.71289,3.022,3.022,0,0,1,.1958-.23145.99988.99988,0,0,0,.188-1.02441,3.3876,3.3876,0,0,1-.15527-.55567A4.09356,4.09356,0,0,1,6.1167,3.06346a7.54263,7.54263,0,0,1,2.415,1.17968,1.00877,1.00877,0,0,0,.82764.13282,11.77716,11.77716,0,0,1,6.17285.001,1.00549,1.00549,0,0,0,.83056-.13769,7.572,7.572,0,0,1,2.40528-1.19043,4.03977,4.03977,0,0,1,.0874,1.57812,3.205,3.205,0,0,1-.16895.60743.9999.9999,0,0,0,.188,1.02441c.07715.08691.1543.18066.22363.26855A4.12186,4.12186,0,0,1,20,9.20311a7.03888,7.03888,0,0,1-.0376.77734c-.22021,3.05566-1.72558,4.46387-5.1958,4.85937a1,1,0,0,0-.54541,1.7461,1.63079,1.63079,0,0,1,.46631.9082,3.06079,3.06079,0,0,1,.09229.81934v2.334C14.77,21.2949,14.77,21.78025,14.77,22.00291a1,1,0,1,0,2,0c0-.2168,0-.69238.00977-1.33984V18.31346a4.8815,4.8815,0,0,0-.15479-1.31153,4.25638,4.25638,0,0,0-.11621-.416,6.51258,6.51258,0,0,0,5.44531-6.42383A8.69677,8.69677,0,0,0,22,9.20311,6.13062,6.13062,0,0,0,20.7373,5.37693Z"/></svg>
+</span>
+      
+      <a class="link" href="https://github.com/mortad3lla">GitHub</a>
+    </span>
+    
+  </nav>
+</header>
+<hr class="head-rule"></hr>
+    
+<main id="main" class="post">
+  
+  <div class="post-heading">
+    <h1 class="post-title">Exponential Motives — Lesson II</h1>
+    <div class="publish-metadata">
+      
+      <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      3 March 2026
+      
+      
+        &nbsp;
+        <span>
+          <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          1948 words
+        </span>
+      
+      
+      
+        
+      
+      
+        &nbsp;
+        <span>
+          <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          ~10 mins
+        </span>
+      
+    </div>
+  </div>
+
+
+  
+  <details>
+    <summary>
+      <b>Table of Contents</b>
+    </summary>
+    <div class="toc numbered-subtitles"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#i-relative-cohomology">I. Relative Cohomology</a>
+      <ul>
+        <li><a href="#betti-side">Betti Side</a></li>
+        <li><a href="#de-rham-side">De Rham Side</a></li>
+      </ul>
+    </li>
+    <li><a href="#example-">Example: , </a></li>
+    <li><a href="#the-final-definition-of-a-period">The (Final) Definition of a Period</a></li>
+    <li><a href="#ii-nori-motives">II. Nori Motives</a>
+      <ul>
+        <li><a href="#quivers-and-representations">Quivers and Representations</a></li>
+        <li><a href="#the-endomorphism-algebra">The Endomorphism Algebra</a></li>
+        <li><a href="#the-nori-quiver">The Nori Quiver </a></li>
+        <li><a href="#the-quiver-representation">The Quiver Representation </a></li>
+        <li><a href="#the-category-of-nori-motives">The Category of Nori Motives</a></li>
+        <li><a href="#relation-with-voevodsky-motives">Relation with Voevodsky Motives</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+  <article class="content numbered-subtitles">
+    
+    <p>Recall from last time: for $k \hookrightarrow \mathbb{C}$ and $X$ a smooth algebraic variety over $k$, the comparison isomorphism gives
+</p>
+$$H^*_{\mathrm{dR}}(X) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X) \otimes_\mathbb{Q} \mathbb{C}, \qquad [\omega] \longmapsto \left([\sigma] \mapsto \int_\sigma \omega\right).$$<p>The <strong>preliminary definition</strong> of a period was: any number of the form $\int_\sigma \omega$, whenever $k \subset \overline{\mathbb{Q}}$.</p>
+<p><strong>Why preliminary?</strong> Because we would also like numbers such as
+</p>
+$$\log 2 = \int_1^2 \frac{dx}{x} = \int_\sigma \omega,$$<p>
+but here $\partial\sigma \neq 0$: the chain $\sigma = [1,2]$ has boundary $2 - 1 \neq 0$, so it is not a cycle.</p>
+<p><strong>Solution:</strong> use <strong>relative cohomology</strong>. We allow chains with non-trivial boundary, as long as the boundary is contained in a fixed subvariety.</p>
+<hr>
+<h2 id="i-relative-cohomology">I. Relative Cohomology</h2>
+<p>Let $Y \hookrightarrow X$ be a closed subvariety defined over $k$.</p>
+<h3 id="betti-side">Betti Side</h3>
+<p><strong>Definition.</strong> The relative Betti cohomology $H^*_B(X, Y)$ is the dual of the relative singular homology
+</p>
+$$H^B_*(X, Y) := H^{\mathrm{sing}}_*(X(\mathbb{C}), Y(\mathbb{C}),\, \mathbb{Q}),$$<p>
+which is the homology of the <strong>cone</strong> of the chain map $i_*: C_*(Y(\mathbb{C})) \to C_*(X(\mathbb{C}))$.</p>
+<p>The map $i_*$ is injective (just composing a simplex in $Y$ with the inclusion), and the cone complex is:
+</p>
+$$\bigl(\mathrm{Cone}(i_*)\bigr)_n = C_{n-1}(Y(\mathbb{C})) \oplus C_n(X(\mathbb{C}))$$<p>
+with differential $\partial(a, b) = \bigl(-\partial a,\; \partial b + i_*(a)\bigr)$ for $a \in C_{n-1}(Y(\mathbb{C}))$, $b \in C_n(X(\mathbb{C}))$.</p>
+<p>So concretely, an element of $H^B_n(X, Y)$ is represented by a pair $(\sigma_Y, \sigma_X)$ which is closed:
+</p>
+$$\partial \sigma_Y = 0, \qquad \partial \sigma_X + i_*(\sigma_Y) = 0.$$<p>
+Since $i_*$ is injective, this simplifies: you just need $\sigma_X$ with $\partial(\sigma_X) \in C_{n-1}(Y(\mathbb{C}))$.</p>
+<p>This is exactly what we wanted: <strong>the boundary of $\sigma_X$ must lie in $Y(\mathbb{C})$</strong>.</p>
+<p><strong>By design</strong>, the construction gives a long exact sequence:
+</p>
+$$\cdots \to H^B_n(Y) \xrightarrow{i_*} H^B_n(X) \longrightarrow H^B_n(X,Y) \xrightarrow{\partial} H^B_{n-1}(Y) \to \cdots$$<p>So knowing the homology of $X$ and $Y$ at least controls the dimensions of the relative groups.</p>
+<p><strong>In terms of sheaves.</strong> Writing $Y \overset{i}{\hookrightarrow} X \overset{j}{\hookleftarrow} X\setminus Y$ (closed/open), one has
+</p>
+$$H^*_B(X, Y) \simeq H^*\!\left(X^{\mathrm{an}},\, j_! j^* \underline{\mathbb{Q}}_X\right).$$<p>
+There is a short exact sequence of sheaves
+</p>
+$$0 \longrightarrow j_! j^* \underline{\mathbb{Q}}_X \longrightarrow \underline{\mathbb{Q}}_X \longrightarrow i_* \underline{\mathbb{Q}}_Y \longrightarrow 0,$$<p>
+which gives exactly the long exact sequence above.</p>
+<h3 id="de-rham-side">De Rham Side</h3>
+<p>Assume $Y$ is <strong>smooth</strong>. The closed immersion $i: Y \hookrightarrow X$ induces a morphism of de Rham complexes:
+</p>
+$$\Omega^\bullet_X \xrightarrow{i^*} i_* \Omega^\bullet_Y.$$<p>We now take the <strong>total complex</strong> $\mathrm{Tot}(i^*)$ of the double complex
+</p>
+$$\begin{array}{ccccc}
+\vdots & & \vdots \\
+\Omega^2_X & \longrightarrow & i_*\Omega^2_Y \\
+\uparrow & & \uparrow \\
+\Omega^1_X & \longrightarrow & i_*\Omega^1_Y \\
+\uparrow & & \uparrow \\
+\mathcal{O}_X & \longrightarrow & i_*\mathcal{O}_Y
+\end{array}$$<p>
+and look at the diagonal. The total complex $\mathrm{Tot}(i^*)$ has differential
+</p>
+$$d(a,b) = \bigl(da,\; -db + i^*a\bigr), \qquad a \in \Omega^n_X,\; b \in i_*\Omega^{n-1}_Y.$$<p><strong>Definition.</strong>
+</p>
+$$H^*_{\mathrm{dR}}(X, Y) := \mathbb{H}^*_{\mathrm{Zar}}\!\left(X,\, \mathrm{Tot}(i^*)\right) \qquad \text{(hypercohomology)}.$$<p><strong>Concretely</strong> (assuming $X$ affine, so global sections suffice): a class in $H^n_{\mathrm{dR}}(X, Y)$ is represented by a pair
+</p>
+$$\omega_X \in \Omega^n_X(X) \quad \text{with} \quad d\omega_X = 0,$$<p>
+</p>
+$$\eta_Y \in \Omega^{n-1}_Y(Y) \quad \text{with} \quad \omega_X\big|_Y = d\eta_Y.$$<p>The map $[(\omega_X, \eta_Y)] \mapsto [\omega_X]$ (forgetting $\eta_Y$) fits into the long exact sequence by design:
+</p>
+$$\cdots \longrightarrow H^{n-1}_{\mathrm{dR}}(Y) \longrightarrow H^n_{\mathrm{dR}}(X, Y) \longrightarrow H^n_{\mathrm{dR}}(X) \longrightarrow H^n_{\mathrm{dR}}(Y) \longrightarrow \cdots$$<hr>
+<h2 id="example-">Example: $X = \mathbb{A}^1_\mathbb{Q} \setminus \{0\}$, $Y = \{1, 2\}$</h2>
+<p>Take $X = \mathrm{Spec}(\mathbb{Q}[x, x^{-1}])$ (which is the right setting for $\frac{dx}{x}$) and $Y = \{1, 2\} = \{(x-1)(x-2) = 0\}$.</p>
+<p><strong>De Rham computation.</strong> The total complex of $i^*$ is:
+</p>
+$$\mathbb{Q}[x, x^{-1}] \longrightarrow \mathbb{Q}[x, x^{-1}]\,dx \;\oplus\; \mathbb{Q} \oplus \mathbb{Q}$$<p>
+</p>
+$$P \longmapsto \bigl(P'(x)\,dx,\; P(1),\; P(2)\bigr)$$<p>
+(restriction to $Y$ is just evaluation; the rest of the complex is zero). Thus $H^*_{\mathrm{dR}}(X, Y)$ is the cohomology of this map. We find the <strong>cokernel</strong> (things not in the image):</p>
+<ul>
+<li>$\bigl(\frac{dx}{x}, 0, 0\bigr)$: certainly not in the image, since the logarithm is not algebraic.</li>
+<li>$(0, 1, 0)$: not in the image either — if $P' = 0$ then $P$ is constant, so $P(1)$ must equal $P(2)$.</li>
+</ul>
+<p>These two are linearly independent in the cokernel.</p>
+<p><strong>Exercise.</strong> Show that they form a basis.</p>
+<p>Moreover, $(0, 1, 0)$ defines the <strong>same class</strong> as $\bigl(\frac{dx}{x}, 0, 0\bigr)$. Indeed, their difference
+</p>
+$$\left(\frac{dx}{x}, 0, 0\right) - (0, 1, 0) = \left(\frac{dx}{x}, -1, 0\right)$$<p>
+lies in the image: we need $P$ with $P' = 1$, $P(1) = -1$, $P(2) = 0$. Since $P' = 1 \Rightarrow P = x + c$, the system $1 + c = -1$, $2 + c = 0$ gives $c = -2$. So it is the image of $P(x) = x - 2$. Therefore:
+</p>
+$$H^1_{\mathrm{dR}}\!\left(\mathbb{A}^1_\mathbb{Q} \setminus \{0\},\; \{1,2\}\right) = \mathbb{Q}\bigl[dx\bigr] \oplus \mathbb{Q}\!\left[\tfrac{dx}{x}\right].$$<p><strong>Betti computation.</strong> We have $X(\mathbb{C}) = \mathbb{C}^*$ and $Y(\mathbb{C}) = \{1, 2\}$. The relevant piece of the long exact sequence is:
+</p>
+$$0 \to H^B_1(X) \to H^B_1(X, Y) \xrightarrow{\partial} H^B_0(Y) \to H^B_0(X) \to 0$$<p>
+</p>
+$$\| \qquad\qquad\quad \| \qquad\qquad\qquad\quad \| \qquad\qquad\quad \|$$<p>
+</p>
+$$\mathbb{Q}\cdot\gamma \qquad \bullet\!\to\!\bullet \qquad\quad \mathbb{Q} \oplus \mathbb{Q} \xrightarrow{\mathrm{sum}} \mathbb{Q}$$<p>The two generators of $H^B_1(X, Y)$ are: $\gamma$ (the loop $|x|=1$ around $0$) and the path from $1$ to $2$.</p>
+<p><strong>Period matrix.</strong> Integrating the two de Rham classes against the two Betti classes:</p>
+$$\begin{array}{c|cc}
+ & dx & \dfrac{dx}{x} \\[6pt]
+\hline
+[1 \to 2] & 1 & \log 2 \\[6pt]
+\gamma & 0 & 2\pi i
+\end{array}$$<p><strong>Theorem.</strong> There is a comparison isomorphism
+</p>
+$$H^*_{\mathrm{dR}}(X, Y) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X, Y) \otimes_\mathbb{Q} \mathbb{C},$$<p>
+dual to the relative period pairing:
+</p>
+$$[(\omega_X, \eta_Y)] \otimes [\sigma_X] \longmapsto \int_{\sigma_X} \omega_X + \int_{\partial \sigma_X} \eta_Y.$$<p><strong>Remark.</strong> This is still not enough in general: we need to extend to the case where $Y$ is not smooth, but merely has <strong>simple normal crossing</strong> (s.n.c.) singularities. (This is needed precisely because the compactification used in the proof of the comparison isomorphism only produces s.n.c. divisors.)</p>
+<hr>
+<h2 id="the-final-definition-of-a-period">The (Final) Definition of a Period</h2>
+<p><strong>Definition.</strong> A <strong>period</strong> is a coefficient of the comparison isomorphism for some $H^n(X, Y)$ over $k \subset \overline{\mathbb{Q}}$, where $X$ is smooth and $Y$ is a simple normal crossing divisor.</p>
+<p><strong>Goal.</strong> Attach to any period a <strong>motivic Galois group</strong>. This requires understanding <strong>all algebraic relations</strong> between periods. That is: given periods $p_1, \ldots, p_r$, find all $Q \in \overline{\mathbb{Q}}[x_1, \ldots, x_r]$ with $Q(p_1, \ldots, p_r) = 0$.</p>
+<p><strong>Remark.</strong> It is enough to understand <strong>equality</strong> between periods. Indeed, periods form a $\overline{\mathbb{Q}}$-algebra (closed under $+$ and $\cdot$, containing $\overline{\mathbb{Q}}$), so any polynomial relation reduces to checking whether a given period equals zero.</p>
+<p><strong>Key point: Künneth formula.</strong> For both cohomologies (both de Rham and Betti, when not stated otherwise):
+</p>
+$$H^*(X_1, Y_1) \otimes H^*(X_2, Y_2) \simeq H^*\!\left(X_1 \times X_2,\; (Y_1 \times X_2) \cup (X_1 \times Y_2)\right).$$<p>Thus we just need to understand <strong>equality</strong> of periods. There are <strong>three sources of relations</strong>:</p>
+<ol>
+<li>
+<p><strong>Bilinearity of the period pairing:</strong> integrating over a sum of cycles is the sum of the integrals, both over cycles and over forms.</p>
+</li>
+<li>
+<p><strong>Change of variables:</strong> for a morphism $f: X \to X'$,
+</p>
+$$\int_\sigma f^*\omega = \int_{f_*\sigma} \omega.$$</li>
+<li>
+<p><strong>Stokes' formula:</strong>
+</p>
+$$\int_\sigma d\omega = \int_{\partial\sigma} \omega.$$<p>
+Note: in the relative context, $\partial\sigma$ is no longer necessarily zero.</p>
+</li>
+</ol>
+<p><strong>Conjecture (Kontsevich–Zagier).</strong> Any relation between periods follows from these three.</p>
+<p>In other words: if you have an equality between two periods, you can derive it by applying only these three types of relations. This will be made more formal later.</p>
+<hr>
+<h2 id="ii-nori-motives">II. Nori Motives</h2>
+<p>Inspired by the Kontsevich–Zagier conjecture, Nori's construction gives one of the ways to define motives. The key feature is that we can define the <strong>motivic Galois group unconditionally</strong>; the conjecture then implies that it acts on periods (on all of them). Conjecturally, these groups are the Galois group of periods in a precise sense.</p>
+<h3 id="quivers-and-representations">Quivers and Representations</h3>
+<p><strong>Definition.</strong> A <strong>quiver</strong> is a directed graph — think of it as a category <em>without composition</em> (composition will be added later).</p>
+<p><strong>Definition.</strong> A <strong>representation</strong> of a quiver $Q$ is a functor $\rho: Q \to \mathrm{Vect}_\mathbb{Q}$: to each vertex a vector space, and to each arrow a linear map.</p>
+<h3 id="the-endomorphism-algebra">The Endomorphism Algebra</h3>
+<p>Given a representation $\rho: Q \to \mathrm{Vect}_\mathbb{Q}$, define:
+</p>
+$$\mathrm{End}(\rho) = \varprojlim_{\substack{Q_0 \subseteq Q \\ \text{finite}}} \mathrm{End}\!\left(\rho\big|_{Q_0}\right),$$<p>
+where the limit runs over all finite sub-quivers $Q_0$. This is a $\mathbb{Q}$-algebra with a natural <strong>topology</strong> inherited as a limit of finite-dimensional algebras.</p>
+<p>For a fixed finite $Q_0$, we define:
+</p>
+$$\mathrm{End}\!\left(\rho\big|_{Q_0}\right) = \left\{(e_q)_{q \in Q_0} \in \prod_{q \in Q_0} \mathrm{End}(\rho(q)) \;\middle|\; \text{compatible}\right\},$$<p>
+where compatible means: for every arrow $f: q \to q'$ in $Q_0$, the diagram
+</p>
+$$\begin{array}{ccc}
+\rho(q) & \xrightarrow{\rho(f)} & \rho(q') \\
+e_q \downarrow & & \downarrow e_{q'} \\
+\rho(q) & \xrightarrow{\rho(f)} & \rho(q')
+\end{array}$$<p>
+commutes. Therefore $\mathrm{End}(\rho)$ is a <strong>pro-finite-dimensional</strong> $\mathbb{Q}$-algebra.</p>
+<p><strong>Definition.</strong> $\langle Q, \rho \rangle$ is the category of finite-dimensional $\mathbb{Q}$-vector spaces with a <strong>continuous action</strong> of $\mathrm{End}(\rho)$.</p>
+<p>An object of $\langle Q, \rho \rangle$ is a vector space $V$ together with a ring map $\mathrm{End}(\rho) \to \mathrm{End}(V)$ that factors through $\mathrm{End}(\rho|_{Q_0})$ for some finite $Q_0$ — i.e., the action is continuous for the profinite topology. There are natural &quot;functors&quot; assembling into:
+</p>
+$$Q \xrightarrow{\rho} \mathrm{Vect}_\mathbb{Q} \qquad \text{and} \qquad Q \to \langle Q, \rho \rangle \xrightarrow{\text{forgetful}} \mathrm{Vect}_\mathbb{Q}, \quad q \mapsto \rho(q).$$<p><strong>Proposition (Nori) — Universal property.</strong> The construction $\langle Q, \rho \rangle$ is universal: whenever $\mathcal{A}$ is a $\mathbb{Q}$-linear abelian category and $\beta: \mathcal{A} \to \mathrm{Vect}_\mathbb{Q}$ is a $\mathbb{Q}$-linear exact faithful functor, any factorization of $\rho$ through $\mathcal{A}$ induces a unique (up to unique isomorphism) functor $\langle Q, \rho \rangle \to \mathcal{A}$:
+</p>
+$$\begin{array}{ccc}
+& & \mathcal{A} \\
+& \nearrow & \downarrow \beta \\
+Q & \xrightarrow{\rho} & \mathrm{Vect}_\mathbb{Q}
+\end{array}$$<h3 id="the-nori-quiver">The Nori Quiver $Q(k)$</h3>
+<p>We apply the above to the specific quiver $Q(k)$:</p>
+<p><strong>Vertices:</strong> symbols $[X, Y, n, i]$ where $X$ is a variety over $k$, $Y \subset X$ is closed, and $n, i \in \mathbb{Z}$ (with $n$ the cohomological degree and $i$ the Tate twist). Morally, the vertex $[X, Y, n, i]$ corresponds to $H^n(X, Y)$ with Tate twist $(i)$.</p>
+<p><strong>Arrows</strong> (three types, each inspired by one of the three sources of relations):</p>
+<ul>
+<li>
+<p><strong>Type (a):</strong> For every morphism $h: X \to X'$ with $h(Y) \subset Y'$, a functoriality arrow:
+</p>
+$$[X', Y', n, i] \xrightarrow{h^*} [X, Y, n, i].$$</li>
+<li>
+<p><strong>Type (b):</strong> For every $Z \subset Y \subset X$ closed, a connecting homomorphism:
+</p>
+$$[Y, Z, n-1, i] \xrightarrow{\partial} [X, Y, n, i].$$</li>
+<li>
+<p><strong>Type (c):</strong> For every $Y \subset X$ closed, a Tate/Künneth arrow:
+</p>
+$$\left[X \times \mathbb{G}_m,\; (Y \times \mathbb{G}_m) \cup (X \times \{1\}),\; n+1,\; i+1\right] \longrightarrow [X, Y, n, i].$$</li>
+</ul>
+<h3 id="the-quiver-representation">The Quiver Representation $\rho_B$</h3>
+<p>The <strong>Betti representation</strong> is:
+</p>
+$$\rho_B: Q(k) \longrightarrow \mathrm{Vect}_\mathbb{Q}, \qquad [X, Y, n, i] \longmapsto H^n_B(X, Y)(i),$$<p>
+where the <strong>Tate twist</strong> $(i)$ means tensoring $(-i)$ times with
+</p>
+$$H^1_B(\mathbb{G}_m) \simeq H^1_B(\mathbb{G}_m, \{1\}) = \mathbb{Q}(-1).$$<p>
+Concretely: for $i > 0$, tensor $i$ times; for $i < 0$, tensor $(-i)$ times with the dual.</p>
+<p>The arrows are mapped as follows:</p>
+<ul>
+<li><strong>(a):</strong> $H^n_B(X', Y')(i) \xrightarrow{h^*} H^n_B(X, Y)(i)$.</li>
+<li><strong>(b):</strong> $H^{n-1}_B(Y, Z)(i) \xrightarrow{\partial} H^n_B(X, Y)(i)$.</li>
+<li><strong>(c):</strong> By the Künneth formula:
+$$H^{n+1}_B\!\bigl(X \times \mathbb{G}_m,\; (Y \times \mathbb{G}_m) \cup (X \times \{1\})\bigr)(i+1) \;=\; \bigoplus_{a+b=n+1} H^a_B(X,Y) \otimes H^b_B(\mathbb{G}_m, 1) \cdot (i+1).$$
+Since $H^b_B(\mathbb{G}_m, 1) = 0$ for $b \neq 1$ and $= H^1_B(\mathbb{G}_m)$ for $b = 1$ (because $\mathbb{G}_m = \mathbb{C}^*$ is connected, so $H^0 \simeq \mathbb{Q}$, and taking the relative group with respect to $\{1\}$ kills it), this collapses to $\simeq H^n_B(X, Y)(i)$, giving the required isomorphism.</li>
+</ul>
+<h3 id="the-category-of-nori-motives">The Category of Nori Motives</h3>
+<p>To have a category with duals, one formally introduces the dual via the Tate twist (the sign convention $-i$ in the twist). Then:</p>
+<p><strong>Definition (Nori Motives).</strong> The <strong>category of Nori motives</strong> over $k$ is
+</p>
+$$M(k) = \langle Q(k),\; \rho_B \rangle.$$<p><strong>Remark.</strong> $M(k)$ is an abelian category. A Nori motive &quot;is&quot; a $H^n_B(X, Y)(i)$, or whatever one can obtain from these by taking kernels, cokernels, and extensions.</p>
+<p>We will see informally that $M(k)$ has a tensor product $\otimes$, making it equivalent to the category of representations of a pro-algebraic group — the <strong>motivic Galois group</strong>.</p>
+<h3 id="relation-with-voevodsky-motives">Relation with Voevodsky Motives</h3>
+<p>There exists a functor from the derived category $D^b(M(k))$ to Voevodsky's triangulated category of motives $DM(k)$, and conjecturally this functor is an equivalence. So Voevodsky motives should be the derived category of Nori motives.</p>
+
+    
+  </article>
+
+  
+  
+
+<div id="sharingbuttons">
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+  <div class="paginator">
+    
+    <a class="link" href="https://mortad3lla.github.io/posts/exponential_motives_lesson1/" title="Exponential Motives — Lesson I"><span class="arrow-icon">🢠</span> Prev</a>
+    
+    
+    <a class="link" href="https://mortad3lla.github.io/posts/exponential_motives_lesson3/" title="Exponential Motives — Lesson III">Next <span class="arrow-icon">🢡</span></a>
+    
+  </div>
+  
+  <div class="comment">
+    
+    
+    
+    <script src="https://giscus.app/client.js"
+        data-repo="yunhaixiang/yhmath"
+        data-repo-id="R_kgDOQj059g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOQj059s4CzenA"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="gruvbox"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  </div>
+  
+  
+</main>
+
+    <footer id="footer">
+  
+  <div>
+    <span>Copyright © 2026 Filippo Belfiori</span>
+  </div>
+</footer>
+
+<script src="https://mortad3lla.github.io/js/math-env.js"></script>
+
+  </div>
+
+  
+  <script src='https://mortad3lla.github.io/js/script.js' defer></script>
+
+  
+  
+
+  
+  
+
+  
+  
+
+</body>
+
+</html>
+
+<script src="https://mortad3lla.github.io/js/collapsible.js" defer></script>
+<script src="https://mortad3lla.github.io/js/mobile-ol-markers.js" defer></script>
