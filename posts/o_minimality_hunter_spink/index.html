@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-us" style="font-size: 105%">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <meta name="author" content="Filippo Belfiori">
+
+  
+  
+  <meta name="description" content="Based on a YouTube lecture by Hunter Spink. These are informal introductory notes; we do not worry about the details of model theory but focus on the ideas and tools usable in algebraic geometry.
+
+I. Motivation
+Algebraic geometry studies sets you can write down using $&#43;$ and $\times$: from these two operations you get all polynomials, and the collection $\{&#43;, \times\}$ is naturally associated to fields.
+Question. What if I look at sets defined not just with polynomials, but also using $\sin$, $\cos$, $\exp$, $\log$, ...?">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://mortad3lla.github.io//images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://mortad3lla.github.io//images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://mortad3lla.github.io//images/favicon-16x16.png">
+
+  
+  
+  <meta name="keywords" content='hugo latex theme blog texify texify2 texify3 michael neuper'>
+  
+
+  
+  
+  <link rel="stylesheet" href='https://mortad3lla.github.io/katex/katex.min.css'>
+<script defer defer src='https://mortad3lla.github.io/katex/katex.min.js'></script>
+<script defer src='https://mortad3lla.github.io/katex/contrib/auto-render.min.js'></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+  
+
+  
+  
+
+  
+  <meta property="og:url" content="https://mortad3lla.github.io/posts/o_minimality_hunter_spink/">
+  <meta property="og:site_name" content="Filippo Belfiori">
+  <meta property="og:title" content="Examples of O-minimality in Algebraic Geometry">
+  <meta property="og:description" content="Based on a YouTube lecture by Hunter Spink. These are informal introductory notes; we do not worry about the details of model theory but focus on the ideas and tools usable in algebraic geometry.
+I. Motivation Algebraic geometry studies sets you can write down using $&#43;$ and $\times$: from these two operations you get all polynomials, and the collection $\{&#43;, \times\}$ is naturally associated to fields.
+Question. What if I look at sets defined not just with polynomials, but also using $\sin$, $\cos$, $\exp$, $\log$, ...?">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-14T00:00:00+00:00">
+
+
+  
+  <link rel="canonical" href="https://mortad3lla.github.io/posts/o_minimality_hunter_spink/">
+
+  
+  
+  
+  <meta itemprop="name" content="Examples of O-minimality in Algebraic Geometry">
+  <meta itemprop="description" content="Based on a YouTube lecture by Hunter Spink. These are informal introductory notes; we do not worry about the details of model theory but focus on the ideas and tools usable in algebraic geometry.
+I. Motivation Algebraic geometry studies sets you can write down using $&#43;$ and $\times$: from these two operations you get all polynomials, and the collection $\{&#43;, \times\}$ is naturally associated to fields.
+Question. What if I look at sets defined not just with polynomials, but also using $\sin$, $\cos$, $\exp$, $\log$, ...?">
+  <meta itemprop="datePublished" content="2026-03-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-03-14T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1910">
+
+  
+  
+  
+    <link rel="stylesheet" href="https://mortad3lla.github.io/css/common.min.861fcd7d94c0b4dbf0e9e70d96940dec8eb63a61695188041a92eb7c10290679.css" integrity="sha256-hh/NfZTAtNvw6ecNlpQN7I62OmFpUYgEGpLrfBApBnk=" crossorigin="anonymous">
+  
+
+  
+  
+    <link rel="stylesheet" href="https://mortad3lla.github.io/css/content.min.387e0600ad454285e14579a443ef8d74c65694968d90ef5ec785e6ae23f8355a.css" integrity="sha256-OH4GAK1FQoXhRXmkQ&#43;&#43;NdMZWlJaNkO9ex4XmriP4NVo=" crossorigin="anonymous">
+  
+
+  
+  
+  <title>Examples of O-minimality in Algebraic Geometry - Filippo Belfiori</title>
+  
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Examples of O-minimality in Algebraic Geometry">
+  <meta name="twitter:description" content="Based on a YouTube lecture by Hunter Spink. These are informal introductory notes; we do not worry about the details of model theory but focus on the ideas and tools usable in algebraic geometry.
+I. Motivation Algebraic geometry studies sets you can write down using $&#43;$ and $\times$: from these two operations you get all polynomials, and the collection $\{&#43;, \times\}$ is naturally associated to fields.
+Question. What if I look at sets defined not just with polynomials, but also using $\sin$, $\cos$, $\exp$, $\log$, ...?">
+
+
+  
+
+
+  <link rel="stylesheet" href="https://mortad3lla.github.io/css/single.min.5a34175f01232dd3f8c27e4152be883054a1cc64ad41473a90a97073d77b2ad0.css" integrity="sha256-WjQXXwEjLdP4wn5BUr6IMFShzGStQUc6kKlwc9d7KtA=" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://mortad3lla.github.io/css/single.min.78a121b7d7a160420f9daab0ea13add66c37b9c44f27bba07b27207e2b0975d2.css" integrity="sha256-eKEht9ehYEIPnaqw6hOt1mw3ucRPJ7ugeycgfisJddI=" crossorigin="anonymous">
+
+
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/style.css" />
+
+</head>
+
+<body>
+  <div id="wrapper">
+    
+
+
+<header id="header">
+  <h1>
+    <a href="https://mortad3lla.github.io/">Filippo Belfiori</a>
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle theme">
+        <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
+        <path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/>
+        </svg>
+    </button>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-binoculars-icon lucide-binoculars">
+<path fill="none" d="M10 10h4"/>
+<path fill="none" d="M19 7V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/>
+<path fill="none" d="M20 21a2 2 0 0 0 2-2v-3.851c0-1.39-2-2.962-2-4.829V8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2z"/>
+<path fill="none" d="M 22 16 L 2 16"/>
+<path fill="none" d="M4 21a2 2 0 0 1-2-2v-3.851c0-1.39 2-2.962 2-4.829V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2z"/>
+<path fill="none" d="M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/research/">Research</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-heart-icon lucide-file-heart">
+<path fill="none" d="M13 22h5a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v7"/>
+<path fill="none" d="M14 2v5a1 1 0 0 0 1 1h5"/>
+<path fill="none" d="M3.62 18.8A2.25 2.25 0 1 1 7 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a1 1 0 0 1-1.507 0z"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/publications/">Publications</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-type-icon lucide-book-type">
+<path fill="none" d="M10 13h4"/>
+<path fill="none" d="M12 6v7"/>
+<path fill="none" d="M16 8V6H8v2"/>
+<path fill="none" d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/teaching/">Teaching</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-user-icon lucide-file-user">
+<path fill="none" d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/>
+<path fill="none" d="M14 2v5a1 1 0 0 0 1 1h5"/>
+<path fill="none" d="M16 22a4 4 0 0 0-8 0"/><circle cx="12" cy="15" r="3"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/curriculum/">CV</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,11H16a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm0,4H16a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2ZM11,9h6a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2ZM21,3H7A1,1,0,0,0,6,4V7H3A1,1,0,0,0,2,8V18a3,3,0,0,0,3,3H18a4,4,0,0,0,4-4V4A1,1,0,0,0,21,3ZM6,18a1,1,0,0,1-2,0V9H6Zm14-1a2,2,0,0,1-2,2H7.82A3,3,0,0,0,8,18V5H20Zm-9-4h1a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2Zm0,4h1a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2Z"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/posts/">Blog</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
+<path d="M10.07031,20.50291a1.00008,1.00008,0,0,0-1.18115-.9834c-1.30908.24024-2.96191.27637-3.40137-.958a5.70754,5.70754,0,0,0-1.83691-2.415,1.20073,1.20073,0,0,1-.1665-.10938,1,1,0,0,0-.93067-.64551H2.54883a.99965.99965,0,0,0-1,.99512c-.00391.81543.811,1.33789,1.1416,1.51465a4.4408,4.4408,0,0,1,.92383,1.35937c.36426,1.02344,1.42285,2.57617,4.46582,2.376.001.03516.00195.06836.00244.09863l.00439.26758a1,1,0,0,0,2,0l-.00488-.31836C10.07715,21.4951,10.07031,21.22068,10.07031,20.50291Zm10.667-15.126c.03174-.125.063-.26367.09034-.41992a6.27792,6.27792,0,0,0-.40821-3.293,1.002,1.002,0,0,0-.61572-.58007c-.356-.12012-1.67041-.35645-4.18408,1.25a13.86918,13.86918,0,0,0-6.354,0C6.76221.751,5.45459.9658,5.10205,1.07908a.99744.99744,0,0,0-.63135.584,6.3003,6.3003,0,0,0-.40332,3.35644c.02442.12793.05078.2461.07813.35449A6.26928,6.26928,0,0,0,2.89014,9.20311a8.42168,8.42168,0,0,0,.04248.92187c.334,4.60254,3.334,5.98438,5.42431,6.459-.04345.125-.083.25878-.11816.40039a1.00023,1.00023,0,0,0,1.94238.47851,1.6784,1.6784,0,0,1,.46778-.87793.99947.99947,0,0,0-.5459-1.74512c-3.4541-.39453-4.95362-1.80175-5.1792-4.89843a6.61076,6.61076,0,0,1-.03369-.73828,4.25769,4.25769,0,0,1,.91943-2.71289,3.022,3.022,0,0,1,.1958-.23145.99988.99988,0,0,0,.188-1.02441,3.3876,3.3876,0,0,1-.15527-.55567A4.09356,4.09356,0,0,1,6.1167,3.06346a7.54263,7.54263,0,0,1,2.415,1.17968,1.00877,1.00877,0,0,0,.82764.13282,11.77716,11.77716,0,0,1,6.17285.001,1.00549,1.00549,0,0,0,.83056-.13769,7.572,7.572,0,0,1,2.40528-1.19043,4.03977,4.03977,0,0,1,.0874,1.57812,3.205,3.205,0,0,1-.16895.60743.9999.9999,0,0,0,.188,1.02441c.07715.08691.1543.18066.22363.26855A4.12186,4.12186,0,0,1,20,9.20311a7.03888,7.03888,0,0,1-.0376.77734c-.22021,3.05566-1.72558,4.46387-5.1958,4.85937a1,1,0,0,0-.54541,1.7461,1.63079,1.63079,0,0,1,.46631.9082,3.06079,3.06079,0,0,1,.09229.81934v2.334C14.77,21.2949,14.77,21.78025,14.77,22.00291a1,1,0,1,0,2,0c0-.2168,0-.69238.00977-1.33984V18.31346a4.8815,4.8815,0,0,0-.15479-1.31153,4.25638,4.25638,0,0,0-.11621-.416,6.51258,6.51258,0,0,0,5.44531-6.42383A8.69677,8.69677,0,0,0,22,9.20311,6.13062,6.13062,0,0,0,20.7373,5.37693Z"/></svg>
+</span>
+      
+      <a class="link" href="https://github.com/mortad3lla">GitHub</a>
+    </span>
+    
+  </nav>
+</header>
+<hr class="head-rule"></hr>
+    
+<main id="main" class="post">
+  
+  <div class="post-heading">
+    <h1 class="post-title">Examples of O-minimality in Algebraic Geometry</h1>
+    <div class="publish-metadata">
+      
+      <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      14 March 2026
+      
+      
+        &nbsp;
+        <span>
+          <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          1910 words
+        </span>
+      
+      
+      
+        
+      
+      
+        &nbsp;
+        <span>
+          <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          ~9 mins
+        </span>
+      
+    </div>
+  </div>
+
+
+  
+  <details>
+    <summary>
+      <b>Table of Contents</b>
+    </summary>
+    <div class="toc numbered-subtitles"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#i-motivation">I. Motivation</a></li>
+    <li><a href="#ii-definable-sets">II. Definable Sets</a>
+      <ul>
+        <li><a href="#the-language">The language</a></li>
+        <li><a href="#definition">Definition</a></li>
+        <li><a href="#examples-with">Examples with </a></li>
+      </ul>
+    </li>
+    <li><a href="#iii-o-minimality">III. O-minimality</a>
+      <ul>
+        <li><a href="#what-does-this-constraint-rule-out">What does this constraint rule out?</a></li>
+        <li><a href="#known-o-minimal-structures">Known o-minimal structures</a></li>
+      </ul>
+    </li>
+    <li><a href="#iv-the-uniform-boundedness-theorem">IV. The Uniform Boundedness Theorem</a></li>
+    <li><a href="#v-first-application-khovanskiis-fewnomial-theorem">V. First Application: Khovanskii's Fewnomial Theorem</a>
+      <ul>
+        <li><a href="#setup">Setup</a></li>
+        <li><a href="#proof-via-o-minimality">Proof via o-minimality</a></li>
+      </ul>
+    </li>
+    <li><a href="#vi-second-application-pilawilkie-point-counting">VI. Second Application: Pila–Wilkie Point Counting</a>
+      <ul>
+        <li><a href="#setup-1">Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#vii-application-of-pilawilkie-multiplicative-maninmumford">VII. Application of Pila–Wilkie: Multiplicative Manin–Mumford</a>
+      <ul>
+        <li><a href="#statement">Statement</a></li>
+        <li><a href="#reformulation">Reformulation</a></li>
+        <li><a href="#proof-via-pilawilkie">Proof via Pila–Wilkie</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+  <article class="content numbered-subtitles">
+    
+    <p><em>Based on a YouTube lecture by Hunter Spink. These are informal introductory notes; we do not worry about the details of model theory but focus on the ideas and tools usable in algebraic geometry.</em></p>
+<hr>
+<h2 id="i-motivation">I. Motivation</h2>
+<p><strong>Algebraic geometry</strong> studies sets you can write down using $+$ and $\times$: from these two operations you get all polynomials, and the collection $\{+, \times\}$ is naturally associated to fields.</p>
+<p><strong>Question.</strong> What if I look at sets defined not just with polynomials, but also using $\sin$, $\cos$, $\exp$, $\log$, ...?</p>
+<p><strong>Idea.</strong> Model theorists identified the <em>weakest</em> condition on a collection of functions $\mathcal{F}$ that prevents you from creating &quot;bad&quot; sets when you add those functions to your language. &quot;Bad&quot; means: a Cantor set, infinitely many connected components, or a set that is not a piecewise differentiable manifold. The key insight is that the right condition ensures <strong>nothing bad can be created at all</strong>.</p>
+<p>Grothendieck was the first to ask: &quot;Why can't I use $\exp$, $\sin$, $\cos$, ... in geometry?&quot; Nowadays this question has many answers, and o-minimality provides the framework.</p>
+<hr>
+<h2 id="ii-definable-sets">II. Definable Sets</h2>
+<h3 id="the-language">The language</h3>
+<p>Fix a collection of functions $\mathcal{F} = \{+, \times, f_1, \ldots, f_k\}$ where each $f_i : \mathbb{R}^{n_i} \to \mathbb{R}$. Taking $\mathcal{F} = \{+, \times\}$ gives polynomials; in general $\mathcal{F}$ can be any collection.</p>
+<p><em>Remark.</em> The quantifiers $\exists$ and $\forall$ allow us to express the concepts of continuity and differentiability (think of the $\varepsilon$-$\delta$ definition from analysis).</p>
+<h3 id="definition">Definition</h3>
+<p>A set $S \subset \mathbb{R}^n$ is <strong>$\mathcal{F}$-definable</strong> if there exists a first-order formula $\phi(x_1, \ldots, x_n)$ such that
+</p>
+$$S = S_\phi := \{(x_1, \ldots, x_n) \mid \phi(x_1, \ldots, x_n) \text{ is true}\}.$$<p>A formula $\phi$ is built from the following ingredients:</p>
+<p><strong>Terms</strong> (the &quot;nouns&quot;): constants, parentheses, variables, and arbitrary compositions of functions in $\mathcal{F}$, e.g. $f_1(x_2 + f_2(x_1), \sqrt{2})$.</p>
+<p><strong>Atomic predicates</strong>: $<$, $=$, $>$. Combined with terms, these produce atomic statements such as $f_1(x_2 + f_2(x_1), \sqrt{2}) > f_3(0)$.</p>
+<p><strong>Logical connectives</strong>: $\lnot$, $\lor$, $\land$, $\to$, $\leftrightarrow$, etc., which combine atomic statements, e.g. $f_1(\cdots) > f_3(0)$ or $f_4(x_1) = f_5(x_2)$.</p>
+<p><strong>Quantifiers</strong>: $\exists x \in \mathbb{R}$ and $\forall x \in \mathbb{R}$, e.g.:
+</p>
+$$\exists\, z \in \mathbb{R} \text{ s.t. } \bigl(f_1(x_2 + f_2(x_1), \sqrt{2}) > f_3(0)\bigr) \text{ or } \bigl(f_4(x_1, z) = f_5(z)\bigr).$$<p><strong>Example.</strong> With $\mathcal{F} = \{+, \times\}$, the unit circle is definable: it is $S_\phi$ for the formula $\phi(x,y) \equiv (x^2 + y^2 = 1)$.</p>
+<h3 id="examples-with">Examples with $\mathcal{F} = \{+, \times, \exp_\mathbb{R}\}$</h3>
+<p>The following are all $\mathcal{F}$-definable sets, illustrating how quantifiers let us build new functions from $\exp$ alone:</p>
+<p><strong>Graph of a composition:</strong>
+</p>
+$$\{(x,y) \in \mathbb{R}^2 \mid y = e^{e^x(x^2+5x+6)}\} \subset \mathbb{R}^2.$$<p><strong>A level set with inequality</strong> (using $\leq$, which we can write as $< $ or $=$):
+</p>
+$$\{(x,y) \in \mathbb{R}^2 \mid e^x + e^y \leq 4\} \subset \mathbb{R}^2, \qquad \text{formula: } e^x + e^y = 4 \text{ or } e^x + e^y < 4.$$<p><strong>An image</strong> (using $\exists$):
+</p>
+$$\mathrm{Im}(e^{yz})\big|_{y + e^z = 4} \subset \mathbb{R}, \qquad \text{formula: } \exists\, y, z \in \mathbb{R} \text{ s.t. } y + e^z = 4 \text{ and } x = e^{yz}.$$<p><strong>Graph of $e^{(\log x)^2}$</strong> (recovering $\log$ via $\exists$):
+</p>
+$$\{(x,y) \in \mathbb{R}^2 \mid y = e^{(\log x)^2}\} \subset \mathbb{R}^2, \qquad \text{formula: } \exists\, z \in \mathbb{R} \text{ s.t. } (e^z = x \text{ and } y = e^{z^2}).$$<p>
+Using $\exists z$ with $e^z = x$ is how we <em>define</em> $z = \log x$ without adding $\log$ as a primitive.</p>
+<p><em>Remark.</em> The definable sets for $\mathcal{F} = \{\exp\}$ and $\mathcal{F} = \{\exp, \log\}$ are <strong>identical</strong>: $\log$ is already definable from $\exp$ via a quantifier.</p>
+<p><strong>Power functions</strong> are now available: $\{(x,y) \mid y = 5x^\pi\}$ is definable because $5x^\pi = 5 \cdot e^{\pi \log x}$, a composition of $\exp$, $\log$, and constants.</p>
+<hr>
+<h2 id="iii-o-minimality">III. O-minimality</h2>
+<p><strong>Definition.</strong> $\mathcal{F}$ is <strong>o-minimal</strong> if every $\mathcal{F}$-definable subset of $\mathbb{R}$ is a <strong>finite union of points and intervals</strong> (possibly open, closed, or unbounded on either end).</p>
+<p>The key word is <em>finite</em>. This is a condition only on subsets of $\mathbb{R}$, but as we will see it has powerful consequences in all dimensions.</p>
+<h3 id="what-does-this-constraint-rule-out">What does this constraint rule out?</h3>
+<p><strong>Example: $\mathcal{F} = \{+, \times, \sin\}$ is NOT o-minimal.</strong> The set $S_{\sin(x)=0} = \pi\mathbb{Z} \subset \mathbb{R}$ is definable (formula: $\sin(x) = 0$), but it is not a finite union of points and intervals. Saying &quot;$\sin$ is not o-minimal&quot; is equivalent to saying: this structure cannot talk about periodic sets without running into infinitely many connected components.</p>
+<p><strong>Example: $\mathcal{F} = \{+, \times\}$ IS o-minimal</strong> — this is the <strong>Tarski–Seidenberg theorem</strong>. For every formula $\phi$, there exists a quantifier-free formula $\psi$ (not involving $\exists x \in \mathbb{R}$ or $\forall x \in \mathbb{R}$) such that $S_\phi = S_\psi$. This is <strong>quantifier elimination</strong> for real closed fields, and it implies that every definable subset of $\mathbb{R}$ is a finite union of points and open intervals.</p>
+<p>As an example of quantifier elimination: $S_{(\exists\, y, z \mid (y-1)^2 + z^2 = x)} = \mathrm{Im}((y-1)^2 + z^2) = (0, +\infty) = S_{0 < x}$.</p>
+<h3 id="known-o-minimal-structures">Known o-minimal structures</h3>
+<p>$\mathcal{F} = \{+, \times, \exp_\mathbb{R}\}$ <strong>is o-minimal</strong> — this is a deep theorem requiring hard analysis and model theory.</p>
+<p>$\mathcal{F} = \{+, \times, \exp_\mathbb{R},\, \sin\big|_{[0,2\pi]},\, \cos\big|_{[0,2\pi]}\}$ <strong>is o-minimal</strong> — restricting $\sin$ and $\cos$ to a compact interval removes the periodicity that caused problems above.</p>
+<p>The <strong>largest known o-minimal structure</strong> is the &quot;Pfaffian closure&quot; or &quot;restricted analytic functions.&quot;</p>
+<hr>
+<h2 id="iv-the-uniform-boundedness-theorem">IV. The Uniform Boundedness Theorem</h2>
+<p>The fundamental structural result of o-minimality is the following.</p>
+<p><strong>Theorem (Uniform Boundedness / Cell Decomposition).</strong> If $\mathcal{F}$ is o-minimal, then every definable set $S_\phi \subset \mathbb{R}^n$ is a <strong>finite Boolean combination of connected differentiable manifolds</strong>. Moreover, every $S_\phi$ is homeomorphic to a union of relative interiors of simplices in a finite simplicial complex — so no bad topology is possible.</p>
+<p>The deeper &quot;magic&quot; statement is:</p>
+<p><strong>For a fixed formula complexity $\mathrm{comp}(\phi) = $ (number of symbols in $\phi$, where constants count as 1 symbol), only finitely many homeomorphism types of simplicial complexes occur.</strong> In other words, the topology of $S_\phi$ is bounded purely by the length of the formula defining it, independently of the specific constants appearing.</p>
+<p><strong>Corollary 1.</strong> Every definable function is <strong>piecewise differentiable</strong>.</p>
+<p><strong>Corollary 2.</strong> If $S_\phi$ is a finite set of points, then $|S_\phi|$ is <strong>bounded above by a function of $\mathrm{comp}(\phi)$ alone</strong>. This corollary is key for applications.</p>
+<hr>
+<h2 id="v-first-application-khovanskiis-fewnomial-theorem">V. First Application: Khovanskii's Fewnomial Theorem</h2>
+<h3 id="setup">Setup</h3>
+<p>A polynomial in $m$ variables is written as:
+</p>
+$$f(x_1, \ldots, x_m) = \sum_{(i_1, \ldots, i_m) \in \mathrm{Supp}(f)} a_{i_1 \cdots i_m}\, x_1^{i_1} \cdots x_m^{i_m},$$<p>
+where $\mathrm{Supp}(f)$ denotes the set of <strong>multi-indices of non-zero coefficients</strong> (the support).</p>
+<p>Consider a system $\{f_1 = 0, \ldots, f_n = 0\}$ in $(\mathbb{R}_{>0})^n$ with finitely many solutions.</p>
+<p><strong>Bézout's theorem</strong> gives a bound on the number of solutions in terms of the degrees: $\#\text{solutions} \leq \prod_i \deg(f_i)$. But if the exponents are very large (high degree), this bound becomes terrible.</p>
+<p><strong>Claim:</strong> there exists a bound <strong>independent of the exponents</strong>, depending only on the sizes of the supports.</p>
+<p><strong>Theorem (Khovanskii's Fewnomial Theorem).</strong> If the system $\{f_1 = 0, \ldots, f_n = 0\}$ has finitely many solutions in $(\mathbb{R}_{>0})^n$, then the number of solutions is bounded by a function of $|\mathrm{Supp}(f_1)|, \ldots, |\mathrm{Supp}(f_n)|$ alone.</p>
+<h3 id="proof-via-o-minimality">Proof via o-minimality</h3>
+<p>The key observation is how to encode the system without increasing the number of symbols as the exponents grow. Note that:
+</p>
+$$x^2 + xy = e^{2\log x} + e^{\log x + \log y}, \qquad x^n + xyz = e^{n\log x} + e^{\log x + \log y + \log z}.$$<p>Even replacing 2 by $n$ (a large exponent), the <strong>number of symbols</strong> in the formula does not change — the exponent $n$ appears as a constant, which counts as 1 symbol. Rewriting the system using $\exp$ and $\log$:
+</p>
+$$\phi(x_1, \ldots, x_m)\colon \sum_{(i_1,\ldots,i_m)\in\mathrm{Supp}(f_1)} a_{i_1\cdots i_m}\, \exp(i_1\log x_1 + \cdots + i_m\log x_m) = 0 \quad \land \quad \cdots$$<p>The complexity $\mathrm{comp}(\phi)$ depends only on the number of non-zero coefficients $|\mathrm{Supp}(f_j)|$, not on the size of the exponents. By Corollary 2 above (and the fact that $\mathcal{F} = \{+, \times, \exp\}$ is o-minimal), the number of solutions is bounded by a function of $\mathrm{comp}(\phi)$, which is a function of the support sizes. $\square$</p>
+<hr>
+<h2 id="vi-second-application-pilawilkie-point-counting">VI. Second Application: Pila–Wilkie Point Counting</h2>
+<h3 id="setup-1">Setup</h3>
+<p>A <strong>semi-algebraic set</strong> in $\mathbb{R}^n$ is defined by polynomial equations and inequalities (e.g. curves, parabolas, discs). Semi-algebraic sets can contain <strong>many rational points</strong>: for example, $\{(x,y) \mid y = x^2\} \cap \mathbb{Q}^2$ is infinite.</p>
+<p>Surprisingly, <strong>transcendental sets contain very few rational points</strong>.</p>
+<p><strong>Definition.</strong> For $S \subset \mathbb{R}^n$, the <strong>transcendental part</strong> of $S$ is:
+</p>
+$$S_{\mathrm{tr}} := S \setminus \bigcup\{V \mid V \subset S \text{ semi-algebraic},\, \dim V \geq 1\},$$<p>
+i.e. we remove all positive-dimensional semi-algebraic subsets contained in $S$ — everything that is not &quot;algebraic geometry.&quot;</p>
+<p>Define the <strong>height</strong> of a rational point $(a_1/b_1, \ldots, a_n/b_n) \in \mathbb{Q}^n$ (with $a_i, b_i \in \mathbb{Z}$) to be $\max(|a_i|, |b_i|)$.</p>
+<p><strong>Theorem (Pila–Wilkie).</strong> Let $S \subset \mathbb{R}^n$ be definable over an o-minimal structure $\mathcal{F} = \{+, \times, \ldots\}$. Then
+</p>
+$$\#\!\left\{\left(\tfrac{a_1}{b_1}, \ldots, \tfrac{a_n}{b_n}\right) \in S_{\mathrm{tr}} \cap \mathbb{Q}^n \;\middle|\; |a_1|, \ldots, |a_n|, |b_1|, \ldots, |b_n| \leq N\right\}$$<p>
+grows <strong>slower than $N^\varepsilon$</strong> for any $\varepsilon > 0$.</p>
+<p>In other words, the count grows slower than any polynomial in $N$ (slower than $N^{1/2}$, $N^{1/3}$, ...). The only hypothesis needed is that $S$ is definable!</p>
+<p>The o-minimality restricts the possible number of rational points in the transcendental part. This is a <strong>shocking theorem</strong>.</p>
+<hr>
+<h2 id="vii-application-of-pilawilkie-multiplicative-maninmumford">VII. Application of Pila–Wilkie: Multiplicative Manin–Mumford</h2>
+<h3 id="statement">Statement</h3>
+<p>Let $f(x, y) = \sum a_{jk} x^j y^k$ be an irreducible polynomial with $|\mathrm{Supp}(f)| \geq 3$.</p>
+<p><strong>Theorem (Multiplicative Manin–Mumford).</strong> There are only <strong>finitely many solutions</strong> to $f(x, y) = 0$ with $x, y$ roots of unity.</p>
+<p><em>Why is this surprising?</em> Each individual root of unity $e^{2\pi i/n}$ is algebraic, but there is no way to put all of them together into a single algebraic family — the &quot;reason&quot; for the finiteness is transcendental.</p>
+<h3 id="reformulation">Reformulation</h3>
+<p>For $z \in \mathbb{C}$, set $\omega(z) = e^{2\pi i z}$. The theorem is equivalent to: there are finitely many solutions $(s,t) \in (\mathbb{Q} \cap [0,1])^2$ to $f(\omega(s), \omega(t)) = 0$.</p>
+<h3 id="proof-via-pilawilkie">Proof via Pila–Wilkie</h3>
+<p><strong>Step 1: The structure $\mathcal{F} = \{+, \times, \exp_\mathbb{R}, \cos(2\pi x)|_{[0,1]}, \sin(2\pi x)|_{[0,1]}\}$ is o-minimal.</strong></p>
+<p><strong>Step 2: Define the surface.</strong> Note that $\omega(a+ib) = e^{-b}\cos(2\pi a) + ie^{-b}\sin(2\pi a)$, so
+</p>
+$$S := \{(s,t) \in \mathbb{C}^2 \cong \mathbb{R}^4 \mid 0 \leq \mathrm{Re}(s), \mathrm{Re}(t) \leq 1 \text{ and } f(\omega(s), \omega(t)) = 0\}$$<p>
+is a <strong>definable set</strong> over $\mathcal{F}$ (and a complex surface), sitting inside $(\mathbb{R} + i\mathbb{R})^2 \cong \mathbb{R}^4$.</p>
+<p><strong>Step 3: The transcendental part.</strong> One shows that $S = S_{\mathrm{tr}}$, i.e. $S$ contains no positive-dimensional semi-algebraic subsets (intuitively: $f$ is irreducible and transcendental, so its zero set on $[0,1]^2$ cannot contain any algebraic curve). This uses the irreducibility of $f$ and the condition $|\mathrm{Supp}(f)| \geq 3$.</p>
+<p><strong>Step 4: Apply Pila–Wilkie.</strong> The rational points of $S \cap \mathbb{Q}^4$ of height $\leq N$ correspond precisely to solutions $(\omega(p/q), \omega(r/s))$ with $q, s \leq N$ — i.e., roots of unity of order $\leq N$. By Pila–Wilkie, their count is $O(N^\varepsilon)$ for any $\varepsilon > 0$.</p>
+<p><strong>Step 5: Contradiction via Galois.</strong> Suppose $f(\omega(3/124), \omega(a/b)) = 0$ with $124 \nmid b$. Applying Galois automorphisms (which permute the roots of unity), we get solutions $(\omega(i/124), \omega(a'/b))$ for all $1 \leq i \leq 124$ with $\gcd(i, 124) = 1$. There are at least $\sqrt{124}$ such values, giving at least $\sqrt{124}$ points on $S$ of height $\leq 124$. More generally, if we had infinitely many root-of-unity solutions as $N \to \infty$, the count would grow at least polynomially (like $\sqrt{N}$), contradicting the Pila–Wilkie bound of $O(N^\varepsilon)$.</p>
+<p>Therefore there are only <strong>finitely many</strong> root-of-unity solutions to $f(x,y) = 0$. $\square$</p>
+
+    
+  </article>
+
+  
+  
+
+<div id="sharingbuttons">
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+  <div class="paginator">
+    
+    <a class="link" href="https://mortad3lla.github.io/posts/exponential_motives_lesson3/" title="Exponential Motives — Lesson III"><span class="arrow-icon">🢠</span> Prev</a>
+    
+    
+    <a></a>
+    
+  </div>
+  
+  <div class="comment">
+    
+    
+    
+    <script src="https://giscus.app/client.js"
+        data-repo="yunhaixiang/yhmath"
+        data-repo-id="R_kgDOQj059g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOQj059s4CzenA"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="gruvbox"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  </div>
+  
+  
+</main>
+
+    <footer id="footer">
+  
+  <div>
+    <span>Copyright © 2026 Filippo Belfiori</span>
+  </div>
+</footer>
+
+<script src="https://mortad3lla.github.io/js/math-env.js"></script>
+
+  </div>
+
+  
+  <script src='https://mortad3lla.github.io/js/script.js' defer></script>
+
+  
+  
+
+  
+  
+
+  
+  
+
+</body>
+
+</html>
+
+<script src="https://mortad3lla.github.io/js/collapsible.js" defer></script>
+<script src="https://mortad3lla.github.io/js/mobile-ol-markers.js" defer></script>

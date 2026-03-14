@@ -6,7 +6,123 @@
     <description>Recent content in Blog on Filippo Belfiori</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://mortad3lla.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://mortad3lla.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Examples of O-minimality in Algebraic Geometry</title>
+      <link>https://mortad3lla.github.io/posts/o_minimality_hunter_spink/</link>
+      <pubDate>Sat, 14 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://mortad3lla.github.io/posts/o_minimality_hunter_spink/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Based on a YouTube lecture by Hunter Spink. These are informal introductory notes; we do not worry about the details of model theory but focus on the ideas and tools usable in algebraic geometry.&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;i-motivation&#34;&gt;I. Motivation&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Algebraic geometry&lt;/strong&gt; studies sets you can write down using $+$ and $\times$: from these two operations you get all polynomials, and the collection $\{+, \times\}$ is naturally associated to fields.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Question.&lt;/strong&gt; What if I look at sets defined not just with polynomials, but also using $\sin$, $\cos$, $\exp$, $\log$, ...?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Idea.&lt;/strong&gt; Model theorists identified the &lt;em&gt;weakest&lt;/em&gt; condition on a collection of functions $\mathcal{F}$ that prevents you from creating &amp;quot;bad&amp;quot; sets when you add those functions to your language. &amp;quot;Bad&amp;quot; means: a Cantor set, infinitely many connected components, or a set that is not a piecewise differentiable manifold. The key insight is that the right condition ensures &lt;strong&gt;nothing bad can be created at all&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Grothendieck was the first to ask: &amp;quot;Why can&#39;t I use $\exp$, $\sin$, $\cos$, ... in geometry?&amp;quot; Nowadays this question has many answers, and o-minimality provides the framework.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;ii-definable-sets&#34;&gt;II. Definable Sets&lt;/h2&gt;
+&lt;h3 id=&#34;the-language&#34;&gt;The language&lt;/h3&gt;
+&lt;p&gt;Fix a collection of functions $\mathcal{F} = \{+, \times, f_1, \ldots, f_k\}$ where each $f_i : \mathbb{R}^{n_i} \to \mathbb{R}$. Taking $\mathcal{F} = \{+, \times\}$ gives polynomials; in general $\mathcal{F}$ can be any collection.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; The quantifiers $\exists$ and $\forall$ allow us to express the concepts of continuity and differentiability (think of the $\varepsilon$-$\delta$ definition from analysis).&lt;/p&gt;
+&lt;h3 id=&#34;definition&#34;&gt;Definition&lt;/h3&gt;
+&lt;p&gt;A set $S \subset \mathbb{R}^n$ is &lt;strong&gt;$\mathcal{F}$-definable&lt;/strong&gt; if there exists a first-order formula $\phi(x_1, \ldots, x_n)$ such that
+&lt;/p&gt;
+$$S = S_\phi := \{(x_1, \ldots, x_n) \mid \phi(x_1, \ldots, x_n) \text{ is true}\}.$$&lt;p&gt;A formula $\phi$ is built from the following ingredients:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Terms&lt;/strong&gt; (the &amp;quot;nouns&amp;quot;): constants, parentheses, variables, and arbitrary compositions of functions in $\mathcal{F}$, e.g. $f_1(x_2 + f_2(x_1), \sqrt{2})$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Atomic predicates&lt;/strong&gt;: $&lt;$, $=$, $&gt;$. Combined with terms, these produce atomic statements such as $f_1(x_2 + f_2(x_1), \sqrt{2}) &gt; f_3(0)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Logical connectives&lt;/strong&gt;: $\lnot$, $\lor$, $\land$, $\to$, $\leftrightarrow$, etc., which combine atomic statements, e.g. $f_1(\cdots) &gt; f_3(0)$ or $f_4(x_1) = f_5(x_2)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Quantifiers&lt;/strong&gt;: $\exists x \in \mathbb{R}$ and $\forall x \in \mathbb{R}$, e.g.:
+&lt;/p&gt;
+$$\exists\, z \in \mathbb{R} \text{ s.t. } \bigl(f_1(x_2 + f_2(x_1), \sqrt{2}) &gt; f_3(0)\bigr) \text{ or } \bigl(f_4(x_1, z) = f_5(z)\bigr).$$&lt;p&gt;&lt;strong&gt;Example.&lt;/strong&gt; With $\mathcal{F} = \{+, \times\}$, the unit circle is definable: it is $S_\phi$ for the formula $\phi(x,y) \equiv (x^2 + y^2 = 1)$.&lt;/p&gt;
+&lt;h3 id=&#34;examples-with&#34;&gt;Examples with $\mathcal{F} = \{+, \times, \exp_\mathbb{R}\}$&lt;/h3&gt;
+&lt;p&gt;The following are all $\mathcal{F}$-definable sets, illustrating how quantifiers let us build new functions from $\exp$ alone:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Graph of a composition:&lt;/strong&gt;
+&lt;/p&gt;
+$$\{(x,y) \in \mathbb{R}^2 \mid y = e^{e^x(x^2+5x+6)}\} \subset \mathbb{R}^2.$$&lt;p&gt;&lt;strong&gt;A level set with inequality&lt;/strong&gt; (using $\leq$, which we can write as $&lt; $ or $=$):
+&lt;/p&gt;
+$$\{(x,y) \in \mathbb{R}^2 \mid e^x + e^y \leq 4\} \subset \mathbb{R}^2, \qquad \text{formula: } e^x + e^y = 4 \text{ or } e^x + e^y &lt; 4.$$&lt;p&gt;&lt;strong&gt;An image&lt;/strong&gt; (using $\exists$):
+&lt;/p&gt;
+$$\mathrm{Im}(e^{yz})\big|_{y + e^z = 4} \subset \mathbb{R}, \qquad \text{formula: } \exists\, y, z \in \mathbb{R} \text{ s.t. } y + e^z = 4 \text{ and } x = e^{yz}.$$&lt;p&gt;&lt;strong&gt;Graph of $e^{(\log x)^2}$&lt;/strong&gt; (recovering $\log$ via $\exists$):
+&lt;/p&gt;
+$$\{(x,y) \in \mathbb{R}^2 \mid y = e^{(\log x)^2}\} \subset \mathbb{R}^2, \qquad \text{formula: } \exists\, z \in \mathbb{R} \text{ s.t. } (e^z = x \text{ and } y = e^{z^2}).$$&lt;p&gt;
+Using $\exists z$ with $e^z = x$ is how we &lt;em&gt;define&lt;/em&gt; $z = \log x$ without adding $\log$ as a primitive.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; The definable sets for $\mathcal{F} = \{\exp\}$ and $\mathcal{F} = \{\exp, \log\}$ are &lt;strong&gt;identical&lt;/strong&gt;: $\log$ is already definable from $\exp$ via a quantifier.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Power functions&lt;/strong&gt; are now available: $\{(x,y) \mid y = 5x^\pi\}$ is definable because $5x^\pi = 5 \cdot e^{\pi \log x}$, a composition of $\exp$, $\log$, and constants.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;iii-o-minimality&#34;&gt;III. O-minimality&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; $\mathcal{F}$ is &lt;strong&gt;o-minimal&lt;/strong&gt; if every $\mathcal{F}$-definable subset of $\mathbb{R}$ is a &lt;strong&gt;finite union of points and intervals&lt;/strong&gt; (possibly open, closed, or unbounded on either end).&lt;/p&gt;
+&lt;p&gt;The key word is &lt;em&gt;finite&lt;/em&gt;. This is a condition only on subsets of $\mathbb{R}$, but as we will see it has powerful consequences in all dimensions.&lt;/p&gt;
+&lt;h3 id=&#34;what-does-this-constraint-rule-out&#34;&gt;What does this constraint rule out?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example: $\mathcal{F} = \{+, \times, \sin\}$ is NOT o-minimal.&lt;/strong&gt; The set $S_{\sin(x)=0} = \pi\mathbb{Z} \subset \mathbb{R}$ is definable (formula: $\sin(x) = 0$), but it is not a finite union of points and intervals. Saying &amp;quot;$\sin$ is not o-minimal&amp;quot; is equivalent to saying: this structure cannot talk about periodic sets without running into infinitely many connected components.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example: $\mathcal{F} = \{+, \times\}$ IS o-minimal&lt;/strong&gt; — this is the &lt;strong&gt;Tarski–Seidenberg theorem&lt;/strong&gt;. For every formula $\phi$, there exists a quantifier-free formula $\psi$ (not involving $\exists x \in \mathbb{R}$ or $\forall x \in \mathbb{R}$) such that $S_\phi = S_\psi$. This is &lt;strong&gt;quantifier elimination&lt;/strong&gt; for real closed fields, and it implies that every definable subset of $\mathbb{R}$ is a finite union of points and open intervals.&lt;/p&gt;
+&lt;p&gt;As an example of quantifier elimination: $S_{(\exists\, y, z \mid (y-1)^2 + z^2 = x)} = \mathrm{Im}((y-1)^2 + z^2) = (0, +\infty) = S_{0 &lt; x}$.&lt;/p&gt;
+&lt;h3 id=&#34;known-o-minimal-structures&#34;&gt;Known o-minimal structures&lt;/h3&gt;
+&lt;p&gt;$\mathcal{F} = \{+, \times, \exp_\mathbb{R}\}$ &lt;strong&gt;is o-minimal&lt;/strong&gt; — this is a deep theorem requiring hard analysis and model theory.&lt;/p&gt;
+&lt;p&gt;$\mathcal{F} = \{+, \times, \exp_\mathbb{R},\, \sin\big|_{[0,2\pi]},\, \cos\big|_{[0,2\pi]}\}$ &lt;strong&gt;is o-minimal&lt;/strong&gt; — restricting $\sin$ and $\cos$ to a compact interval removes the periodicity that caused problems above.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;largest known o-minimal structure&lt;/strong&gt; is the &amp;quot;Pfaffian closure&amp;quot; or &amp;quot;restricted analytic functions.&amp;quot;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;iv-the-uniform-boundedness-theorem&#34;&gt;IV. The Uniform Boundedness Theorem&lt;/h2&gt;
+&lt;p&gt;The fundamental structural result of o-minimality is the following.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem (Uniform Boundedness / Cell Decomposition).&lt;/strong&gt; If $\mathcal{F}$ is o-minimal, then every definable set $S_\phi \subset \mathbb{R}^n$ is a &lt;strong&gt;finite Boolean combination of connected differentiable manifolds&lt;/strong&gt;. Moreover, every $S_\phi$ is homeomorphic to a union of relative interiors of simplices in a finite simplicial complex — so no bad topology is possible.&lt;/p&gt;
+&lt;p&gt;The deeper &amp;quot;magic&amp;quot; statement is:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;For a fixed formula complexity $\mathrm{comp}(\phi) = $ (number of symbols in $\phi$, where constants count as 1 symbol), only finitely many homeomorphism types of simplicial complexes occur.&lt;/strong&gt; In other words, the topology of $S_\phi$ is bounded purely by the length of the formula defining it, independently of the specific constants appearing.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Corollary 1.&lt;/strong&gt; Every definable function is &lt;strong&gt;piecewise differentiable&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Corollary 2.&lt;/strong&gt; If $S_\phi$ is a finite set of points, then $|S_\phi|$ is &lt;strong&gt;bounded above by a function of $\mathrm{comp}(\phi)$ alone&lt;/strong&gt;. This corollary is key for applications.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;v-first-application-khovanskiis-fewnomial-theorem&#34;&gt;V. First Application: Khovanskii&#39;s Fewnomial Theorem&lt;/h2&gt;
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
+&lt;p&gt;A polynomial in $m$ variables is written as:
+&lt;/p&gt;
+$$f(x_1, \ldots, x_m) = \sum_{(i_1, \ldots, i_m) \in \mathrm{Supp}(f)} a_{i_1 \cdots i_m}\, x_1^{i_1} \cdots x_m^{i_m},$$&lt;p&gt;
+where $\mathrm{Supp}(f)$ denotes the set of &lt;strong&gt;multi-indices of non-zero coefficients&lt;/strong&gt; (the support).&lt;/p&gt;
+&lt;p&gt;Consider a system $\{f_1 = 0, \ldots, f_n = 0\}$ in $(\mathbb{R}_{&gt;0})^n$ with finitely many solutions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bézout&#39;s theorem&lt;/strong&gt; gives a bound on the number of solutions in terms of the degrees: $\#\text{solutions} \leq \prod_i \deg(f_i)$. But if the exponents are very large (high degree), this bound becomes terrible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Claim:&lt;/strong&gt; there exists a bound &lt;strong&gt;independent of the exponents&lt;/strong&gt;, depending only on the sizes of the supports.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem (Khovanskii&#39;s Fewnomial Theorem).&lt;/strong&gt; If the system $\{f_1 = 0, \ldots, f_n = 0\}$ has finitely many solutions in $(\mathbb{R}_{&gt;0})^n$, then the number of solutions is bounded by a function of $|\mathrm{Supp}(f_1)|, \ldots, |\mathrm{Supp}(f_n)|$ alone.&lt;/p&gt;
+&lt;h3 id=&#34;proof-via-o-minimality&#34;&gt;Proof via o-minimality&lt;/h3&gt;
+&lt;p&gt;The key observation is how to encode the system without increasing the number of symbols as the exponents grow. Note that:
+&lt;/p&gt;
+$$x^2 + xy = e^{2\log x} + e^{\log x + \log y}, \qquad x^n + xyz = e^{n\log x} + e^{\log x + \log y + \log z}.$$&lt;p&gt;Even replacing 2 by $n$ (a large exponent), the &lt;strong&gt;number of symbols&lt;/strong&gt; in the formula does not change — the exponent $n$ appears as a constant, which counts as 1 symbol. Rewriting the system using $\exp$ and $\log$:
+&lt;/p&gt;
+$$\phi(x_1, \ldots, x_m)\colon \sum_{(i_1,\ldots,i_m)\in\mathrm{Supp}(f_1)} a_{i_1\cdots i_m}\, \exp(i_1\log x_1 + \cdots + i_m\log x_m) = 0 \quad \land \quad \cdots$$&lt;p&gt;The complexity $\mathrm{comp}(\phi)$ depends only on the number of non-zero coefficients $|\mathrm{Supp}(f_j)|$, not on the size of the exponents. By Corollary 2 above (and the fact that $\mathcal{F} = \{+, \times, \exp\}$ is o-minimal), the number of solutions is bounded by a function of $\mathrm{comp}(\phi)$, which is a function of the support sizes. $\square$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;vi-second-application-pilawilkie-point-counting&#34;&gt;VI. Second Application: Pila–Wilkie Point Counting&lt;/h2&gt;
+&lt;h3 id=&#34;setup-1&#34;&gt;Setup&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;semi-algebraic set&lt;/strong&gt; in $\mathbb{R}^n$ is defined by polynomial equations and inequalities (e.g. curves, parabolas, discs). Semi-algebraic sets can contain &lt;strong&gt;many rational points&lt;/strong&gt;: for example, $\{(x,y) \mid y = x^2\} \cap \mathbb{Q}^2$ is infinite.&lt;/p&gt;
+&lt;p&gt;Surprisingly, &lt;strong&gt;transcendental sets contain very few rational points&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; For $S \subset \mathbb{R}^n$, the &lt;strong&gt;transcendental part&lt;/strong&gt; of $S$ is:
+&lt;/p&gt;
+$$S_{\mathrm{tr}} := S \setminus \bigcup\{V \mid V \subset S \text{ semi-algebraic},\, \dim V \geq 1\},$$&lt;p&gt;
+i.e. we remove all positive-dimensional semi-algebraic subsets contained in $S$ — everything that is not &amp;quot;algebraic geometry.&amp;quot;&lt;/p&gt;
+&lt;p&gt;Define the &lt;strong&gt;height&lt;/strong&gt; of a rational point $(a_1/b_1, \ldots, a_n/b_n) \in \mathbb{Q}^n$ (with $a_i, b_i \in \mathbb{Z}$) to be $\max(|a_i|, |b_i|)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem (Pila–Wilkie).&lt;/strong&gt; Let $S \subset \mathbb{R}^n$ be definable over an o-minimal structure $\mathcal{F} = \{+, \times, \ldots\}$. Then
+&lt;/p&gt;
+$$\#\!\left\{\left(\tfrac{a_1}{b_1}, \ldots, \tfrac{a_n}{b_n}\right) \in S_{\mathrm{tr}} \cap \mathbb{Q}^n \;\middle|\; |a_1|, \ldots, |a_n|, |b_1|, \ldots, |b_n| \leq N\right\}$$&lt;p&gt;
+grows &lt;strong&gt;slower than $N^\varepsilon$&lt;/strong&gt; for any $\varepsilon &gt; 0$.&lt;/p&gt;
+&lt;p&gt;In other words, the count grows slower than any polynomial in $N$ (slower than $N^{1/2}$, $N^{1/3}$, ...). The only hypothesis needed is that $S$ is definable!&lt;/p&gt;
+&lt;p&gt;The o-minimality restricts the possible number of rational points in the transcendental part. This is a &lt;strong&gt;shocking theorem&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;vii-application-of-pilawilkie-multiplicative-maninmumford&#34;&gt;VII. Application of Pila–Wilkie: Multiplicative Manin–Mumford&lt;/h2&gt;
+&lt;h3 id=&#34;statement&#34;&gt;Statement&lt;/h3&gt;
+&lt;p&gt;Let $f(x, y) = \sum a_{jk} x^j y^k$ be an irreducible polynomial with $|\mathrm{Supp}(f)| \geq 3$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem (Multiplicative Manin–Mumford).&lt;/strong&gt; There are only &lt;strong&gt;finitely many solutions&lt;/strong&gt; to $f(x, y) = 0$ with $x, y$ roots of unity.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Why is this surprising?&lt;/em&gt; Each individual root of unity $e^{2\pi i/n}$ is algebraic, but there is no way to put all of them together into a single algebraic family — the &amp;quot;reason&amp;quot; for the finiteness is transcendental.&lt;/p&gt;
+&lt;h3 id=&#34;reformulation&#34;&gt;Reformulation&lt;/h3&gt;
+&lt;p&gt;For $z \in \mathbb{C}$, set $\omega(z) = e^{2\pi i z}$. The theorem is equivalent to: there are finitely many solutions $(s,t) \in (\mathbb{Q} \cap [0,1])^2$ to $f(\omega(s), \omega(t)) = 0$.&lt;/p&gt;
+&lt;h3 id=&#34;proof-via-pilawilkie&#34;&gt;Proof via Pila–Wilkie&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Step 1: The structure $\mathcal{F} = \{+, \times, \exp_\mathbb{R}, \cos(2\pi x)|_{[0,1]}, \sin(2\pi x)|_{[0,1]}\}$ is o-minimal.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 2: Define the surface.&lt;/strong&gt; Note that $\omega(a+ib) = e^{-b}\cos(2\pi a) + ie^{-b}\sin(2\pi a)$, so
+&lt;/p&gt;
+$$S := \{(s,t) \in \mathbb{C}^2 \cong \mathbb{R}^4 \mid 0 \leq \mathrm{Re}(s), \mathrm{Re}(t) \leq 1 \text{ and } f(\omega(s), \omega(t)) = 0\}$$&lt;p&gt;
+is a &lt;strong&gt;definable set&lt;/strong&gt; over $\mathcal{F}$ (and a complex surface), sitting inside $(\mathbb{R} + i\mathbb{R})^2 \cong \mathbb{R}^4$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 3: The transcendental part.&lt;/strong&gt; One shows that $S = S_{\mathrm{tr}}$, i.e. $S$ contains no positive-dimensional semi-algebraic subsets (intuitively: $f$ is irreducible and transcendental, so its zero set on $[0,1]^2$ cannot contain any algebraic curve). This uses the irreducibility of $f$ and the condition $|\mathrm{Supp}(f)| \geq 3$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 4: Apply Pila–Wilkie.&lt;/strong&gt; The rational points of $S \cap \mathbb{Q}^4$ of height $\leq N$ correspond precisely to solutions $(\omega(p/q), \omega(r/s))$ with $q, s \leq N$ — i.e., roots of unity of order $\leq N$. By Pila–Wilkie, their count is $O(N^\varepsilon)$ for any $\varepsilon &gt; 0$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 5: Contradiction via Galois.&lt;/strong&gt; Suppose $f(\omega(3/124), \omega(a/b)) = 0$ with $124 \nmid b$. Applying Galois automorphisms (which permute the roots of unity), we get solutions $(\omega(i/124), \omega(a&#39;/b))$ for all $1 \leq i \leq 124$ with $\gcd(i, 124) = 1$. There are at least $\sqrt{124}$ such values, giving at least $\sqrt{124}$ points on $S$ of height $\leq 124$. More generally, if we had infinitely many root-of-unity solutions as $N \to \infty$, the count would grow at least polynomially (like $\sqrt{N}$), contradicting the Pila–Wilkie bound of $O(N^\varepsilon)$.&lt;/p&gt;
+&lt;p&gt;Therefore there are only &lt;strong&gt;finitely many&lt;/strong&gt; root-of-unity solutions to $f(x,y) = 0$. $\square$&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Exponential Motives — Lesson III</title>
       <link>https://mortad3lla.github.io/posts/exponential_motives_lesson3/</link>
