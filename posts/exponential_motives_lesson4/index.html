@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en-us" style="font-size: 105%">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <meta name="author" content="Filippo Belfiori">
+
+  
+  
+  <meta name="description" content="Recap
+We are working with $k \subset \mathbb{C}$, $X$ a smooth variety over $k$, and $f: X \to \mathbb{A}^1_k$ a global regular function. Setting $f = 0$ recovers the usual theories; we will see that this can happen for $f \neq 0$ as well.
+Twisted de Rham cohomology:
+
+$$H^n_{\mathrm{dR}}(X, f) = \mathbb{H}^n_{\mathrm{Zar}}\!\left(X,\; \mathcal{O}_X \xrightarrow{d_f} \Omega^1_X \xrightarrow{d_f} \cdots\right), \qquad d_f(\omega) = d\omega - df \wedge \omega.$$Rapid decay homology (relative version): given $Y \subset X$ a closed subvariety,
+">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://mortad3lla.github.io//images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://mortad3lla.github.io//images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://mortad3lla.github.io//images/favicon-16x16.png">
+
+  
+  
+  <meta name="keywords" content='hugo latex theme blog texify texify2 texify3 michael neuper'>
+  
+
+  
+  
+  <link rel="stylesheet" href='https://mortad3lla.github.io/katex/katex.min.css'>
+<script defer defer src='https://mortad3lla.github.io/katex/katex.min.js'></script>
+<script defer src='https://mortad3lla.github.io/katex/contrib/auto-render.min.js'></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+  
+
+  
+  
+
+  
+  <meta property="og:url" content="https://mortad3lla.github.io/posts/exponential_motives_lesson4/">
+  <meta property="og:site_name" content="Filippo Belfiori">
+  <meta property="og:title" content="Exponential Motives — Lesson IV">
+  <meta property="og:description" content="Recap We are working with $k \subset \mathbb{C}$, $X$ a smooth variety over $k$, and $f: X \to \mathbb{A}^1_k$ a global regular function. Setting $f = 0$ recovers the usual theories; we will see that this can happen for $f \neq 0$ as well.
+Twisted de Rham cohomology: $$H^n_{\mathrm{dR}}(X, f) = \mathbb{H}^n_{\mathrm{Zar}}\!\left(X,\; \mathcal{O}_X \xrightarrow{d_f} \Omega^1_X \xrightarrow{d_f} \cdots\right), \qquad d_f(\omega) = d\omega - df \wedge \omega.$$Rapid decay homology (relative version): given $Y \subset X$ a closed subvariety,">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-10T00:00:00+00:00">
+
+
+  
+  <link rel="canonical" href="https://mortad3lla.github.io/posts/exponential_motives_lesson4/">
+
+  
+  
+  
+  <meta itemprop="name" content="Exponential Motives — Lesson IV">
+  <meta itemprop="description" content="Recap We are working with $k \subset \mathbb{C}$, $X$ a smooth variety over $k$, and $f: X \to \mathbb{A}^1_k$ a global regular function. Setting $f = 0$ recovers the usual theories; we will see that this can happen for $f \neq 0$ as well.
+Twisted de Rham cohomology: $$H^n_{\mathrm{dR}}(X, f) = \mathbb{H}^n_{\mathrm{Zar}}\!\left(X,\; \mathcal{O}_X \xrightarrow{d_f} \Omega^1_X \xrightarrow{d_f} \cdots\right), \qquad d_f(\omega) = d\omega - df \wedge \omega.$$Rapid decay homology (relative version): given $Y \subset X$ a closed subvariety,">
+  <meta itemprop="datePublished" content="2026-03-10T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-03-10T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2418">
+
+  
+  
+  
+    <link rel="stylesheet" href="https://mortad3lla.github.io/css/common.min.861fcd7d94c0b4dbf0e9e70d96940dec8eb63a61695188041a92eb7c10290679.css" integrity="sha256-hh/NfZTAtNvw6ecNlpQN7I62OmFpUYgEGpLrfBApBnk=" crossorigin="anonymous">
+  
+
+  
+  
+    <link rel="stylesheet" href="https://mortad3lla.github.io/css/content.min.387e0600ad454285e14579a443ef8d74c65694968d90ef5ec785e6ae23f8355a.css" integrity="sha256-OH4GAK1FQoXhRXmkQ&#43;&#43;NdMZWlJaNkO9ex4XmriP4NVo=" crossorigin="anonymous">
+  
+
+  
+  
+  <title>Exponential Motives — Lesson IV - Filippo Belfiori</title>
+  
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exponential Motives — Lesson IV">
+  <meta name="twitter:description" content="Recap We are working with $k \subset \mathbb{C}$, $X$ a smooth variety over $k$, and $f: X \to \mathbb{A}^1_k$ a global regular function. Setting $f = 0$ recovers the usual theories; we will see that this can happen for $f \neq 0$ as well.
+Twisted de Rham cohomology: $$H^n_{\mathrm{dR}}(X, f) = \mathbb{H}^n_{\mathrm{Zar}}\!\left(X,\; \mathcal{O}_X \xrightarrow{d_f} \Omega^1_X \xrightarrow{d_f} \cdots\right), \qquad d_f(\omega) = d\omega - df \wedge \omega.$$Rapid decay homology (relative version): given $Y \subset X$ a closed subvariety,">
+
+
+  
+
+
+  <link rel="stylesheet" href="https://mortad3lla.github.io/css/single.min.5a34175f01232dd3f8c27e4152be883054a1cc64ad41473a90a97073d77b2ad0.css" integrity="sha256-WjQXXwEjLdP4wn5BUr6IMFShzGStQUc6kKlwc9d7KtA=" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://mortad3lla.github.io/css/single.min.78a121b7d7a160420f9daab0ea13add66c37b9c44f27bba07b27207e2b0975d2.css" integrity="sha256-eKEht9ehYEIPnaqw6hOt1mw3ucRPJ7ugeycgfisJddI=" crossorigin="anonymous">
+
+
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/style.css" />
+
+</head>
+
+<body>
+  <div id="wrapper">
+    
+
+
+<header id="header">
+  <h1>
+    <a href="https://mortad3lla.github.io/">Filippo Belfiori</a>
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle theme">
+        <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
+        <path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/>
+        </svg>
+    </button>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-binoculars-icon lucide-binoculars">
+<path fill="none" d="M10 10h4"/>
+<path fill="none" d="M19 7V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/>
+<path fill="none" d="M20 21a2 2 0 0 0 2-2v-3.851c0-1.39-2-2.962-2-4.829V8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2z"/>
+<path fill="none" d="M 22 16 L 2 16"/>
+<path fill="none" d="M4 21a2 2 0 0 1-2-2v-3.851c0-1.39 2-2.962 2-4.829V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2z"/>
+<path fill="none" d="M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/research/">Research</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-heart-icon lucide-file-heart">
+<path fill="none" d="M13 22h5a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v7"/>
+<path fill="none" d="M14 2v5a1 1 0 0 0 1 1h5"/>
+<path fill="none" d="M3.62 18.8A2.25 2.25 0 1 1 7 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a1 1 0 0 1-1.507 0z"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/publications/">Publications</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-type-icon lucide-book-type">
+<path fill="none" d="M10 13h4"/>
+<path fill="none" d="M12 6v7"/>
+<path fill="none" d="M16 8V6H8v2"/>
+<path fill="none" d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/teaching/">Teaching</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-user-icon lucide-file-user">
+<path fill="none" d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/>
+<path fill="none" d="M14 2v5a1 1 0 0 0 1 1h5"/>
+<path fill="none" d="M16 22a4 4 0 0 0-8 0"/><circle cx="12" cy="15" r="3"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/curriculum/">CV</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,11H16a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm0,4H16a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2ZM11,9h6a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2ZM21,3H7A1,1,0,0,0,6,4V7H3A1,1,0,0,0,2,8V18a3,3,0,0,0,3,3H18a4,4,0,0,0,4-4V4A1,1,0,0,0,21,3ZM6,18a1,1,0,0,1-2,0V9H6Zm14-1a2,2,0,0,1-2,2H7.82A3,3,0,0,0,8,18V5H20Zm-9-4h1a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2Zm0,4h1a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2Z"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/posts/">Blog</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
+<path d="M10.07031,20.50291a1.00008,1.00008,0,0,0-1.18115-.9834c-1.30908.24024-2.96191.27637-3.40137-.958a5.70754,5.70754,0,0,0-1.83691-2.415,1.20073,1.20073,0,0,1-.1665-.10938,1,1,0,0,0-.93067-.64551H2.54883a.99965.99965,0,0,0-1,.99512c-.00391.81543.811,1.33789,1.1416,1.51465a4.4408,4.4408,0,0,1,.92383,1.35937c.36426,1.02344,1.42285,2.57617,4.46582,2.376.001.03516.00195.06836.00244.09863l.00439.26758a1,1,0,0,0,2,0l-.00488-.31836C10.07715,21.4951,10.07031,21.22068,10.07031,20.50291Zm10.667-15.126c.03174-.125.063-.26367.09034-.41992a6.27792,6.27792,0,0,0-.40821-3.293,1.002,1.002,0,0,0-.61572-.58007c-.356-.12012-1.67041-.35645-4.18408,1.25a13.86918,13.86918,0,0,0-6.354,0C6.76221.751,5.45459.9658,5.10205,1.07908a.99744.99744,0,0,0-.63135.584,6.3003,6.3003,0,0,0-.40332,3.35644c.02442.12793.05078.2461.07813.35449A6.26928,6.26928,0,0,0,2.89014,9.20311a8.42168,8.42168,0,0,0,.04248.92187c.334,4.60254,3.334,5.98438,5.42431,6.459-.04345.125-.083.25878-.11816.40039a1.00023,1.00023,0,0,0,1.94238.47851,1.6784,1.6784,0,0,1,.46778-.87793.99947.99947,0,0,0-.5459-1.74512c-3.4541-.39453-4.95362-1.80175-5.1792-4.89843a6.61076,6.61076,0,0,1-.03369-.73828,4.25769,4.25769,0,0,1,.91943-2.71289,3.022,3.022,0,0,1,.1958-.23145.99988.99988,0,0,0,.188-1.02441,3.3876,3.3876,0,0,1-.15527-.55567A4.09356,4.09356,0,0,1,6.1167,3.06346a7.54263,7.54263,0,0,1,2.415,1.17968,1.00877,1.00877,0,0,0,.82764.13282,11.77716,11.77716,0,0,1,6.17285.001,1.00549,1.00549,0,0,0,.83056-.13769,7.572,7.572,0,0,1,2.40528-1.19043,4.03977,4.03977,0,0,1,.0874,1.57812,3.205,3.205,0,0,1-.16895.60743.9999.9999,0,0,0,.188,1.02441c.07715.08691.1543.18066.22363.26855A4.12186,4.12186,0,0,1,20,9.20311a7.03888,7.03888,0,0,1-.0376.77734c-.22021,3.05566-1.72558,4.46387-5.1958,4.85937a1,1,0,0,0-.54541,1.7461,1.63079,1.63079,0,0,1,.46631.9082,3.06079,3.06079,0,0,1,.09229.81934v2.334C14.77,21.2949,14.77,21.78025,14.77,22.00291a1,1,0,1,0,2,0c0-.2168,0-.69238.00977-1.33984V18.31346a4.8815,4.8815,0,0,0-.15479-1.31153,4.25638,4.25638,0,0,0-.11621-.416,6.51258,6.51258,0,0,0,5.44531-6.42383A8.69677,8.69677,0,0,0,22,9.20311,6.13062,6.13062,0,0,0,20.7373,5.37693Z"/></svg>
+</span>
+      
+      <a class="link" href="https://github.com/mortad3lla">GitHub</a>
+    </span>
+    
+  </nav>
+</header>
+<hr class="head-rule"></hr>
+    
+<main id="main" class="post">
+  
+  <div class="post-heading">
+    <h1 class="post-title">Exponential Motives — Lesson IV</h1>
+    <div class="publish-metadata">
+      
+      <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      10 March 2026
+      
+      
+        &nbsp;
+        <span>
+          <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          2418 words
+        </span>
+      
+      
+      
+        
+      
+      
+        &nbsp;
+        <span>
+          <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          ~12 mins
+        </span>
+      
+    </div>
+  </div>
+
+
+  
+  <details>
+    <summary>
+      <b>Table of Contents</b>
+    </summary>
+    <div class="toc numbered-subtitles"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#recap">Recap</a></li>
+    <li><a href="#i-rapid-decay-cohomology">I. Rapid Decay Cohomology</a></li>
+    <li><a href="#ii-properties">II. Properties</a>
+      <ul>
+        <li><a href="#1-functoriality">(1) Functoriality</a></li>
+        <li><a href="#2-boundary-morphisms">(2) Boundary Morphisms</a></li>
+        <li><a href="#3-künneth-formula">(3) Künneth Formula</a></li>
+      </ul>
+    </li>
+    <li><a href="#iii-the-comparison-isomorphism">III. The Comparison Isomorphism</a></li>
+    <li><a href="#iv-definition-of-exponential-periods">IV. Definition of Exponential Periods</a></li>
+    <li><a href="#v-examples">V. Examples</a>
+      <ul>
+        <li><a href="#example-0--constant">Example (0):  constant</a></li>
+        <li><a href="#example-1--">Example (1): , , </a></li>
+        <li><a href="#example-2-">Example (2): , </a></li>
+        <li><a href="#another-example-exponential-motives-that-are-classical">Another example: exponential motives that are classical</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+  <article class="content numbered-subtitles">
+    
+    <h2 id="recap">Recap</h2>
+<p>We are working with $k \subset \mathbb{C}$, $X$ a smooth variety over $k$, and $f: X \to \mathbb{A}^1_k$ a global regular function. Setting $f = 0$ recovers the usual theories; we will see that this can happen for $f \neq 0$ as well.</p>
+<p><strong>Twisted de Rham cohomology:</strong>
+</p>
+$$H^n_{\mathrm{dR}}(X, f) = \mathbb{H}^n_{\mathrm{Zar}}\!\left(X,\; \mathcal{O}_X \xrightarrow{d_f} \Omega^1_X \xrightarrow{d_f} \cdots\right), \qquad d_f(\omega) = d\omega - df \wedge \omega.$$<p><strong>Rapid decay homology</strong> (relative version): given $Y \subset X$ a closed subvariety,
+</p>
+$$H^{\mathrm{Rd}}_*(X, Y, f) := \varinjlim_{r \to +\infty} H_*\!\left(X(\mathbb{C}),\; Y(\mathbb{C}) \cup f^{-1}(S_r);\; \mathbb{Q}\right),$$<p>
+where $S_r = \{\mathrm{Re}(z) > r\}$. The subvariety $Y$ allows boundaries to land in $Y(\mathbb{C})$, in addition to the usual rapid decay region. The transition maps are eventually isomorphisms (by the same Zariski open / homotopy equivalence argument as before). The twisted de Rham version $H^n_{\mathrm{dR}}(X, Y, f)$ can be defined analogously; we will see it in the examples.</p>
+<hr>
+<h2 id="i-rapid-decay-cohomology">I. Rapid Decay Cohomology</h2>
+<p><strong>Definition.</strong> The <strong>rapid decay cohomology</strong> is the linear dual of rapid decay homology:
+</p>
+$$H^*_{\mathrm{Rd}}(X, Y, f) := \mathrm{Hom}_\mathbb{Q}\!\left(H^{\mathrm{Rd}}_*(X, Y, f),\; \mathbb{Q}\right) = \varinjlim_{r \to +\infty} H^*\!\left(X(\mathbb{C}),\; Y(\mathbb{C}) \cup f^{-1}(S_r)\right).$$<p>The transition maps are eventually isomorphisms for the same reason as in the $Y = \emptyset$ case.</p>
+<hr>
+<h2 id="ii-properties">II. Properties</h2>
+<h3 id="1-functoriality">(1) Functoriality</h3>
+<p>Given a morphism $h: X \to X'$ with $f = f' \circ h$ and $h(Y) \subset Y'$, the map $h$ sends the pair $(X(\mathbb{C}),\; Y(\mathbb{C}) \cup f^{-1}(S_r))$ to $(X'(\mathbb{C}),\; Y'(\mathbb{C}) \cup (f')^{-1}(S_r))$. Passing to the colimit gives a pullback map:
+</p>
+$$h^*: H^*_{\mathrm{Rd}}(X', Y', f') \longrightarrow H^*_{\mathrm{Rd}}(X, Y, f).$$<h3 id="2-boundary-morphisms">(2) Boundary Morphisms</h3>
+<p>For a triple $Z \subset Y \subset X$, the inclusion of pairs gives a map $H^*_{\mathrm{Rd}}(X, Y, f) \to H^*_{\mathrm{Rd}}(X, Z, f)$. The boundary morphism goes in the other direction in homology — if the boundary of a chain can lie in $Z$ it can certainly lie in $Y$ — so in cohomology it goes:</p>
+$$\cdots \to H^{n-1}(Y, Z, f|_Y) \to H^n(X, Y, f) \to H^n(X, Z, f) \to \cdots$$<p><em>Think in homology first to get the direction right, then dualize.</em></p>
+<p><strong>Exercise.</strong> This is a long exact sequence. Prove it using the long exact sequence for triples:
+</p>
+$$Z(\mathbb{C}) \cup f^{-1}(S_r) \;\subset\; Y(\mathbb{C}) \cup f^{-1}(S_r) \;\subset\; X(\mathbb{C}).$$<h3 id="3-künneth-formula">(3) Künneth Formula</h3>
+<p>Given two triples $(X, Y, f)$ and $(X', Y', f')$, define the <strong>Thom–Sebastiani sum</strong>:
+</p>
+$$f \boxplus f': X \times X' \longrightarrow \mathbb{A}^1_k, \qquad (x, x') \longmapsto f(x) + f'(x').$$<p>Then there is a Künneth isomorphism:
+</p>
+$$H^*_{\mathrm{Rd}}\!\left(X \times X',\; Y \times X' \cup X \times Y',\; f \boxplus f'\right) \simeq H^*_{\mathrm{Rd}}(X, Y, f) \otimes H^*_{\mathrm{Rd}}(X', Y', f').$$<hr>
+<h2 id="iii-the-comparison-isomorphism">III. The Comparison Isomorphism</h2>
+<div class="math-env style-defn" 
+    
+     data-kind="fact"
+     data-lang="en"
+     data-numbered="true">
+  <span class="math-heading">
+  <span class="math-title"
+        data-label='Fact'></span>
+  </span>
+  <span class="math-body">
+    <p><strong>Theorem (Deligne; Bloch–Esnault; Hien–Roucairol).</strong> There is a canonical isomorphism
+</p>
+$$H^*_{\mathrm{dR}}(X, f) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_{\mathrm{Rd}}(X, f) \otimes_\mathbb{Q} \mathbb{C},$$<p>
+dual to a <strong>perfect pairing</strong>
+</p>
+$$H^*_{\mathrm{dR}}(X, f) \otimes H^{\mathrm{Rd}}_*(X, f) \longrightarrow \mathbb{C}.$$
+  </span>
+</div>
+
+<p>When $X$ is affine, the de Rham side is computed from global sections, and the pairing is:
+</p>
+$$\left([\omega],\; \sigma = (\sigma_r)_r\right) \longmapsto \int_\sigma e^{-f}\omega := \lim_{r \to +\infty} \int_{\sigma_r} e^{-f}\omega.$$<p>Here $(\sigma_r)_r$ is the compatible system of chains defining the rapid decay cycle: each $\sigma_r \in C_n(X(\mathbb{C}))$ satisfies $\partial\sigma_r \subset f^{-1}(S_r)$. The integral $\int_{\sigma_r} e^{-f}\omega$ <strong>converges</strong> because $e^{-f}$ decays exponentially on $\{\mathrm{Re}(f) > r\}$ — this is precisely the rapid decay condition! Therefore the limit is well-defined.</p>
+<p><strong>Remark (novelty of the proof).</strong> The key subtlety is that the natural map
+</p>
+$$H^*_{\mathrm{dR}}(X, f) \longrightarrow H^*_{\mathrm{dR}}(X^{\mathrm{an}}, f^{\mathrm{an}})$$<p>
+is <strong>NOT</strong> an isomorphism in general. This is the essential difference from the classical case.</p>
+<p>Recall: a connection $\mathcal{E} \xrightarrow{\nabla} \mathcal{E} \otimes \Omega^1_X$ has <strong>regular singularities at infinity</strong> if $\mathcal{E}$ extends to a coherent sheaf $\bar{\mathcal{E}}$ on a compactification $\bar{X}$, and $\nabla$ extends to
+</p>
+$$\bar{\mathcal{E}} \xrightarrow{\bar\nabla} \bar{\mathcal{E}} \otimes \Omega^1_{\bar{X}}(\log D),$$<p>
+independently of the choice of compactification $\bar{X}$ (where $D = \bar{X} \setminus X$).</p>
+<p><strong>Theorem (Deligne).</strong> If $(\mathcal{E}, \nabla)$ has regular singularities, then:
+</p>
+$$H^*_{\mathrm{dR}}(X, (\mathcal{E}, \nabla)) \otimes_k \mathbb{C} \simeq H^*(X(\mathbb{C}),\; \ker(\nabla^{\mathrm{an}}))$$<p>
+(cohomology of the associated local system).</p>
+<p><strong>Main point.</strong> The connection $(\mathcal{O}_X, \nabla_f)$ with $\nabla_f(1) = -df$ does <strong>not</strong> have regular singularities in general. For example, take $X = \mathbb{A}^1_k$ and $f = x$: the compactification is $\mathbb{P}^1$, and in the coordinate $t = 1/x$ at infinity we get $dx = d(1/t) = -t^{-2}\,dt$, which has a <strong>double pole</strong> at $\infty$. So the connection cannot extend with only logarithmic poles. This is the phenomenon of irregular singularities, and it is precisely what makes the algebraic and analytic de Rham cohomologies differ.</p>
+<hr>
+<h2 id="iv-definition-of-exponential-periods">IV. Definition of Exponential Periods</h2>
+<p><strong>Definition.</strong> Let $k \subset \overline{\mathbb{Q}}$. An <strong>exponential period</strong> is a coefficient of the comparison isomorphism for some $H^n(X, Y, f)$, i.e. a number of the form
+</p>
+$$[\omega] \otimes [\sigma] \longmapsto \int_\sigma e^{-f}\omega$$<p>
+for $[\omega] \in H^n_{\mathrm{dR}}(X, Y, f)$, $[\sigma] \in H^{\mathrm{Rd}}_n(X, Y, f)$, and $(X, Y, f)$ defined over $k$.</p>
+<hr>
+<h2 id="v-examples">V. Examples</h2>
+<h3 id="example-0--constant">Example (0): $f$ constant</h3>
+<p>If $f$ is constant, $d_f = d$ and the twisted de Rham complex is the usual one, so:
+</p>
+$$H^*_{\mathrm{dR}}(X, f) = H^*_{\mathrm{dR}}(X), \qquad H^{\mathrm{Rd}}_*(X, f) = H^B_*(X).$$<p>However, the comparison isomorphism is <strong>different</strong>: the pairing gives $\int_\sigma e^{-f}\omega = e^{-f} \int_\sigma \omega$, so the period matrix is multiplied by the constant $e^{-f}$. For $f = 0$ we recover the usual pairing; for $f \neq 0$ everything is multiplied by $e^{-f}$.</p>
+<p><strong>Concrete example.</strong> Take $\alpha \in \overline{\mathbb{Q}}$, $X = \mathrm{Spec}(\mathbb{Q}(\alpha))$ (a point), and $f = -\alpha \in \mathcal{O}(X) = \mathbb{Q}(\alpha)$. The pairing is evaluation at the point, giving $e^\alpha$. Therefore:</p>
+$$e^\alpha \text{ is an exponential period of } (X, f).$$<p><strong>Conjecture.</strong> $e^\alpha$ is <strong>not</strong> a (classical) period — it is transcendental over the field generated by all classical periods. In particular, exponential periods are algebraically independent from classical periods as one varies $\alpha$.</p>
+<p><em>Remark.</em> This is &quot;impossible to prove at the moment&quot; in general. However, we have the following powerful result in this direction:</p>
+<div class="math-env style-defn" 
+    
+     data-kind="fact"
+     data-lang="en"
+     data-numbered="true">
+  <span class="math-heading">
+  <span class="math-title"
+        data-label='Fact'></span>
+  </span>
+  <span class="math-body">
+    <strong>Theorem (Hermite–Lindemann–Weierstrass).</strong> Let $\alpha_1, \ldots, \alpha_n \in \overline{\mathbb{Q}}$ be $\mathbb{Q}$-linearly independent. Then $e^{\alpha_1}, \ldots, e^{\alpha_n}$ are <strong>algebraically independent</strong> over $\overline{\mathbb{Q}}$. That is, if $p \in \mathbb{Q}[x_1, \ldots, x_n]$ satisfies $p(e^{\alpha_1}, \ldots, e^{\alpha_n}) = 0$, then $p = 0$.
+  </span>
+</div>
+
+<p><em>Remarks.</em></p>
+<ul>
+<li>We do not know 3 classical periods that are algebraically independent over $\overline{\mathbb{Q}}$.</li>
+<li>For exponential periods we can get as many algebraically independent ones as we want, from the theorem above.</li>
+<li>More precisely: $\mathrm{tr.deg}_{\overline{\mathbb{Q}}}(e^{\alpha_1}, \ldots, e^{\alpha_n}) = \mathrm{rank}_\mathbb{Q}\langle\alpha_1, \ldots, \alpha_n\rangle$. If the $\alpha_i$ are $\mathbb{Q}$-linearly independent, this is exactly $n$.</li>
+</ul>
+<hr>
+<h3 id="example-1--">Example (1): $X = \mathbb{A}^1_k$, $f = x^n$, $n \geq 2$</h3>
+<p>We already computed:
+</p>
+$$H^1_{\mathrm{dR}}(\mathbb{A}^1, x^n) = \mathbb{Q}[dx], \qquad H^{\mathrm{Rd}}_1(\mathbb{A}^1, x^n) = \mathbb{Q}[\mathbb{R}]$$<p>
+(one generator each, as seen in the previous lecture).</p>
+<p>The pairing gives $\int_\mathbb{R} e^{-x^n}\,dx = \sqrt{\pi}$ for $n = 2$. So:</p>
+$$\sqrt{\pi} = \int_{-\infty}^{+\infty} e^{-x^2}\,dx \quad \text{is an exponential period.}$$<p>Since $\pi$ is a classical period (of $(\mathbb{G}_m, \emptyset, 0)$ for example), $\sqrt{\pi}$ is algebraic over the ring of classical periods — unlike $e^\alpha$ above. This illustrates the difference between the two types of exponential periods.</p>
+<p><strong>Proof that $\sqrt{\pi}^2 = \pi$:</strong> we want to verify that $\left(\int_\mathbb{R} e^{-x^2}\,dx\right)^2 = \pi$, i.e. $\int_{\mathbb{R}^2} e^{-x^2-y^2}\,dx\,dy = \pi$.</p>
+<p>By the Künneth formula with the Thom–Sebastiani sum:
+</p>
+$$H^1(\mathbb{A}^1, x^2)^{\otimes 2} = H^2(\mathbb{A}^2, x^2+y^2), \qquad dx \otimes dy \longmapsto dx\,dy,$$<p>
+and $\mathbb{R}^2$ is a valid rapid decay 2-cycle (its boundary lies in $\{\mathrm{Re}(x^2+y^2) > r\}$ for each $r$, since at each step we can take a large disc whose boundary circle lies in that region). Computing in polar coordinates:
+</p>
+$$\int_{\mathbb{R}^2} e^{-(x^2+y^2)}\,dx\,dy = \left(\int_0^\infty e^{-r^2} r\,dr\right)\left(\int_0^{2\pi} d\theta\right) = \frac{1}{2} \cdot 2\pi = \pi.$$<p><em>Technical point.</em> The naive change of variables to polar coordinates uses $\sin$ and $\cos$, which are not algebraic. The algebraic way to handle this is to introduce the unit circle $C: s^2 + t^2 = 1$ (whose points play the role of $(\cos\theta, \sin\theta)$) and the map:
+</p>
+$$h: \mathbb{A}^1 \times C \longrightarrow \mathbb{A}^2, \qquad (r, (s,t)) \longmapsto (rs, rt).$$<p>
+This is algebraic and gives the change of variables. The function on $\mathbb{A}^1 \times C$ is $r^2 \boxplus 0$ (Thom–Sebastiani sum with the zero function on $C$), which maps to $x^2 + y^2$ on $\mathbb{A}^2$.</p>
+<p>The induced map on cohomology is:
+</p>
+$$h^*: H^2(\mathbb{A}^2, x^2+y^2) \longrightarrow H^2(\mathbb{A}^1 \times C, \{0\} \times C, r^2 \boxplus 0)$$<p>
+By Künneth: $H^2(\mathbb{A}^1 \times C, \{0\} \times C, r^2 \boxplus 0) \simeq H^1(\mathbb{A}^1, \{0\}, r^2) \otimes H^1(C)$. Computing this:
+</p>
+$$dx\,dy \longmapsto d(rs)\otimes d(rt) = (r\,ds + s\,dr)\otimes(r\,dt + t\,dr) = r\,dr \otimes (s\,dt - t\,ds) + \ldots$$<p>
+The terms $ds \otimes dt$ and $dr \otimes dr$ vanish. The surviving term is $r\,dr \otimes (s\,dt - t\,ds)$. But $r\,dr = 0$ in $H^1_{\mathrm{dR}}(\mathbb{A}^1, r^2)$: this follows because $d_f(-1/2) = -r^2 \cdot (-1/2) \cdot 2r\,dr = r\,dr$ wait — more precisely, $d_f(-1/2) = d(-1/2) - df \wedge (-1/2) = 0 - 2r\,dr \cdot (-1/2) = r\,dr$, so $r\,dr = 0$ in the cokernel. Therefore $h^*$ is the <strong>zero map</strong>:
+</p>
+$$h^*: H^2(\mathbb{A}^2, x^2+y^2) \longrightarrow H^1(\mathbb{A}^1, r^2) \otimes H^1(C) = 0.$$<p><em>Why does this not contradict the computation?</em> Because $\mathbb{R}$ is a valid rapid decay cycle for $r^2$, but $[0, +\infty)$ is not — a chain from $0$ to $\infty$ does not have its boundary in the rapid decay region (the boundary includes $\{0\}$, which is not in $\{\mathrm{Re}(r^2) > r_0\}$). This is why the change of variables is &quot;not allowed&quot; at the level of rapid decay cycles: $\mathbb{R}$ is a cycle, but $(0, +\infty)$ is not.</p>
+<p><strong>Resolution via a subvariety.</strong> To make the Künneth argument work, we introduce $Y = \{0\} \subset \mathbb{A}^1$ and use the long exact sequence. For $X = \mathbb{A}^1$, $Y = \{0\}$, $f = x^2$:
+</p>
+$$H^1(\mathbb{A}^1, \{0\}, x^2) \longrightarrow H^1(\mathbb{A}^1, x^2) \longrightarrow 0$$<p>
+and from the long exact sequence:
+</p>
+$$H^0(Y, f|_Y) = H^0(\{0\}, 0) = H^0(\mathrm{Spec}(\mathbb{Q})) = \mathbb{Q}(0)$$<p>
+(where $(0)$ means the constant function zero on $Y = \{0\}$). In fact $H^1(\mathbb{A}^1, \{0\}, x^2) \simeq H^1(\mathbb{A}^1, x^2) \oplus \mathbb{Q}(0)$ as a direct sum.</p>
+<p>Now using $\{0\} \times C \subset \mathbb{A}^1 \times C$, the map $h$ sends $\{0\} \times C$ to $\{(0,0)\} \subset \mathbb{A}^2$, and in the relative setting:
+</p>
+$$H^2(\mathbb{A}^2, \{(0,0)\}, x^2+y^2) \simeq H^2(\mathbb{A}^2, x^2+y^2)$$<p>
+(the point does not change things). By Künneth:
+</p>
+$$H^2(\mathbb{A}^1 \times C, \{0\} \times C, r^2 \boxplus 0) \simeq H^1(\mathbb{A}^1, \{0\}, r^2) \otimes H^1(C) \simeq \bigl(\mathbb{Q}(0) \oplus H^1(\mathbb{A}^1, r^2)\bigr) \otimes H^1(C).$$<p>
+The projection onto the $\mathbb{Q}(0) \otimes H^1(C) = H^1(C)$ component is the key piece. <strong>Total result:</strong>
+</p>
+$$h^*: H^2(\mathbb{A}^2, x^2+y^2) \xrightarrow{\sim} H^1(C).$$<p>The generator $dx\,dy$ maps to $s\,dt - t\,ds$ (the angular form on $C$, i.e. $d\theta$ in disguise), which is a generator of $H^1(C)$. This is an isomorphism.</p>
+<p><strong>Upshot.</strong> We have proved:
+</p>
+$$H^1(\mathbb{A}^1, x^2)^{\otimes 2} \simeq H^2(\mathbb{A}^2, x^2+y^2) \xrightarrow{\sim} H^1(C) = H^1(\{x^2+y^2=1\}).$$<p>This is a <strong>classical motive</strong> — the cohomology of the affine conic $C$.</p>
+<p><em>Remarks.</em>
+(a) If $k$ contains $\sqrt{-1}$, then $x^2 + y^2 = (x+iy)(x-iy)$, so $C \simeq \mathbb{G}_m$ and $H^1(C) \simeq \mathbb{Q}(-1)$ (the Tate twist, since $H^1_B(\mathbb{G}_m) = \mathbb{Q}(-1)$ is a pure Hodge structure of weight 2, Hodge type $(1,1)$).</p>
+<p>(b) The period we found is $\pi$, not $2\pi i$. Note that $2\pi i = \pi \cdot (2i)$, and $2i$ is an algebraic number, so $2\pi i$ is just a period times an algebraic number — consistent with what we found.</p>
+<p>The compactification $C \hookrightarrow \mathbb{P}^1$ (via $x^2 + y^2 = z^2$) has $D = \mathbb{P}^1 \setminus C = \mathrm{Spec}(\mathbb{Q}(i))$, two points, explaining the structure.</p>
+<hr>
+<p><strong>Goal.</strong> Understand when an exponential motive is isomorphic to a classical motive. We will approach this with the same Nori motive machinery.</p>
+<hr>
+<h3 id="example-2-">Example (2): $X = \mathbb{G}_m$, $f = x + 1/x$</h3>
+<p>The variety is $X = \mathrm{Spec}(\mathbb{Q}[x, x^{-1}])$, affine, so we compute twisted de Rham from global sections:
+</p>
+$$\mathbb{Q}[x, x^{-1}] \xrightarrow{d_f} \mathbb{Q}[x, x^{-1}]\,dx, \qquad P \longmapsto \left(P'(x) - \left(1 - \frac{1}{x^2}\right)P(x)\right)dx.$$<p><strong>Claim:</strong>
+</p>
+$$H^1_{\mathrm{dR}}(\mathbb{G}_m, f) = \mathbb{Q}\!\left[\frac{dx}{x}\right] \oplus \mathbb{Q}[dx].$$<p><em>Proof that these two are linearly independent.</em> Suppose $a + b/x = P'(x) - (1 - 1/x^2)P(x)$ has a solution $P \in \mathbb{Q}[x, x^{-1}]$ with $a, b \in \mathbb{Q}$. Looking at the recursion on Laurent coefficients one shows this is impossible (exercise: verify this by writing $P = \sum c_n x^n$ and checking that the system of equations for the $c_n$ has no solution).</p>
+<p><em>Remark.</em> More generally, $\mathbb{Q}[x^{n+1}\,dx] \oplus \mathbb{Q}[x^n\,dx]$ spans the cokernel (one can reduce any monomial to lower degree using $d_f$).</p>
+<p><strong>Rapid decay homology.</strong> The function $f = x + 1/x$ on $\mathbb{C}^*$ has $\mathrm{Re}(f) \to +\infty$ in two directions: along the positive real axis $\mathbb{R}_{>0}$ (as $x \to +\infty$ or $x \to 0^+$), and along the circle $|x|=1$ the function is purely imaginary and does not grow. The two rapid decay generators of $H^{\mathrm{Rd}}_1(\mathbb{G}_m, f)$ are:</p>
+<ul>
+<li>The unit circle $\bigcirc$ (a cycle, boundary empty);</li>
+<li>The positive real line $\mathbb{R}_{>0}$ (boundary $\{0\}$ and $\{\infty\}$, which are in the rapid decay region for large $r$).</li>
+</ul>
+$$H^{\mathrm{Rd}}_1(\mathbb{G}_m, f) = \mathbb{Q}\!\left[\bigcirc\right] \oplus \mathbb{Q}\!\left[\mathbb{R}_{>0}\right].$$<p><strong>Period matrix.</strong> The interesting entry is the integral over the unit circle:
+</p>
+$$\oint_{|x|=1} e^{-(x+1/x)}\frac{dx}{x} = \sum_{n=0}^\infty \oint_{|x|=1} \frac{(-1)^n}{n!}\left(x + \frac{1}{x}\right)^n \frac{dx}{x} = 2\pi i \sum_{n=0}^\infty \frac{\binom{2n}{n}}{2^{2n} \cdot n!} \cdot \frac{(-1)^n \cdot 2^{2n}}{n!}$$<p>Working this out carefully (using the residue of $(x + 1/x)^n/x$ at $x=0$, which picks out the $x^0$ coefficient):
+</p>
+$$\oint_{|x|=1} e^{-(x+1/x)}\frac{dx}{x} = 2\pi i \sum_{n=0}^\infty \frac{\binom{2n}{n}}{(2n)!} \cdot (-1)^n \cdot 2^{2n}$$<p>which simplifies to:
+</p>
+$$= 2\pi i \sum_{n=0}^\infty \frac{(-1)^n}{(n!)^2} = 2\pi i \cdot I_0(2) \qquad \Longrightarrow \quad \text{this is an exponential period.}$$<p>More generally, turning this into a function of a parameter $z$:
+</p>
+$$z \longmapsto \int_\sigma e^{-z(x+1/x)}\frac{dx}{x} = 2\pi i \sum_{n=0}^\infty \frac{z^{2n}}{((2n)!/\binom{2n}{n})} = 2\pi i \cdot I_0(2z),$$<p>
+where $I_0$ is the <strong>modified Bessel function of the first kind</strong>:
+</p>
+$$I_0(2z) = \sum_{n=0}^\infty \frac{z^{2n}}{(n!)^2},$$<p>
+important in physics. It satisfies a differential equation (Bessel's equation), which reflects the Gauss–Manin connection on the cohomology bundle.</p>
+<p><em>The exponential factor in the integrand is what allows these transcendental series — algebraically non-trivial numbers — to appear as periods of a simple algebraic variety.</em></p>
+<h3 id="another-example-exponential-motives-that-are-classical">Another example: exponential motives that are classical</h3>
+<p><strong>Claim.</strong> For any $(X, f)$, the cohomology $H^*(X \times \mathbb{A}^1, z \cdot f)$ (where $z$ is the coordinate on $\mathbb{A}^1$ and the function is $(x, z) \mapsto z \cdot f(x)$) is a <strong>classical motive</strong> — isomorphic to usual cohomology (without a function) using only the three relations (bilinearity, change of variables, Stokes).</p>
+<p><strong>Intuition from $\mathbb{F}_p$.</strong> Working over $\mathbb{F}_p$, fix a non-trivial additive character $\psi: (\mathbb{F}_p, +) \to (\mathbb{C}^\times, \cdot)$, e.g. $\psi(x) = e^{2\pi i x/p}$. The <strong>exponential sum</strong>:
+</p>
+$$\sum_{x \in X(\mathbb{F}_p),\; z \in \mathbb{F}_p} \psi(z \cdot f(x))$$<p>
+is a generalization of point counting ($\psi = 1$ gives $\#X(\mathbb{F}_p)$). Setting $W = X \times \mathbb{A}^1$, $g = z \cdot f$:
+</p>
+$$\sum_{x \in X(\mathbb{F}_p),\; z \in \mathbb{F}_p} \psi(z \cdot f(x)) = \sum_{\substack{x \in X(\mathbb{F}_p),\; z \in \mathbb{F}_p \\ f(x) \neq 0}} \psi(z \cdot f(x)) + p \cdot \#\{f=0\}(\mathbb{F}_p).$$<p>
+By orthogonality of characters, $\sum_{z \in \mathbb{F}_p} \psi(z \cdot f(x)) = 0$ whenever $f(x) \neq 0$. So the whole sum equals $p \cdot \#\{f=0\}(\mathbb{F}_p)$, which counts $\mathbb{F}_p$-points of the hypersurface $\{f=0\}$. This suggests that $H^n(X \times \mathbb{A}^1, z \cdot f) \simeq H^{n-2}(\{f=0\})(-1)$ (a Tate-twisted classical motive), consistent with the claim.</p>
+
+    
+  </article>
+
+  
+  
+
+<div id="sharingbuttons">
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+  <div class="paginator">
+    
+    <a class="link" href="https://mortad3lla.github.io/posts/exponential_motives_lesson3/" title="Exponential Motives — Lesson III"><span class="arrow-icon">🢠</span> Prev</a>
+    
+    
+    <a class="link" href="https://mortad3lla.github.io/posts/o_minimality_hunter_spink/" title="Examples of O-minimality in Algebraic Geometry">Next <span class="arrow-icon">🢡</span></a>
+    
+  </div>
+  
+  <div class="comment">
+    
+    
+    
+    <script src="https://giscus.app/client.js"
+        data-repo="yunhaixiang/yhmath"
+        data-repo-id="R_kgDOQj059g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOQj059s4CzenA"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="gruvbox"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  </div>
+  
+  
+</main>
+
+    <footer id="footer">
+  
+  <div>
+    <span>Copyright © 2026 Filippo Belfiori</span>
+  </div>
+</footer>
+
+<script src="https://mortad3lla.github.io/js/math-env.js"></script>
+
+  </div>
+
+  
+  <script src='https://mortad3lla.github.io/js/script.js' defer></script>
+
+  
+  
+
+  
+  
+
+  
+  
+
+</body>
+
+</html>
+
+<script src="https://mortad3lla.github.io/js/collapsible.js" defer></script>
+<script src="https://mortad3lla.github.io/js/mobile-ol-markers.js" defer></script>
