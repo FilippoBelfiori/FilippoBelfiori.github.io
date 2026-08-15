@@ -6,7 +6,264 @@
     <description>Recent content in Blog on Filippo Belfiori</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://mortad3lla.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://mortad3lla.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Motivic Cohomology</title>
+      <link>https://mortad3lla.github.io/posts/notes-on-motivic-cohomolgoy/</link>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://mortad3lla.github.io/posts/notes-on-motivic-cohomolgoy/</guid>
+      <description>&lt;h2 id=&#34;étale-sheaves-with-transfers&#34;&gt;Étale sheaves with transfers&lt;/h2&gt;
+&lt;p&gt;We know that there is a forgetful functor &lt;/p&gt;
+$$PST(k) \to PShv(Sm/k)$$&lt;p&gt; which simply allow us to see a presheaf with transfer as a presheaf on the category of smooth schemes. A presehaf with transfers is an étale sheaf with transfers if is an étale sheaf when restricted to the étale site on $Sm/k$. We denote the category of étale sheaves with transfers by $Shv_{ét}(Cor_k)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposition&lt;/strong&gt; For any scheme $X$, the presheaf with transfer $\mathbb{Z}_{tr}(X)$ is an étale sheaf with transfers.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Corollary&lt;/strong&gt; For any étale sheaf with transfers $F$ and any smooth scheme $X$ &lt;/p&gt;
+$$Hom_{Shv_{ét}(Cor_k)}(\mathbb{Z}_{tr}(X), F) = Hom_{PST}(\mathbb{Z}_{tr}(X), F).$$&lt;p&gt;&lt;strong&gt;Corollary&lt;/strong&gt; For any abelian group the complexes $A(q)$ of presheaves with transfers are complexes of étale sheaves with transfers. In particular, $\mathbb{Z}/n (1)$ is a complex of étale sheaves with transfers quasi-isomorphic to the étale sheaf $\mu_n$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposition&lt;/strong&gt; Let $\left\{U_i \to X\right\}$ be a Zariski cover. Then the following is exact as a complex of étale sheaves &lt;/p&gt;
+$$0 \to \mathbb{Z}_{tr}(U_1 \cap \ldots \cap U_n) \to \ldots \to \oplus_i \mathbb{Z}_{tr}(U_i) \to \mathbb{Z}_{tr}(X) \to .O$$&lt;p&gt;As an application, take the usual covering of $\mathbb{P}^1$. Then there is an exact sequence of complex of étale sheaves
+&lt;/p&gt;
+$$0 \to \mathbb{Z}_{tr}(\mathbb{G}_m) \to 2 \mathbb{Z}_{tr}(\mathbb{A}^1,1) \to \mathbb{Z}_{tr}(\mathbb{P}^1,1) \to 0.$$&lt;p&gt;
+Since $C_{*}\mathbb{Z}_{tr}(\mathbb{A}^1,1)=0$ we find &lt;/p&gt;
+$$C_{*}\mathbb{Z}_{tr}(\mathbb{P}^1,1)=C_{*}\mathbb{Z}_{tr}(\mathbb{G}_m)[1]=\mathbb{Z}(1).$$&lt;p&gt;Moreover, we know we can take the étale sheafification from $PShv(Sm/k)$ to the category of $Sh_{ét}(Sm/k)$. Given $F \in PST(k)$ a presheaf with transfers, we denote $F_{ét}$ the composition of the forgetful functor with the étale sheafification.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; The étale sheaf $F_{ét}$ has a unique structure of an étale sheaf with transfers such that $F \to F_{ét}$ is a morphism of étale sheaves with transfers.&lt;/p&gt;
+&lt;p&gt;Recall that having transfers is a property! The same actually holds for the Nisnevich topology, but not for the Zariski topology (this will hold if $F$ is $\mathbb{A}^1$-invariant).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposition&lt;/strong&gt; Let $F$ be an étale sheaf with transfers. Then the cohomology presheaves $H^n_{ét}(-,F)$ on $Sm/k$ are preshaeves with transfers.&lt;/p&gt;
+&lt;h2 id=&#34;contractions&#34;&gt;Contractions&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt; Let $F$ be an homotopy invariant presheaf with transfers. We define $F_{-1}$ as the presheaf with transfers &lt;/p&gt;
+$$F_{-1}(X) = \textnormal{coker}(F(X \times \mathbb{A}^1) \to F(X \times \mathbb{A}^1 \setminus 0)).$$</description>
+    </item>
+    
+    <item>
+      <title>Symmetric Spectra</title>
+      <link>https://mortad3lla.github.io/posts/symmetric_spectra/</link>
+      <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://mortad3lla.github.io/posts/symmetric_spectra/</guid>
+      <description>&lt;h2 id=&#34;1-the-two-main-objects&#34;&gt;1. The Two Main Objects&lt;/h2&gt;
+&lt;p&gt;The paper constructs and studies two categories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;$\mathrm{Sp}^\Sigma$&lt;/strong&gt; — symmetric spectra of &lt;strong&gt;simplicial sets&lt;/strong&gt; (Sections 1–5)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$\mathrm{Sp}^\Sigma_{\mathcal{T}_*}$&lt;/strong&gt; — symmetric spectra of &lt;strong&gt;compactly generated topological spaces&lt;/strong&gt; (Section 6)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The simplicial case is the primary one. Section 6 then &lt;em&gt;lifts&lt;/em&gt; the whole theory to the topological setting via geometric realization / singular functor, and the two stable model categories turn out to be &lt;strong&gt;Quillen equivalent&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-what-is-a-symmetric-spectrum&#34;&gt;2. What Is a Symmetric Spectrum?&lt;/h2&gt;
+&lt;h3 id=&#34;ordinary-spectrum-definition-121&#34;&gt;Ordinary spectrum (Definition 1.2.1)&lt;/h3&gt;
+&lt;p&gt;A sequence of pointed simplicial sets $X_0, X_1, \ldots$ together with structure maps $\sigma: S^1 \wedge X_n \to X_{n+1}$.&lt;/p&gt;
+&lt;h3 id=&#34;symmetric-spectrum-definition-122&#34;&gt;Symmetric spectrum (Definition 1.2.2)&lt;/h3&gt;
+&lt;p&gt;Same data &lt;strong&gt;plus&lt;/strong&gt;: a basepoint-preserving left action of $\Sigma_n$ on $X_n$ for each $n$, such that the iterated structure map
+&lt;/p&gt;
+$$\sigma^p = \sigma \circ (S^1 \wedge \sigma) \circ \cdots \circ (S^{p-1} \wedge \sigma) : S^p \wedge X_n \to X_{n+p}$$&lt;p&gt;
+is $\Sigma_p \times \Sigma_n$-equivariant for all $p \geq 1$, $n \geq 0$.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Key slogan:&lt;/strong&gt; $S^p = (S^1)^{\wedge p}$ carries a left permutation action of $\Sigma_p$; the symmetric spectrum must be compatible with this action at every level.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note (Remark 1.2.3):&lt;/strong&gt; It suffices to require equivariance for $\sigma$ and $\sigma^2$ alone (since $\Sigma_p$ is generated by transpositions).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The category of symmetric spectra is denoted $\mathrm{Sp}^\Sigma$; maps are sequences of $\Sigma_n$-equivariant pointed maps commuting with structure maps.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;3-the-closed-symmetric-monoidal-structure-2&#34;&gt;3. The Closed Symmetric Monoidal Structure (§2)&lt;/h2&gt;
+&lt;h3 id=&#34;why-ordinary-spectra-fail&#34;&gt;Why ordinary spectra fail&lt;/h3&gt;
+&lt;p&gt;The sphere sequence $S = (S^0, S^1, S^2, \ldots)$ is a monoid in the category of sequences $\mathcal{S}^{\mathbb{N}}_*$, but &lt;strong&gt;not a commutative monoid&lt;/strong&gt; (the twist map on $S^1 \wedge S^1$ is not the identity). Hence there is no closed symmetric monoidal smash product on $\mathrm{Sp}^{\mathbb{N}}$.&lt;/p&gt;
+&lt;h3 id=&#34;why-symmetric-spectra-work&#34;&gt;Why symmetric spectra work&lt;/h3&gt;
+&lt;p&gt;The sphere symmetric spectrum $S$ &lt;strong&gt;is&lt;/strong&gt; a commutative monoid in the category of symmetric sequences $\mathcal{S}^\Sigma_*$ (Lemma 4.4.1: it is the free commutative monoid on $G_1 S^1$).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key equivalence (Proposition 2.2.1):&lt;/strong&gt;
+&lt;/p&gt;
+$$\mathrm{Sp}^\Sigma \;\simeq\; \text{left } S\text{-modules in } \mathcal{S}^\Sigma_*$$&lt;p&gt;&lt;strong&gt;Smash product (Definition 2.2.3):&lt;/strong&gt;
+&lt;/p&gt;
+$$X \wedge Y := X \otimes_S Y$$&lt;p&gt;
+i.e., the relative tensor product over $S$ in the symmetric monoidal category of symmetric sequences.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Main structural theorem (Theorem 2.2.10):&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The smash product is a &lt;strong&gt;closed symmetric monoidal product&lt;/strong&gt; on $\mathrm{Sp}^\Sigma$. In particular, there is a natural adjunction isomorphism
+&lt;/p&gt;
+$$\mathrm{Sp}^\Sigma(X \wedge Y, Z) \cong \mathrm{Sp}^\Sigma(X, \mathrm{Hom}_S(Y, Z)).$$&lt;/blockquote&gt;
+&lt;p&gt;The internal hom $\mathrm{Hom}_S(X,Y)$ is the &lt;strong&gt;function spectrum&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;4-the-stable-category-of-symmetric-spectra-of-simplicial-sets&#34;&gt;4. The Stable Category of Symmetric Spectra of Simplicial Sets&lt;/h2&gt;
+&lt;h3 id=&#34;41-stable-equivalence--the-critical-subtlety-31&#34;&gt;4.1 Stable Equivalence — the critical subtlety (§3.1)&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;Warning:&lt;/strong&gt; Stable equivalence &lt;strong&gt;cannot&lt;/strong&gt; be defined via stable homotopy groups $\pi_*$ (i.e., via the underlying forgetful functor $U: \mathrm{Sp}^\Sigma \to \mathrm{Sp}^{\mathbb{N}}$). The forgetful functor does &lt;strong&gt;not&lt;/strong&gt; preserve stable equivalences.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Definition (3.1.3):&lt;/strong&gt; A map $f: X \to Y$ is a &lt;strong&gt;stable equivalence&lt;/strong&gt; if $E^0 f: E^0 Y \to E^0 X$ is an isomorphism for every &lt;strong&gt;injective $\Omega$-spectrum&lt;/strong&gt; $E$, where $E^0(X) = \pi_0 \mathrm{Map}(X, E)$.&lt;/p&gt;
+&lt;p&gt;Equivalently (Proposition 3.1.4), the following are equivalent:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$E^0 f$ is an isomorphism for every injective $\Omega$-spectrum $E$&lt;/li&gt;
+&lt;li&gt;$\mathrm{Map}(f, E)$ is a weak equivalence for every injective $\Omega$-spectrum $E$&lt;/li&gt;
+&lt;li&gt;$\mathrm{Hom}_S(f, E)$ is a level equivalence for every injective $\Omega$-spectrum $E$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Important relationship with homotopy groups (Theorem 3.1.11):&lt;/strong&gt;&lt;br&gt;
+If $\pi_* f$ is an isomorphism, then $f$ is a stable equivalence. The converse fails in general (Example 3.1.10: the map $\lambda: F_1 S^1 \to F_0 S^0$ is a stable equivalence but not a $\pi_*$-isomorphism).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Corollary 3.1.8:&lt;/strong&gt; Every level equivalence is a stable equivalence.&lt;/p&gt;
+&lt;h3 id=&#34;42-the-stable-model-structure-34-theorem-344&#34;&gt;4.2 The Stable Model Structure (§3.4, Theorem 3.4.4)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Main Theorem:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\mathrm{Sp}^\Sigma$ with the following three classes is a &lt;strong&gt;model category&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Weak equivalences&lt;/strong&gt; = stable equivalences&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cofibrations&lt;/strong&gt; = stable cofibrations (= $FI_\partial$-cofibrations = maps with LLP w.r.t. all level trivial fibrations)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fibrations&lt;/strong&gt; = stable fibrations (= maps with RLP w.r.t. all stable trivial cofibrations)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Key identifications:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stable trivial fibrations = level trivial fibrations (Lemma 3.4.5)&lt;/li&gt;
+&lt;li&gt;Stable fibrations = $J$-injective maps (Corollary 3.4.16)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fibrant objects = $\Omega$-spectra&lt;/strong&gt; (Corollary 3.4.13), i.e., $X$ such that each $X_n$ is a Kan complex and $X_n \xrightarrow{\sim} \mathrm{Map}(S^1, X_{n+1})$&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cofibrant objects:&lt;/strong&gt; $X$ is stably cofibrant iff $* \to X$ is a stable cofibration; all $F_n K$ are stably cofibrant (Prop. 3.4.2.3)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Characterization of stable cofibrations (Proposition 5.2.2):&lt;/strong&gt;&lt;br&gt;
+$f: X \to Y$ is a stable cofibration iff for all $n \geq 0$, the map
+&lt;/p&gt;
+$$\mathrm{Ev}_n(f \square i): X_n \amalg_{L_n X} L_n Y \to Y_n$$&lt;p&gt;
+is a $\Sigma_n$-cofibration (i.e., equivariant monomorphism with free $\Sigma_n$-action on new cells), where $L_n X = \mathrm{Ev}_n(X \wedge \bar{S})$ is the &lt;strong&gt;latching space&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;43-comparison-with-bousfieldfriedlander-4-theorem-432&#34;&gt;4.3 Comparison with Bousfield–Friedlander (§4, Theorem 4.3.2)&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The forgetful functor $U: \mathrm{Sp}^\Sigma \to \mathrm{Sp}^{\mathbb{N}}$ and its left adjoint $V: \mathrm{Sp}^{\mathbb{N}} \to \mathrm{Sp}^\Sigma$ form a &lt;strong&gt;Quillen equivalence&lt;/strong&gt; of stable model categories.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Concretely: $V(X) = S \otimes_{T(G_1 S^1)} GX$. The induced equivalence on homotopy categories identifies $\mathrm{Ho}(\mathrm{Sp}^\Sigma)$ with &lt;strong&gt;Boardman&#39;s stable homotopy category&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The homotopy category of symmetric $\Omega$-spectra $\mathrm{Ho}(\Omega \mathrm{Sp}^\Sigma)$ (inverting level equivalences) is also naturally equivalent to Boardman&#39;s category (§1.4).&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;5-additional-key-properties-5&#34;&gt;5. Additional Key Properties (§5)&lt;/h2&gt;
+&lt;h3 id=&#34;51-two-level-model-structures-theorem-512&#34;&gt;5.1 Two Level Model Structures (Theorem 5.1.2)&lt;/h3&gt;
+&lt;p&gt;There are two model structures with weak equivalences = level equivalences:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Projective level structure:&lt;/strong&gt; cofibrations = stable cofibrations (= $FI_\partial$-cof), fibrations = level fibrations&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Injective level structure:&lt;/strong&gt; cofibrations = level cofibrations (= monomorphisms), fibrations = injective fibrations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Corollary 5.1.3:&lt;/strong&gt; Every symmetric spectrum embeds in an injective spectrum by a level equivalence (enough injectives).&lt;/p&gt;
+&lt;h3 id=&#34;52-monoidal-structure-is-compatible-53-corollary-538&#34;&gt;5.2 Monoidal Structure is Compatible (§5.3, Corollary 5.3.8)&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Both the &lt;strong&gt;projective level structure&lt;/strong&gt; and the &lt;strong&gt;stable model structure&lt;/strong&gt; on $\mathrm{Sp}^\Sigma$ are &lt;strong&gt;monoidal&lt;/strong&gt;: the pushout smash product $f \square g$ of two cofibrations is a cofibration, trivial if either factor is trivial.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Key result (Theorem 5.3.7): if $f$ is an $S$-cofibration and $g$ is a level cofibration, and either is a stable equivalence, then $f \square g$ is a stable equivalence.&lt;/p&gt;
+&lt;p&gt;Since the sphere spectrum $S$ is &lt;strong&gt;cofibrant&lt;/strong&gt; in $\mathrm{Sp}^\Sigma$, this ensures the smash product descends to a symmetric monoidal structure on $\mathrm{Ho}(\mathrm{Sp}^\Sigma)$.&lt;/p&gt;
+&lt;h3 id=&#34;53-proper-model-category-theorem-542&#34;&gt;5.3 Proper Model Category (Theorem 5.4.2)&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The stable model category of symmetric spectra is &lt;strong&gt;proper&lt;/strong&gt; (both left and right proper).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;54-the-monoid-axiom-theorem-551&#34;&gt;5.4 The Monoid Axiom (Theorem 5.5.1)&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Transfinite compositions of pushouts of maps of the form $f \wedge X$ (where $f$ is a stable trivial cofibration) are stable equivalences.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Consequence (Corollaries 5.5.2–5.5.3):&lt;/strong&gt; For any monoid $R$ in $\mathrm{Sp}^\Sigma$ (= symmetric ring spectrum):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There is a &lt;strong&gt;model structure on $R$-modules&lt;/strong&gt; (weak equivalences = underlying stable equivalences)&lt;/li&gt;
+&lt;li&gt;If $R$ is commutative, there is a &lt;strong&gt;model structure on $R$-algebras&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;A stable equivalence of monoids $R \xrightarrow{\sim} R&#39;$ induces a &lt;strong&gt;Quillen equivalence&lt;/strong&gt; between module/algebra categories (Theorem 5.5.9)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;55-semistable-spectra-56&#34;&gt;5.5 Semistable Spectra (§5.6)&lt;/h3&gt;
+&lt;p&gt;A symmetric spectrum $X$ is &lt;strong&gt;semistable&lt;/strong&gt; if $X \to LX$ (fibrant replacement) is a stable homotopy equivalence. Semistable spectra include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;All $\Omega$-spectra (fibrant objects)&lt;/li&gt;
+&lt;li&gt;Spectra with finite classical stable homotopy groups&lt;/li&gt;
+&lt;li&gt;Connective spectra satisfying a connectivity growth condition&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Proposition 5.6.5:&lt;/strong&gt; For semistable $X$ and $Y$, a map $f: X \to Y$ is a stable equivalence iff it is a stable homotopy equivalence.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;6-the-stable-category-of-topological-symmetric-spectra-6&#34;&gt;6. The Stable Category of Topological Symmetric Spectra (§6)&lt;/h2&gt;
+&lt;h3 id=&#34;61-setup&#34;&gt;6.1 Setup&lt;/h3&gt;
+&lt;p&gt;One works with &lt;strong&gt;compactly generated weak Hausdorff spaces&lt;/strong&gt; $\mathcal{T}_*$ (not all of $\mathrm{Top}_*$, which is not symmetric monoidal under $\wedge$). The category $\mathcal{T}_*$ is a &lt;strong&gt;proper monoidal model category&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A topological symmetric spectrum (Definition 6.2.2) is defined exactly as in the simplicial case, replacing simplicial sets by spaces in $\mathcal{T}_*$ and $S^1$ by the unit circle.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Structural equivalence:&lt;/strong&gt; The category $\mathrm{Sp}^\Sigma_{\mathcal{T}_*}$ is again equivalent to left $S$-modules (where $S = (S^0, S^1, \ldots)$ with permutation actions), and is a &lt;strong&gt;closed symmetric monoidal category&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;62-stable-model-structure-on-topological-symmetric-spectra-63&#34;&gt;6.2 Stable Model Structure on Topological Symmetric Spectra (§6.3)&lt;/h3&gt;
+&lt;p&gt;The stable model structure is &lt;strong&gt;lifted from the simplicial case&lt;/strong&gt; via:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;geometric realization $|\cdot|: \mathrm{Sp}^\Sigma \to \mathrm{Sp}^\Sigma_{\mathcal{T}_*}$&lt;/li&gt;
+&lt;li&gt;singular functor $\mathrm{Sing}: \mathrm{Sp}^\Sigma_{\mathcal{T}_*} \to \mathrm{Sp}^\Sigma$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Definition (6.3.2):&lt;/strong&gt; A map $f$ in $\mathrm{Sp}^\Sigma_{\mathcal{T}_*}$ is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;strong&gt;stable equivalence&lt;/strong&gt; if $\mathrm{Sing}(f)$ is a stable equivalence in $\mathrm{Sp}^\Sigma$&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;stable fibration&lt;/strong&gt; if $\mathrm{Sing}(f)$ is a stable fibration in $\mathrm{Sp}^\Sigma$&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;stable cofibration&lt;/strong&gt; if $f$ has LLP w.r.t. all stable trivial fibrations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Theorem 6.3.8:&lt;/strong&gt; The stable model structure on $\mathrm{Sp}^\Sigma_{\mathcal{T}_*}$ is a &lt;strong&gt;model category&lt;/strong&gt;. Moreover:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$f \in \mathrm{Sp}^\Sigma$ is a stable equivalence $\Leftrightarrow$ $|f|$ is a stable equivalence&lt;/li&gt;
+&lt;li&gt;$g \in \mathrm{Sp}^\Sigma_{\mathcal{T}_*}$ is a stable equivalence $\Leftrightarrow$ $\mathrm{Sing}(g)$ is a stable equivalence&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;(Quillen equivalence):&lt;/strong&gt; $(|\cdot|, \mathrm{Sing})$ is a Quillen equivalence between the stable model structure on $\mathrm{Sp}^\Sigma$ and the stable model structure on $\mathrm{Sp}^\Sigma_{\mathcal{T}_*}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fibrant objects&lt;/strong&gt; = topological $\Omega$-spectra: $X$ such that $X_n \xrightarrow{\sim} X_{n+1}^{S^1}$ for all $n$ (Lemma 6.3.3).&lt;/p&gt;
+&lt;h3 id=&#34;63-properties-of-the-topological-stable-structure-64&#34;&gt;6.3 Properties of the Topological Stable Structure (§6.4)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Monoidal (Corollary 6.4.2):&lt;/strong&gt; Both the projective level structure and the stable model structure on $\mathrm{Sp}^\Sigma_{\mathcal{T}_*}$ are monoidal.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proper (Theorem 6.4.4):&lt;/strong&gt; The stable model structure on topological symmetric spectra is proper.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Monoids and modules (Theorem 6.4.5):&lt;/strong&gt; The monoid axiom is &lt;em&gt;unknown&lt;/em&gt; for topological symmetric spectra. However:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Every monoid $R$ admits a stably cofibrant replacement $R&#39; \xrightarrow{\sim} R$&lt;/li&gt;
+&lt;li&gt;If $R$ is stably cofibrant, there is a model structure on $R$-modules&lt;/li&gt;
+&lt;li&gt;Quillen equivalence holds between module categories under stably cofibrant stable equivalences of monoids&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Homotopy category of monoids (Theorem 6.4.6):&lt;/strong&gt; The homotopy category of monoids in $\mathrm{Sp}^\Sigma_{\mathcal{T}_*}$ (inverting stable equivalences) is equivalent to the homotopy category of monoids in $\mathrm{Sp}^\Sigma$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;7-summary-table&#34;&gt;7. Summary Table&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Property&lt;/th&gt;
+          &lt;th&gt;$\mathrm{Sp}^\Sigma$ (simplicial)&lt;/th&gt;
+          &lt;th&gt;$\mathrm{Sp}^\Sigma_{\mathcal{T}_*}$ (topological)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Closed symmetric monoidal&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Stable model structure&lt;/td&gt;
+          &lt;td&gt;✓ (Theorem 3.4.4)&lt;/td&gt;
+          &lt;td&gt;✓ (Theorem 6.3.8)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Fibrant objects&lt;/td&gt;
+          &lt;td&gt;$\Omega$-spectra&lt;/td&gt;
+          &lt;td&gt;$\Omega$-spectra&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Sphere spectrum cofibrant&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+          &lt;td&gt;✓&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Monoidal model structure&lt;/td&gt;
+          &lt;td&gt;✓ (Corollary 5.3.8)&lt;/td&gt;
+          &lt;td&gt;✓ (Corollary 6.4.2)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Proper&lt;/td&gt;
+          &lt;td&gt;✓ (Theorem 5.4.2)&lt;/td&gt;
+          &lt;td&gt;✓ (Theorem 6.4.4)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Monoid axiom&lt;/td&gt;
+          &lt;td&gt;✓ (Theorem 5.5.1)&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Model structure on $R$-modules&lt;/td&gt;
+          &lt;td&gt;✓ for any monoid $R$&lt;/td&gt;
+          &lt;td&gt;✓ if $R$ stably cofibrant&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Quillen equivalent to $\mathrm{Sp}^{\mathbb{N}}$&lt;/td&gt;
+          &lt;td&gt;✓ (Theorem 4.3.2)&lt;/td&gt;
+          &lt;td&gt;✓ (via composition)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Quillen equivalent to each other&lt;/td&gt;
+          &lt;td&gt;—&lt;/td&gt;
+          &lt;td&gt;✓ (Theorem 6.3.8)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Based on: M. Hovey, B. Shipley, J. Smith — &amp;quot;Symmetric Spectra&amp;quot;, arXiv:math/9801077 (1998)&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Examples of O-minimality in Algebraic Geometry</title>
       <link>https://mortad3lla.github.io/posts/o_minimality_hunter_spink/</link>
@@ -349,8 +606,6 @@ $$\omega_B: M(k) \longrightarrow \mathrm{Vect}_\mathbb{Q}, \qquad \omega_B([X, Y
   &lt;/span&gt;
 &lt;/div&gt;
 
-&lt;p&gt;The construction factors as:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://q.uiver.app/#q=WzMsWzAsMSwiUShrKSJdLFsyLDAsIlxcbWF0aHJte1ZlY3R9X3tcXG1hdGhiYntRfX0iXSxbMSwxLCJNKGspPVxcbGFuZ2xlIFEoayksXFxyaG9fQlxccmFuZ2xlIl0sWzAsMSwiXFxyaG9fQiIse31dLFswLDIsIiIse31dLFsyLDEsIlxcb21lZ2FfQiIse31dXQ&#34;&gt;&lt;img src=&#34;https://q.uiver.app/#q=WzMsWzAsMSwiUShrKSJdLFsyLDAsIlxcbWF0aHJte1ZlY3R9X3tcXG1hdGhiYntRfX0iXSxbMSwxLCJNKGspPVxcbGFuZ2xlIFEoayksXFxyaG9fQlxccmFuZ2xlIl0sWzAsMSwiXFxyaG9fQiIse31dLFswLDIsIiIse31dLFsyLDEsIlxcb21lZ2FfQiIse31dXQ&#34; alt=&#34;Tannakian triangle&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The theorem says in particular that $\otimes$ in $M(k)$ is compatible with the Künneth formula via $\omega_B$.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Why is this non-trivial?&lt;/strong&gt; We need to define $[X, Y, n, i] \otimes [X&#39;, Y&#39;, n&#39;, i&#39;]$ compatibly with $\rho_B$. The natural candidate is $[X \times X&#39;,\, (Y \times X&#39;) \cup (X \times Y&#39;),\, n+n&#39;,\, i+i&#39;]$. The problem is that Künneth gives:
 &lt;/p&gt;

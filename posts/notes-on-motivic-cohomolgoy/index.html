@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-us" style="font-size: 105%">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <meta name="author" content="Filippo Belfiori">
+
+  
+  
+  <meta name="description" content="Étale sheaves with transfers
+We know that there is a forgetful functor 
+$$PST(k) \to PShv(Sm/k)$$ which simply allow us to see a presheaf with transfer as a presheaf on the category of smooth schemes. A presehaf with transfers is an étale sheaf with transfers if is an étale sheaf when restricted to the étale site on $Sm/k$. We denote the category of étale sheaves with transfers by $Shv_{ét}(Cor_k)$.
+Proposition For any scheme $X$, the presheaf with transfer $\mathbb{Z}_{tr}(X)$ is an étale sheaf with transfers.">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://mortad3lla.github.io//images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://mortad3lla.github.io//images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://mortad3lla.github.io//images/favicon-16x16.png">
+
+  
+  
+  <meta name="keywords" content='hugo latex theme blog texify texify2 texify3 michael neuper'>
+  
+
+  
+  
+  <link rel="stylesheet" href='https://mortad3lla.github.io/katex/katex.min.css'>
+<script defer defer src='https://mortad3lla.github.io/katex/katex.min.js'></script>
+<script defer src='https://mortad3lla.github.io/katex/contrib/auto-render.min.js'></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+  
+
+  
+  
+
+  
+  <meta property="og:url" content="https://mortad3lla.github.io/posts/notes-on-motivic-cohomolgoy/">
+  <meta property="og:site_name" content="Filippo Belfiori">
+  <meta property="og:title" content="Motivic Cohomology">
+  <meta property="og:description" content="Étale sheaves with transfers We know that there is a forgetful functor $$PST(k) \to PShv(Sm/k)$$ which simply allow us to see a presheaf with transfer as a presheaf on the category of smooth schemes. A presehaf with transfers is an étale sheaf with transfers if is an étale sheaf when restricted to the étale site on $Sm/k$. We denote the category of étale sheaves with transfers by $Shv_{ét}(Cor_k)$.
+Proposition For any scheme $X$, the presheaf with transfer $\mathbb{Z}_{tr}(X)$ is an étale sheaf with transfers.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-23T00:00:00+00:00">
+
+
+  
+  <link rel="canonical" href="https://mortad3lla.github.io/posts/notes-on-motivic-cohomolgoy/">
+
+  
+  
+  
+  <meta itemprop="name" content="Motivic Cohomology">
+  <meta itemprop="description" content="Étale sheaves with transfers We know that there is a forgetful functor $$PST(k) \to PShv(Sm/k)$$ which simply allow us to see a presheaf with transfer as a presheaf on the category of smooth schemes. A presehaf with transfers is an étale sheaf with transfers if is an étale sheaf when restricted to the étale site on $Sm/k$. We denote the category of étale sheaves with transfers by $Shv_{ét}(Cor_k)$.
+Proposition For any scheme $X$, the presheaf with transfer $\mathbb{Z}_{tr}(X)$ is an étale sheaf with transfers.">
+  <meta itemprop="datePublished" content="2026-04-23T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-04-23T00:00:00+00:00">
+  <meta itemprop="wordCount" content="350">
+
+  
+  
+  
+    <link rel="stylesheet" href="https://mortad3lla.github.io/css/common.min.861fcd7d94c0b4dbf0e9e70d96940dec8eb63a61695188041a92eb7c10290679.css" integrity="sha256-hh/NfZTAtNvw6ecNlpQN7I62OmFpUYgEGpLrfBApBnk=" crossorigin="anonymous">
+  
+
+  
+  
+    <link rel="stylesheet" href="https://mortad3lla.github.io/css/content.min.387e0600ad454285e14579a443ef8d74c65694968d90ef5ec785e6ae23f8355a.css" integrity="sha256-OH4GAK1FQoXhRXmkQ&#43;&#43;NdMZWlJaNkO9ex4XmriP4NVo=" crossorigin="anonymous">
+  
+
+  
+  
+  <title>Motivic Cohomology - Filippo Belfiori</title>
+  
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Motivic Cohomology">
+  <meta name="twitter:description" content="Étale sheaves with transfers We know that there is a forgetful functor $$PST(k) \to PShv(Sm/k)$$ which simply allow us to see a presheaf with transfer as a presheaf on the category of smooth schemes. A presehaf with transfers is an étale sheaf with transfers if is an étale sheaf when restricted to the étale site on $Sm/k$. We denote the category of étale sheaves with transfers by $Shv_{ét}(Cor_k)$.
+Proposition For any scheme $X$, the presheaf with transfer $\mathbb{Z}_{tr}(X)$ is an étale sheaf with transfers.">
+
+
+  
+
+
+  <link rel="stylesheet" href="https://mortad3lla.github.io/css/single.min.5a34175f01232dd3f8c27e4152be883054a1cc64ad41473a90a97073d77b2ad0.css" integrity="sha256-WjQXXwEjLdP4wn5BUr6IMFShzGStQUc6kKlwc9d7KtA=" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://mortad3lla.github.io/css/single.min.78a121b7d7a160420f9daab0ea13add66c37b9c44f27bba07b27207e2b0975d2.css" integrity="sha256-eKEht9ehYEIPnaqw6hOt1mw3ucRPJ7ugeycgfisJddI=" crossorigin="anonymous">
+
+
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/style.css" />
+
+</head>
+
+<body>
+  <div id="wrapper">
+    
+
+
+<header id="header">
+  <h1>
+    <a href="https://mortad3lla.github.io/">Filippo Belfiori</a>
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle theme">
+        <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
+        <path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/>
+        </svg>
+    </button>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-binoculars-icon lucide-binoculars">
+<path fill="none" d="M10 10h4"/>
+<path fill="none" d="M19 7V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/>
+<path fill="none" d="M20 21a2 2 0 0 0 2-2v-3.851c0-1.39-2-2.962-2-4.829V8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2z"/>
+<path fill="none" d="M 22 16 L 2 16"/>
+<path fill="none" d="M4 21a2 2 0 0 1-2-2v-3.851c0-1.39 2-2.962 2-4.829V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2z"/>
+<path fill="none" d="M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/research/">Research</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-heart-icon lucide-file-heart">
+<path fill="none" d="M13 22h5a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v7"/>
+<path fill="none" d="M14 2v5a1 1 0 0 0 1 1h5"/>
+<path fill="none" d="M3.62 18.8A2.25 2.25 0 1 1 7 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a1 1 0 0 1-1.507 0z"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/publications/">Publications</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-type-icon lucide-book-type">
+<path fill="none" d="M10 13h4"/>
+<path fill="none" d="M12 6v7"/>
+<path fill="none" d="M16 8V6H8v2"/>
+<path fill="none" d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/teaching/">Teaching</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-user-icon lucide-file-user">
+<path fill="none" d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/>
+<path fill="none" d="M14 2v5a1 1 0 0 0 1 1h5"/>
+<path fill="none" d="M16 22a4 4 0 0 0-8 0"/><circle cx="12" cy="15" r="3"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/curriculum/">CV</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,11H16a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm0,4H16a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2ZM11,9h6a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2ZM21,3H7A1,1,0,0,0,6,4V7H3A1,1,0,0,0,2,8V18a3,3,0,0,0,3,3H18a4,4,0,0,0,4-4V4A1,1,0,0,0,21,3ZM6,18a1,1,0,0,1-2,0V9H6Zm14-1a2,2,0,0,1-2,2H7.82A3,3,0,0,0,8,18V5H20Zm-9-4h1a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2Zm0,4h1a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2Z"/></svg>
+</span>
+      
+      <a class="link" href="https://mortad3lla.github.io/posts/">Blog</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      
+        <span class="icon"><svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
+<path d="M10.07031,20.50291a1.00008,1.00008,0,0,0-1.18115-.9834c-1.30908.24024-2.96191.27637-3.40137-.958a5.70754,5.70754,0,0,0-1.83691-2.415,1.20073,1.20073,0,0,1-.1665-.10938,1,1,0,0,0-.93067-.64551H2.54883a.99965.99965,0,0,0-1,.99512c-.00391.81543.811,1.33789,1.1416,1.51465a4.4408,4.4408,0,0,1,.92383,1.35937c.36426,1.02344,1.42285,2.57617,4.46582,2.376.001.03516.00195.06836.00244.09863l.00439.26758a1,1,0,0,0,2,0l-.00488-.31836C10.07715,21.4951,10.07031,21.22068,10.07031,20.50291Zm10.667-15.126c.03174-.125.063-.26367.09034-.41992a6.27792,6.27792,0,0,0-.40821-3.293,1.002,1.002,0,0,0-.61572-.58007c-.356-.12012-1.67041-.35645-4.18408,1.25a13.86918,13.86918,0,0,0-6.354,0C6.76221.751,5.45459.9658,5.10205,1.07908a.99744.99744,0,0,0-.63135.584,6.3003,6.3003,0,0,0-.40332,3.35644c.02442.12793.05078.2461.07813.35449A6.26928,6.26928,0,0,0,2.89014,9.20311a8.42168,8.42168,0,0,0,.04248.92187c.334,4.60254,3.334,5.98438,5.42431,6.459-.04345.125-.083.25878-.11816.40039a1.00023,1.00023,0,0,0,1.94238.47851,1.6784,1.6784,0,0,1,.46778-.87793.99947.99947,0,0,0-.5459-1.74512c-3.4541-.39453-4.95362-1.80175-5.1792-4.89843a6.61076,6.61076,0,0,1-.03369-.73828,4.25769,4.25769,0,0,1,.91943-2.71289,3.022,3.022,0,0,1,.1958-.23145.99988.99988,0,0,0,.188-1.02441,3.3876,3.3876,0,0,1-.15527-.55567A4.09356,4.09356,0,0,1,6.1167,3.06346a7.54263,7.54263,0,0,1,2.415,1.17968,1.00877,1.00877,0,0,0,.82764.13282,11.77716,11.77716,0,0,1,6.17285.001,1.00549,1.00549,0,0,0,.83056-.13769,7.572,7.572,0,0,1,2.40528-1.19043,4.03977,4.03977,0,0,1,.0874,1.57812,3.205,3.205,0,0,1-.16895.60743.9999.9999,0,0,0,.188,1.02441c.07715.08691.1543.18066.22363.26855A4.12186,4.12186,0,0,1,20,9.20311a7.03888,7.03888,0,0,1-.0376.77734c-.22021,3.05566-1.72558,4.46387-5.1958,4.85937a1,1,0,0,0-.54541,1.7461,1.63079,1.63079,0,0,1,.46631.9082,3.06079,3.06079,0,0,1,.09229.81934v2.334C14.77,21.2949,14.77,21.78025,14.77,22.00291a1,1,0,1,0,2,0c0-.2168,0-.69238.00977-1.33984V18.31346a4.8815,4.8815,0,0,0-.15479-1.31153,4.25638,4.25638,0,0,0-.11621-.416,6.51258,6.51258,0,0,0,5.44531-6.42383A8.69677,8.69677,0,0,0,22,9.20311,6.13062,6.13062,0,0,0,20.7373,5.37693Z"/></svg>
+</span>
+      
+      <a class="link" href="https://github.com/mortad3lla">GitHub</a>
+    </span>
+    
+  </nav>
+</header>
+<hr class="head-rule"></hr>
+    
+<main id="main" class="post">
+  
+  <div class="post-heading">
+    <h1 class="post-title">Motivic Cohomology</h1>
+    <div class="publish-metadata">
+      
+      <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      23 April 2026
+      
+      
+        &nbsp;
+        <span>
+          <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          350 words
+        </span>
+      
+      
+      
+        
+      
+      
+        &nbsp;
+        <span>
+          <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          ~2 mins
+        </span>
+      
+    </div>
+  </div>
+
+
+  
+  <details>
+    <summary>
+      <b>Table of Contents</b>
+    </summary>
+    <div class="toc numbered-subtitles"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#étale-sheaves-with-transfers">Étale sheaves with transfers</a></li>
+    <li><a href="#contractions">Contractions</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+  <article class="content numbered-subtitles">
+    
+    <h2 id="étale-sheaves-with-transfers">Étale sheaves with transfers</h2>
+<p>We know that there is a forgetful functor </p>
+$$PST(k) \to PShv(Sm/k)$$<p> which simply allow us to see a presheaf with transfer as a presheaf on the category of smooth schemes. A presehaf with transfers is an étale sheaf with transfers if is an étale sheaf when restricted to the étale site on $Sm/k$. We denote the category of étale sheaves with transfers by $Shv_{ét}(Cor_k)$.</p>
+<p><strong>Proposition</strong> For any scheme $X$, the presheaf with transfer $\mathbb{Z}_{tr}(X)$ is an étale sheaf with transfers.</p>
+<p><strong>Corollary</strong> For any étale sheaf with transfers $F$ and any smooth scheme $X$ </p>
+$$Hom_{Shv_{ét}(Cor_k)}(\mathbb{Z}_{tr}(X), F) = Hom_{PST}(\mathbb{Z}_{tr}(X), F).$$<p><strong>Corollary</strong> For any abelian group the complexes $A(q)$ of presheaves with transfers are complexes of étale sheaves with transfers. In particular, $\mathbb{Z}/n (1)$ is a complex of étale sheaves with transfers quasi-isomorphic to the étale sheaf $\mu_n$.</p>
+<p><strong>Proposition</strong> Let $\left\{U_i \to X\right\}$ be a Zariski cover. Then the following is exact as a complex of étale sheaves </p>
+$$0 \to \mathbb{Z}_{tr}(U_1 \cap \ldots \cap U_n) \to \ldots \to \oplus_i \mathbb{Z}_{tr}(U_i) \to \mathbb{Z}_{tr}(X) \to .O$$<p>As an application, take the usual covering of $\mathbb{P}^1$. Then there is an exact sequence of complex of étale sheaves
+</p>
+$$0 \to \mathbb{Z}_{tr}(\mathbb{G}_m) \to 2 \mathbb{Z}_{tr}(\mathbb{A}^1,1) \to \mathbb{Z}_{tr}(\mathbb{P}^1,1) \to 0.$$<p>
+Since $C_{*}\mathbb{Z}_{tr}(\mathbb{A}^1,1)=0$ we find </p>
+$$C_{*}\mathbb{Z}_{tr}(\mathbb{P}^1,1)=C_{*}\mathbb{Z}_{tr}(\mathbb{G}_m)[1]=\mathbb{Z}(1).$$<p>Moreover, we know we can take the étale sheafification from $PShv(Sm/k)$ to the category of $Sh_{ét}(Sm/k)$. Given $F \in PST(k)$ a presheaf with transfers, we denote $F_{ét}$ the composition of the forgetful functor with the étale sheafification.</p>
+<p><strong>Theorem</strong> The étale sheaf $F_{ét}$ has a unique structure of an étale sheaf with transfers such that $F \to F_{ét}$ is a morphism of étale sheaves with transfers.</p>
+<p>Recall that having transfers is a property! The same actually holds for the Nisnevich topology, but not for the Zariski topology (this will hold if $F$ is $\mathbb{A}^1$-invariant).</p>
+<p><strong>Proposition</strong> Let $F$ be an étale sheaf with transfers. Then the cohomology presheaves $H^n_{ét}(-,F)$ on $Sm/k$ are preshaeves with transfers.</p>
+<h2 id="contractions">Contractions</h2>
+<p><strong>Definition</strong> Let $F$ be an homotopy invariant presheaf with transfers. We define $F_{-1}$ as the presheaf with transfers </p>
+$$F_{-1}(X) = \textnormal{coker}(F(X \times \mathbb{A}^1) \to F(X \times \mathbb{A}^1 \setminus 0)).$$
+    
+  </article>
+
+  
+  
+
+<div id="sharingbuttons">
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+  <div class="paginator">
+    
+    <a class="link" href="https://mortad3lla.github.io/posts/symmetric_spectra/" title="Symmetric Spectra"><span class="arrow-icon">🢠</span> Prev</a>
+    
+    
+    <a></a>
+    
+  </div>
+  
+  <div class="comment">
+    
+    
+    
+    <script src="https://giscus.app/client.js"
+        data-repo="yunhaixiang/yhmath"
+        data-repo-id="R_kgDOQj059g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOQj059s4CzenA"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="gruvbox"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  </div>
+  
+  
+</main>
+
+    <footer id="footer">
+  
+  <div>
+    <span>Copyright © 2026 Filippo Belfiori</span>
+  </div>
+</footer>
+
+<script src="https://mortad3lla.github.io/js/math-env.js"></script>
+
+  </div>
+
+  
+  <script src='https://mortad3lla.github.io/js/script.js' defer></script>
+
+  
+  
+
+  
+  
+
+  
+  
+
+</body>
+
+</html>
+
+<script src="https://mortad3lla.github.io/js/collapsible.js" defer></script>
+<script src="https://mortad3lla.github.io/js/mobile-ol-markers.js" defer></script>
