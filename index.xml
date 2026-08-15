@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Filippo Belfiori</title>
-    <link>https://mortad3lla.github.io/</link>
+    <link>https://filippobelfiori.github.io/</link>
     <description>Recent content on Filippo Belfiori</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://mortad3lla.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://filippobelfiori.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Motivic Cohomology</title>
-      <link>https://mortad3lla.github.io/posts/notes-on-motivic-cohomolgoy/</link>
+      <link>https://filippobelfiori.github.io/posts/notes-on-motivic-cohomolgoy/</link>
       <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mortad3lla.github.io/posts/notes-on-motivic-cohomolgoy/</guid>
+      <guid>https://filippobelfiori.github.io/posts/notes-on-motivic-cohomolgoy/</guid>
       <description>&lt;h2 id=&#34;étale-sheaves-with-transfers&#34;&gt;Étale sheaves with transfers&lt;/h2&gt;
 &lt;p&gt;We know that there is a forgetful functor &lt;/p&gt;
 $$PST(k) \to PShv(Sm/k)$$&lt;p&gt; which simply allow us to see a presheaf with transfer as a presheaf on the category of smooth schemes. A presehaf with transfers is an étale sheaf with transfers if is an étale sheaf when restricted to the étale site on $Sm/k$. We denote the category of étale sheaves with transfers by $Shv_{ét}(Cor_k)$.&lt;/p&gt;
@@ -34,10 +34,10 @@ $$F_{-1}(X) = \textnormal{coker}(F(X \times \mathbb{A}^1) \to F(X \times \mathbb
     
     <item>
       <title>Symmetric Spectra</title>
-      <link>https://mortad3lla.github.io/posts/symmetric_spectra/</link>
+      <link>https://filippobelfiori.github.io/posts/symmetric_spectra/</link>
       <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mortad3lla.github.io/posts/symmetric_spectra/</guid>
+      <guid>https://filippobelfiori.github.io/posts/symmetric_spectra/</guid>
       <description>&lt;h2 id=&#34;1-the-two-main-objects&#34;&gt;1. The Two Main Objects&lt;/h2&gt;
 &lt;p&gt;The paper constructs and studies two categories:&lt;/p&gt;
 &lt;ul&gt;
@@ -265,10 +265,10 @@ is a $\Sigma_n$-cofibration (i.e., equivariant monomorphism with free $\Sigma_n$
     
     <item>
       <title>Examples of O-minimality in Algebraic Geometry</title>
-      <link>https://mortad3lla.github.io/posts/o_minimality_hunter_spink/</link>
+      <link>https://filippobelfiori.github.io/posts/o_minimality_hunter_spink/</link>
       <pubDate>Sat, 14 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mortad3lla.github.io/posts/o_minimality_hunter_spink/</guid>
+      <guid>https://filippobelfiori.github.io/posts/o_minimality_hunter_spink/</guid>
       <description>&lt;p&gt;&lt;em&gt;Based on a YouTube lecture by Hunter Spink. These are informal introductory notes; we do not worry about the details of model theory but focus on the ideas and tools usable in algebraic geometry.&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;i-motivation&#34;&gt;I. Motivation&lt;/h2&gt;
@@ -381,10 +381,10 @@ is a &lt;strong&gt;definable set&lt;/strong&gt; over $\mathcal{F}$ (and a comple
     
     <item>
       <title>Exponential Motives — Lesson IV</title>
-      <link>https://mortad3lla.github.io/posts/exponential_motives_lesson4/</link>
+      <link>https://filippobelfiori.github.io/posts/exponential_motives_lesson4/</link>
       <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mortad3lla.github.io/posts/exponential_motives_lesson4/</guid>
+      <guid>https://filippobelfiori.github.io/posts/exponential_motives_lesson4/</guid>
       <description>&lt;h2 id=&#34;recap&#34;&gt;Recap&lt;/h2&gt;
 &lt;p&gt;We are working with $k \subset \mathbb{C}$, $X$ a smooth variety over $k$, and $f: X \to \mathbb{A}^1_k$ a global regular function. Setting $f = 0$ recovers the usual theories; we will see that this can happen for $f \neq 0$ as well.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Twisted de Rham cohomology:&lt;/strong&gt;
@@ -578,10 +578,10 @@ By orthogonality of characters, $\sum_{z \in \mathbb{F}_p} \psi(z \cdot f(x)) = 
     
     <item>
       <title>Exponential Motives — Lesson III</title>
-      <link>https://mortad3lla.github.io/posts/exponential_motives_lesson3/</link>
+      <link>https://filippobelfiori.github.io/posts/exponential_motives_lesson3/</link>
       <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mortad3lla.github.io/posts/exponential_motives_lesson3/</guid>
+      <guid>https://filippobelfiori.github.io/posts/exponential_motives_lesson3/</guid>
       <description>&lt;h2 id=&#34;recap-nori-motives&#34;&gt;Recap: Nori Motives&lt;/h2&gt;
 &lt;p&gt;Recall the category of Nori motives $M(k) = \langle Q(k), \rho_B \rangle$, where $Q(k)$ is the quiver of algebraic varieties over $k$ with vertices $[X, Y, n, i]$ and arrows of types (a), (b), (c) inspired by the Kontsevich–Zagier conjecture. The Betti representation is:
 &lt;/p&gt;
@@ -759,10 +759,10 @@ $$\int_\sigma e^{-x^n}\,dx \sim \Gamma\!\left(\tfrac{1}{n}\right).$$&lt;p&gt;Thi
     
     <item>
       <title>Exponential Motives — Lesson II</title>
-      <link>https://mortad3lla.github.io/posts/exponential_motives_lesson2/</link>
+      <link>https://filippobelfiori.github.io/posts/exponential_motives_lesson2/</link>
       <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mortad3lla.github.io/posts/exponential_motives_lesson2/</guid>
+      <guid>https://filippobelfiori.github.io/posts/exponential_motives_lesson2/</guid>
       <description>&lt;p&gt;Recall from last time: for $k \hookrightarrow \mathbb{C}$ and $X$ a smooth algebraic variety over $k$, the comparison isomorphism gives
 &lt;/p&gt;
 $$H^*_{\mathrm{dR}}(X) \otimes_k \mathbb{C} \xrightarrow{\sim} H^*_B(X) \otimes_\mathbb{Q} \mathbb{C}, \qquad [\omega] \longmapsto \left([\sigma] \mapsto \int_\sigma \omega\right).$$&lt;p&gt;The &lt;strong&gt;preliminary definition&lt;/strong&gt; of a period was: any number of the form $\int_\sigma \omega$, whenever $k \subset \overline{\mathbb{Q}}$.&lt;/p&gt;
@@ -963,10 +963,10 @@ $$M(k) = \langle Q(k),\; \rho_B \rangle.$$&lt;p&gt;&lt;strong&gt;Remark.&lt;/str
     
     <item>
       <title>Exponential Motives — Lesson I</title>
-      <link>https://mortad3lla.github.io/posts/exponential_motives_lesson1/</link>
+      <link>https://filippobelfiori.github.io/posts/exponential_motives_lesson1/</link>
       <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mortad3lla.github.io/posts/exponential_motives_lesson1/</guid>
+      <guid>https://filippobelfiori.github.io/posts/exponential_motives_lesson1/</guid>
       <description>&lt;p&gt;These are notes from a lecture by &lt;strong&gt;J. Fresán&lt;/strong&gt; on &lt;em&gt;Exponential Motives&lt;/em&gt;, a generalisation of the theory of motives. There are many ways to think about motives; the perspective here is close to &lt;strong&gt;Nori motives&lt;/strong&gt;, since periods are central.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1149,10 +1149,10 @@ are quasi-isomorphisms. One cannot apply GAGA directly, because $j_*\Omega^\bull
     
     <item>
       <title>Chern Classes in Ordinary Cohomology</title>
-      <link>https://mortad3lla.github.io/posts/chern-classes/</link>
+      <link>https://filippobelfiori.github.io/posts/chern-classes/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mortad3lla.github.io/posts/chern-classes/</guid>
+      <guid>https://filippobelfiori.github.io/posts/chern-classes/</guid>
       <description>&lt;p&gt;Let $X$ be a topological space and let $E \to X$ be a complex vector bundle of rank $n$. The &lt;strong&gt;Chern classes&lt;/strong&gt; of $E$ are characteristic classes&lt;/p&gt;
 $$
 c_i(E) \in H^{2i}(X;\mathbb{Z}), \qquad i=0,\dots,n,
@@ -1264,10 +1264,10 @@ $$&lt;p&gt;where $x_i$ are the Chern roots (via the splitting principle).&lt;/p&
     
     <item>
       <title>Postnikov Tower</title>
-      <link>https://mortad3lla.github.io/posts/postnikov-tower/</link>
+      <link>https://filippobelfiori.github.io/posts/postnikov-tower/</link>
       <pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://mortad3lla.github.io/posts/postnikov-tower/</guid>
+      <guid>https://filippobelfiori.github.io/posts/postnikov-tower/</guid>
       <description>&lt;p&gt;If $X$ and $Y$ are topological spaces, a map $f: X \to Y$ is said to be an &lt;strong&gt;$n$-equivalence&lt;/strong&gt; if it induces a bijection $\pi_0(X) \to \pi_0(Y)$ (the sets of path-connected components of $X$ and $Y$ respectively) and for all choice of a base-point $x \in X$, an isomorphism of groups $\pi_i(X,x) \to \pi_i(Y,f(x))$ for all $i &lt; n$ and a surjection for $i=n$. Moreover, $f$ is a &lt;strong&gt;weak homotopy equivalence&lt;/strong&gt; if it is an $n$-equivalence for all $n$.&lt;/p&gt;
 &lt;p&gt;A map $p: E \to B$ is a &lt;strong&gt;(Serre) fibration&lt;/strong&gt; if it has the right lifting property with respect to the maps $D^n \times \{0\} \to D^n \times I$.&lt;/p&gt;
 &lt;p&gt;If $f: X \to Y$ is any map, there is a functorial way to factorize it as $X \to P_f \to Y$ where $X \to P_f$ is a homotopy equivalence and $P_f \to Y$ is a (Serre) fibration. Then we define the &lt;strong&gt;homotopy fibre&lt;/strong&gt; $F_f(y)$ of a map $f: X \to Y$ and a point $y \in Y$ as the fibre of $P_f \to Y$ over $y$. This is exactly the homotopy pullback, computed as the ordinary pullback after a fibrant remplacement.&lt;/p&gt;
