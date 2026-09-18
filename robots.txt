@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://www.math.univ-paris13.fr/~belfiori/sitemap.xml
+Sitemap: https://filippobelfiori.github.io/sitemap.xml
